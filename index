@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Grange · Soirée du 13 Juin 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital@0;1&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ░░ FOND BRIQUE ░░ -->
+  <div class="brick-bg" aria-hidden="true">
+    <div class="brick-overlay"></div>
+    <div class="brick-vignette"></div>
+    <div class="brick-glow"></div>
+  </div>
+
+  <!-- ░░ VIGNES ░░ -->
+  <div class="vines-wrap vines-wrap-left" aria-hidden="true">
+    <img class="vine-img vine-img-1" src="vine-left.png"  alt="" />
+    <img class="vine-img vine-img-2" src="vine-right.png" alt="" />
+    <img class="vine-img vine-img-3" src="vine-left.png"  alt="" />
+    <img class="vine-img vine-img-4" src="vine-right.png" alt="" />
+  </div>
+  <div class="vines-wrap vines-wrap-right" aria-hidden="true">
+    <img class="vine-img vine-img-1" src="vine-right.png" alt="" />
+    <img class="vine-img vine-img-2" src="vine-left.png"  alt="" />
+    <img class="vine-img vine-img-3" src="vine-right.png" alt="" />
+    <img class="vine-img vine-img-4" src="vine-left.png"  alt="" />
+  </div>
+
+  <!-- ░░ CONTENU PRINCIPAL ░░ -->
+  <main class="hero">
+
+    <p class="eyebrow animate-down delay-1">Soirée privée &middot; Samedi 13 Juin 2026</p>
+
+    <div class="title-block animate-down delay-2">
+      <span class="title-la">La</span>
+      <h1 class="title-main">Grange</h1>
+    </div>
+
+    <div class="ornament animate-down delay-3" aria-hidden="true">
+      <span class="orn-line"></span>
+      <span class="orn-diamond"></span>
+      <span class="orn-diamond sm"></span>
+      <span class="orn-diamond"></span>
+      <span class="orn-line r"></span>
+    </div>
+
+    <p class="hero-tagline animate-down delay-4">
+      Une soirée chic &amp; champêtre dans un lieu qui a du caractère
+    </p>
+
+    <!-- ÉTIQUETTES INFO -->
+    <ul class="tags animate-up delay-5" role="list">
+      <li class="tag">
+        <span class="tag-icon" aria-hidden="true">🕖</span>
+        <strong>19h30</strong>
+        <span class="tag-sep" aria-hidden="true"></span>
+        Ouverture des portes
+      </li>
+      <li class="tag">
+        <span class="tag-icon" aria-hidden="true">🌅</span>
+        <strong>Nuit</strong>
+        <span class="tag-sep" aria-hidden="true"></span>
+        On verra bien à quelle heure…
+      </li>
+      <li class="tag">
+        <span class="tag-icon" aria-hidden="true">📍</span>
+        <strong>Adresse</strong>
+        <span class="tag-sep" aria-hidden="true"></span>
+        Envoyée par message
+      </li>
+      <li class="tag">
+        <span class="tag-icon" aria-hidden="true">🚗</span>
+        <strong>Parking</strong>
+        <span class="tag-sep" aria-hidden="true"></span>
+        Disponible sur place
+      </li>
+      <li class="tag">
+        <span class="tag-icon" aria-hidden="true">👗</span>
+        <strong>Tenue</strong>
+        <span class="tag-sep" aria-hidden="true"></span>
+        Élégance champêtre
+      </li>
+      <li class="tag">
+        <span class="tag-icon" aria-hidden="true">🍽️</span>
+        <strong>Dîner</strong>
+        <span class="tag-sep" aria-hidden="true"></span>
+        ~21h · en plein air
+      </li>
+      <li class="tag tag-mystery">
+        <span class="tag-icon" aria-hidden="true">✨</span>
+        <strong>Surprises</strong>
+        <span class="tag-sep" aria-hidden="true"></span>
+        3 mystères au programme…
+      </li>
+      <li class="tag tag-rsvp">
+        <span class="tag-icon" aria-hidden="true">✉️</span>
+        <strong>RSVP</strong>
+        <span class="tag-sep" aria-hidden="true"></span>
+        Avant le 1er Juin
+      </li>
+    </ul>
+
+    <!-- NAVIGATION VERS LES AUTRES PAGES -->
+    <nav class="page-nav animate-up delay-6" aria-label="Navigation du site">
+      <a href="programme.html" class="nav-btn">Programme &amp; surprises</a>
+      <a href="infos.html" class="nav-btn nav-btn-ghost">Infos pratiques</a>
+    </nav>
+
+  </main>
+
+  <!-- FLÈCHE SCROLL -->
+  <div class="scroll-cue animate-down delay-6" aria-hidden="true">
+    <span>Défiler</span>
+    <div class="scroll-arrow"></div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
