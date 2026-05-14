@@ -7,27 +7,30 @@
   <link rel="stylesheet" href="style.css" />
   <style>
     :root { --page-color: var(--c-video); }
-    .video-thumb {
-      aspect-ratio: 16/9;
+    .gallery-img .video-ph {
+      width: 100%; aspect-ratio: 16/9;
       background: #161616;
-      border-radius: var(--radius-md) var(--radius-md) 0 0;
+      border-radius: var(--radius-sm);
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      gap: 10px; cursor: pointer;
-      transition: background 0.2s;
+      gap: 10px;
     }
-    .video-thumb:hover { background: #1e1e1e; }
     .play-circle {
-      width: 52px; height: 52px;
-      border-radius: 50%;
+      width: 44px; height: 44px; border-radius: 50%;
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.15);
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem;
-      transition: background 0.2s, transform 0.2s;
+      font-size: 1rem;
     }
-    .video-thumb:hover .play-circle { background: rgba(255,255,255,0.14); transform: scale(1.08); }
-    .video-label { font-size: 0.72rem; color: var(--text-3); letter-spacing: 0.04em; }
+    .video-label { font-size: 0.72rem; color: var(--text-3); }
+    .group-main-img .video-ph {
+      width: 100%; height: 100%; min-height: 220px;
+      background: #161616;
+      border-radius: var(--radius-md);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 14px;
+    }
+    .group-main-img .play-circle { width: 64px; height: 64px; font-size: 1.4rem; }
   </style>
 </head>
 <body>
@@ -47,159 +50,151 @@
     <div class="nav-burger"><span></span><span></span><span></span></div>
   </nav>
 
+  <!-- HERO -->
   <div class="page-hero">
     <div class="hero-eyebrow">
-      <div class="figurine-lg">🎬</div>
+      <div class="fig-badge">🎬</div>
       <span>Vidéo</span>
     </div>
     <h1>La vidéo qui<br><em>captive</em></h1>
-    <p>Du tournage au montage, je crée des vidéos percutantes. Réels, clips, documentaires, corporate — je maîtrise tout le processus.</p>
+    <p class="hero-sub">Du tournage au montage, je crée des vidéos percutantes. Réels, clips, documentaires, corporate — je maîtrise tout le processus de production.</p>
     <div class="hero-actions">
       <a href="mailto:contact@exemple.com" class="btn btn-primary">Démarrer un projet</a>
       <a href="#projets" class="btn btn-ghost">Voir les réalisations</a>
     </div>
+    <div class="hero-line"></div>
   </div>
 
+  <!-- PORTFOLIO -->
   <div class="portfolio-section" id="projets">
 
-    <!-- Groupe 1 — Réels & Shorts -->
+    <!-- ── Groupe : Réels & Shorts ── -->
     <div class="project-group reveal">
-      <div class="group-header">
-        <div class="mini-fig">📱</div>
-        <div class="group-info">
-          <div class="group-name">Réels & Shorts</div>
-          <div class="group-meta">Instagram · TikTok · YouTube Shorts</div>
+      <div class="group-row">
+        <div class="group-lead">
+          <div class="group-fig">
+            <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+              <ellipse cx="30" cy="12" rx="11" ry="11"/>
+              <rect x="25" y="22" width="10" height="7" rx="3"/>
+              <path d="M11 29 Q30 35 49 29 L53 90 Q30 96 7 90 Z"/>
+              <path d="M11 31 L3 78 Q3 85 13 83 L19 37 Z"/>
+              <path d="M49 31 L57 78 Q57 85 47 83 L41 37 Z"/>
+              <path d="M13 88 L9 150 Q9 157 21 157 L25 97 Z"/>
+              <path d="M47 88 L51 150 Q51 157 39 157 L35 97 Z"/>
+            </svg>
+          </div>
+          <div class="group-text">
+            <h2>Réels & Shorts</h2>
+            <p>Formats courts percutants pour Instagram, TikTok et YouTube. Rythme, musique, montage — chaque seconde compte.</p>
+          </div>
         </div>
-        <div class="group-count">— projets</div>
+        <div class="group-main-img">
+          <div class="video-ph"><div class="play-circle">▶</div><span class="video-label">Vidéo principale</span></div>
+        </div>
       </div>
-      <div class="project-grid">
-        <div class="project-card">
-          <div class="video-thumb"><div class="play-circle">▶</div><span class="video-label">Reel à venir</span></div>
-          <div class="project-body">
-            <div class="project-title">Titre du reel</div>
-            <div class="project-desc">Format, plateforme, concept.</div>
-            <div class="project-tags"><span class="project-tag">Reel</span><span class="project-tag">Instagram</span></div>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="video-thumb"><div class="play-circle">▶</div><span class="video-label">TikTok à venir</span></div>
-          <div class="project-body">
-            <div class="project-title">Titre du projet</div>
-            <div class="project-desc">Format, plateforme, concept.</div>
-            <div class="project-tags"><span class="project-tag">TikTok</span><span class="project-tag">Viral</span></div>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="video-thumb"><div class="play-circle">▶</div><span class="video-label">Short à venir</span></div>
-          <div class="project-body">
-            <div class="project-title">Titre du projet</div>
-            <div class="project-desc">Format, plateforme, concept.</div>
-            <div class="project-tags"><span class="project-tag">YouTube</span><span class="project-tag">Short</span></div>
-          </div>
-        </div>
+      <div class="group-gallery">
+        <div class="gallery-img"><div class="video-ph"><div class="play-circle">▶</div><span class="video-label">Reel à venir</span></div></div>
+        <div class="gallery-img"><div class="video-ph"><div class="play-circle">▶</div><span class="video-label">TikTok à venir</span></div></div>
+        <div class="gallery-img"><div class="video-ph"><div class="play-circle">▶</div><span class="video-label">Short à venir</span></div></div>
       </div>
     </div>
 
-    <!-- Groupe 2 — Documentaires -->
+    <!-- ── Groupe : Mini-documentaires ── -->
     <div class="project-group reveal">
-      <div class="group-header">
-        <div class="mini-fig">🎞️</div>
-        <div class="group-info">
-          <div class="group-name">Mini-documentaires & Reportages</div>
-          <div class="group-meta">Narration longue forme · Portraits</div>
+      <div class="group-row">
+        <div class="group-lead">
+          <div class="group-fig">
+            <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+              <ellipse cx="30" cy="12" rx="11" ry="11"/>
+              <rect x="25" y="22" width="10" height="7" rx="3"/>
+              <path d="M11 29 Q30 35 49 29 L53 90 Q30 96 7 90 Z"/>
+              <path d="M7 31 L2 72 Q2 78 12 77 L17 37 Z"/>
+              <path d="M53 31 L58 72 Q58 78 48 77 L43 37 Z"/>
+              <path d="M13 88 L9 150 Q9 157 21 157 L25 97 Z"/>
+              <path d="M47 88 L51 150 Q51 157 39 157 L35 97 Z"/>
+            </svg>
+          </div>
+          <div class="group-text">
+            <h2>Mini-documentaires & Reportages</h2>
+            <p>Narration longue forme, portraits humains, histoires qui méritent d'être racontées. Un regard sincère et soigné sur ce qui compte.</p>
+          </div>
         </div>
-        <div class="group-count">— projets</div>
+        <div class="group-main-img">
+          <div class="video-ph"><div class="play-circle">▶</div><span class="video-label">Documentaire principal</span></div>
+        </div>
       </div>
-      <div class="project-grid col-2">
-        <div class="project-card">
-          <div class="video-thumb"><div class="play-circle">▶</div><span class="video-label">Documentaire à venir</span></div>
-          <div class="project-body">
-            <div class="project-title">Titre du documentaire</div>
-            <div class="project-desc">Sujet, durée, année de production.</div>
-            <div class="project-tags"><span class="project-tag">Documentaire</span><span class="project-tag">4K</span></div>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="video-thumb"><div class="play-circle">▶</div><span class="video-label">Reportage à venir</span></div>
-          <div class="project-body">
-            <div class="project-title">Titre du reportage</div>
-            <div class="project-desc">Sujet, durée, année de production.</div>
-            <div class="project-tags"><span class="project-tag">Reportage</span><span class="project-tag">Son</span></div>
-          </div>
-        </div>
+      <div class="group-gallery">
+        <div class="gallery-img"><div class="video-ph"><div class="play-circle">▶</div><span class="video-label">Doc à venir</span></div></div>
+        <div class="gallery-img"><div class="video-ph"><div class="play-circle">▶</div><span class="video-label">Reportage à venir</span></div></div>
+        <div class="gallery-img"><div class="video-ph"><div class="play-circle">▶</div><span class="video-label">Portrait à venir</span></div></div>
       </div>
     </div>
 
-    <!-- Groupe 3 — Corporate -->
+    <!-- ── Groupe : Corporate & Marques ── -->
     <div class="project-group reveal">
-      <div class="group-header">
-        <div class="mini-fig">🏢</div>
-        <div class="group-info">
-          <div class="group-name">Corporate & Marques</div>
-          <div class="group-meta">Films institutionnels · Produits · Formation</div>
+      <div class="group-row">
+        <div class="group-lead">
+          <div class="group-fig">
+            <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+              <ellipse cx="30" cy="12" rx="11" ry="11"/>
+              <rect x="25" y="22" width="10" height="7" rx="3"/>
+              <path d="M14 29 Q30 35 46 29 L49 90 Q30 96 11 90 Z"/>
+              <path d="M14 31 L8 70 Q8 76 18 74 L22 37 Z"/>
+              <path d="M46 31 L52 70 Q52 76 42 74 L38 37 Z"/>
+              <path d="M15 88 L12 150 Q12 157 24 157 L27 97 Z"/>
+              <path d="M45 88 L48 150 Q48 157 36 157 L33 97 Z"/>
+            </svg>
+          </div>
+          <div class="group-text">
+            <h2>Corporate & Marques</h2>
+            <p>Films institutionnels, vidéos produit, témoignages clients. La vidéo au service de votre image de marque.</p>
+          </div>
         </div>
-        <div class="group-count">— projets</div>
+        <div class="group-main-img">
+          <div class="video-ph"><div class="play-circle">▶</div><span class="video-label">Film corporate principal</span></div>
+        </div>
       </div>
-      <div class="project-grid">
-        <div class="project-card">
-          <div class="video-thumb"><div class="play-circle">▶</div><span class="video-label">Corporate à venir</span></div>
-          <div class="project-body">
-            <div class="project-title">Titre du projet</div>
-            <div class="project-desc">Client, objectif, format.</div>
-            <div class="project-tags"><span class="project-tag">Corporate</span></div>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="video-thumb"><div class="play-circle">▶</div><span class="video-label">Produit à venir</span></div>
-          <div class="project-body">
-            <div class="project-title">Titre du projet</div>
-            <div class="project-desc">Client, objectif, format.</div>
-            <div class="project-tags"><span class="project-tag">Produit</span></div>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="video-thumb"><div class="play-circle">▶</div><span class="video-label">Brand à venir</span></div>
-          <div class="project-body">
-            <div class="project-title">Titre du projet</div>
-            <div class="project-desc">Client, objectif, format.</div>
-            <div class="project-tags"><span class="project-tag">Brand</span></div>
-          </div>
-        </div>
+      <div class="group-gallery">
+        <div class="gallery-img"><div class="video-ph"><div class="play-circle">▶</div><span class="video-label">Corporate à venir</span></div></div>
+        <div class="gallery-img"><div class="video-ph"><div class="play-circle">▶</div><span class="video-label">Produit à venir</span></div></div>
+        <div class="gallery-img"><div class="video-ph"><div class="play-circle">▶</div><span class="video-label">Témoignage à venir</span></div></div>
       </div>
     </div>
 
-    <!-- Groupe 4 — Clips -->
+    <!-- ── Groupe : Clips musicaux ── -->
     <div class="project-group reveal">
-      <div class="group-header">
-        <div class="mini-fig">🎵</div>
-        <div class="group-info">
-          <div class="group-name">Clips musicaux</div>
-          <div class="group-meta">Direction artistique · Mise en scène</div>
+      <div class="group-row">
+        <div class="group-lead">
+          <div class="group-fig">
+            <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+              <ellipse cx="30" cy="12" rx="11" ry="11"/>
+              <rect x="25" y="22" width="10" height="7" rx="3"/>
+              <path d="M12 29 Q30 35 48 29 L52 88 Q30 94 8 88 Z"/>
+              <path d="M12 31 L5 68 Q5 74 15 72 L20 37 Z"/>
+              <path d="M48 31 L55 68 Q55 74 45 72 L40 37 Z"/>
+              <path d="M14 86 L10 150 Q10 157 22 157 L26 96 Z"/>
+              <path d="M46 86 L50 150 Q50 157 38 157 L34 96 Z"/>
+            </svg>
+          </div>
+          <div class="group-text">
+            <h2>Clips musicaux</h2>
+            <p>Direction artistique, mise en scène, écriture visuelle. Chaque clip raconte une histoire en images au service de la musique.</p>
+          </div>
         </div>
-        <div class="group-count">— projets</div>
+        <div class="group-main-img">
+          <div class="video-ph"><div class="play-circle">▶</div><span class="video-label">Clip principal</span></div>
+        </div>
       </div>
-      <div class="project-grid col-2">
-        <div class="project-card">
-          <div class="video-thumb"><div class="play-circle">▶</div><span class="video-label">Clip à venir</span></div>
-          <div class="project-body">
-            <div class="project-title">Artiste — Titre</div>
-            <div class="project-desc">Genre musical, concept visuel, durée.</div>
-            <div class="project-tags"><span class="project-tag">Clip</span><span class="project-tag">Direction artistique</span></div>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="video-thumb"><div class="play-circle">▶</div><span class="video-label">Clip à venir</span></div>
-          <div class="project-body">
-            <div class="project-title">Artiste — Titre</div>
-            <div class="project-desc">Genre musical, concept visuel, durée.</div>
-            <div class="project-tags"><span class="project-tag">Clip</span><span class="project-tag">Motion</span></div>
-          </div>
-        </div>
+      <div class="group-gallery">
+        <div class="gallery-img"><div class="video-ph"><div class="play-circle">▶</div><span class="video-label">Clip à venir</span></div></div>
+        <div class="gallery-img"><div class="video-ph"><div class="play-circle">▶</div><span class="video-label">Clip à venir</span></div></div>
+        <div class="gallery-img"><div class="video-ph"><div class="play-circle">▶</div><span class="video-label">Clip à venir</span></div></div>
       </div>
     </div>
 
-  </div>
+  </div><!-- /portfolio-section -->
 
+  <!-- CTA -->
   <div class="cta-section">
     <div class="cta-inner">
       <div>

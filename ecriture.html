@@ -7,68 +7,50 @@
   <link rel="stylesheet" href="style.css" />
   <style>
     :root { --page-color: var(--c-writing); }
-    .article-card {
-      padding: 28px;
-      border-radius: var(--radius-md);
+    .text-preview {
+      width: 100%; height: 100%; min-height: 220px;
       background: var(--surface);
       border: 1px solid var(--border);
-      cursor: pointer;
-      transition: border-color 0.25s, transform 0.25s;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+      border-radius: var(--r-md);
+      padding: 28px 32px;
+      display: flex; flex-direction: column; gap: 14px;
+      justify-content: center;
     }
-    .article-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
-    .article-type {
-      font-family: var(--font-hand);
-      font-size: 0.8rem;
+    .tp-label {
+      font-family: var(--ff-hand);
+      font-size: 0.78rem;
       color: var(--page-color);
     }
-    .article-title {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
+    .tp-title {
+      font-family: var(--ff-display);
+      font-size: 1.25rem;
       font-weight: 400;
       line-height: 1.35;
+      color: var(--text-1);
     }
-    .article-excerpt {
-      font-size: 0.82rem;
+    .tp-body {
+      font-size: 0.8rem;
+      line-height: 1.7;
       color: var(--text-2);
-      line-height: 1.65;
       font-weight: 300;
     }
-    .article-meta {
-      display: flex; gap: 12px;
-      font-size: 0.72rem; color: var(--text-3);
+    .tp-meta {
+      display: flex; gap: 10px;
+      font-size: 0.7rem; color: var(--text-3);
       margin-top: 4px;
+      font-family: var(--ff-hand);
     }
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 14px;
-    }
-    .pull-quote {
-      padding: 40px;
-      border-radius: var(--radius-lg);
+    .gallery-text-card {
+      padding: 20px;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-left: 2px solid var(--page-color);
-      grid-column: 1 / -1;
+      border-radius: var(--r-md);
+      display: flex; flex-direction: column; gap: 8px;
+      height: 100%;
     }
-    .pull-quote blockquote {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 300;
-      font-style: italic;
-      line-height: 1.5;
-      color: var(--text-1);
-      margin-bottom: 10px;
-    }
-    .pull-quote cite {
-      font-family: var(--font-hand);
-      font-size: 0.82rem;
-      color: var(--text-3);
-      font-style: normal;
-    }
+    .gallery-text-card .tp-label { font-size: 0.72rem; }
+    .gallery-text-card .tp-title { font-size: 0.95rem; }
+    .gallery-text-card .tp-body { font-size: 0.75rem; }
   </style>
 </head>
 <body>
@@ -85,143 +67,243 @@
     <div class="nav-burger"><span></span><span></span><span></span></div>
   </nav>
 
+  <!-- HERO -->
   <div class="page-hero">
     <div class="hero-eyebrow">
-      <div class="figurine-lg">✍️</div>
+      <div class="fig-badge">✍️</div>
       <span>Écriture</span>
     </div>
     <h1>Les mots qui<br><em>font la différence</em></h1>
-    <p>Articles, scripts, copywriting, storytelling — j'écris avec clarté, style et intention. Chaque mot est choisi pour servir votre message.</p>
+    <p class="hero-sub">Articles, scripts, copywriting, storytelling — j'écris avec clarté, style et intention. Chaque mot est choisi pour servir votre message.</p>
     <div class="hero-actions">
       <a href="mailto:contact@exemple.com" class="btn btn-primary">Travailler ensemble</a>
       <a href="#projets" class="btn btn-ghost">Lire des extraits</a>
     </div>
+    <div class="hero-line"></div>
   </div>
 
+  <!-- PORTFOLIO -->
   <div class="portfolio-section" id="projets">
 
-    <!-- Groupe 1 — Articles -->
+    <!-- ── Groupe : Articles & Blog ── -->
     <div class="project-group reveal">
-      <div class="group-header">
-        <div class="mini-fig">📰</div>
-        <div class="group-info">
-          <div class="group-name">Articles & Blog</div>
-          <div class="group-meta">Fond · Opinion · SEO · Presse</div>
+      <div class="group-row">
+        <div class="group-lead">
+          <div class="group-fig">
+            <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+              <ellipse cx="30" cy="12" rx="11" ry="11"/>
+              <rect x="25" y="22" width="10" height="7" rx="3"/>
+              <path d="M11 29 Q30 35 49 29 L53 90 Q30 96 7 90 Z"/>
+              <path d="M11 31 L3 78 Q3 85 13 83 L19 37 Z"/>
+              <path d="M49 31 L57 78 Q57 85 47 83 L41 37 Z"/>
+              <path d="M13 88 L9 150 Q9 157 21 157 L25 97 Z"/>
+              <path d="M47 88 L51 150 Q51 157 39 157 L35 97 Z"/>
+            </svg>
+          </div>
+          <div class="group-text">
+            <h2>Articles & Blog</h2>
+            <p>Articles de fond, billets d'opinion, contenus SEO. Des textes qui informent, questionnent, engagent — et qui restent en tête.</p>
+          </div>
         </div>
-        <div class="group-count">— articles</div>
+        <div class="group-main-img">
+          <div class="text-preview">
+            <div class="tp-label">Article de fond</div>
+            <div class="tp-title">Titre de l'article — À renseigner</div>
+            <div class="tp-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</div>
+            <div class="tp-meta"><span>📅 Date</span><span>⏱ 5 min</span></div>
+          </div>
+        </div>
       </div>
-      <div class="articles-grid">
-        <div class="pull-quote">
-          <blockquote>« Les bons mots n'expliquent pas seulement — ils font ressentir, ils convainquent, ils restent. »</blockquote>
-          <cite>— Matthias</cite>
+      <div class="group-gallery">
+        <div class="gallery-img">
+          <div class="gallery-text-card">
+            <div class="tp-label">Opinion</div>
+            <div class="tp-title">Titre — À renseigner</div>
+            <div class="tp-body">Pellentesque habitant morbi tristique senectus et netus.</div>
+          </div>
         </div>
-        <div class="article-card">
-          <div class="article-type">Article de fond</div>
-          <div class="article-title">Titre de l'article — À renseigner</div>
-          <div class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-          <div class="article-meta"><span>📅 Date</span><span>⏱ 5 min</span></div>
+        <div class="gallery-img">
+          <div class="gallery-text-card">
+            <div class="tp-label">SEO</div>
+            <div class="tp-title">Titre — À renseigner</div>
+            <div class="tp-body">Vestibulum tortor quam, feugiat vitae ultricies eget, tempor sit amet.</div>
+          </div>
         </div>
-        <div class="article-card">
-          <div class="article-type">Opinion</div>
-          <div class="article-title">Titre de l'article — À renseigner</div>
-          <div class="article-excerpt">Pellentesque habitant morbi tristique senectus et netus. Vestibulum tortor quam, feugiat vitae ultricies eget.</div>
-          <div class="article-meta"><span>📅 Date</span><span>⏱ 3 min</span></div>
+        <div class="gallery-img">
+          <div class="gallery-text-card">
+            <div class="tp-label">Presse</div>
+            <div class="tp-title">Titre — À renseigner</div>
+            <div class="tp-body">Aenean commodo ligula eget dolor. Aenean massa viverra.</div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Groupe 2 — Scripts -->
+    <!-- ── Groupe : Scripts & Narration ── -->
     <div class="project-group reveal">
-      <div class="group-header">
-        <div class="mini-fig">🎬</div>
-        <div class="group-info">
-          <div class="group-name">Scripts & Narration</div>
-          <div class="group-meta">Vidéo · Podcast · Publicité · Court-métrage</div>
+      <div class="group-row">
+        <div class="group-lead">
+          <div class="group-fig">
+            <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+              <ellipse cx="30" cy="12" rx="11" ry="11"/>
+              <rect x="25" y="22" width="10" height="7" rx="3"/>
+              <path d="M11 29 Q30 35 49 29 L53 90 Q30 96 7 90 Z"/>
+              <path d="M7 31 L2 72 Q2 78 12 77 L17 37 Z"/>
+              <path d="M53 31 L58 72 Q58 78 48 77 L43 37 Z"/>
+              <path d="M13 88 L9 150 Q9 157 21 157 L25 97 Z"/>
+              <path d="M47 88 L51 150 Q51 157 39 157 L35 97 Z"/>
+            </svg>
+          </div>
+          <div class="group-text">
+            <h2>Scripts & Narration</h2>
+            <p>Scripts YouTube, podcasts, publicités, courts-métrages. La narration comme outil de persuasion et d'émotion.</p>
+          </div>
         </div>
-        <div class="group-count">— scripts</div>
+        <div class="group-main-img">
+          <div class="text-preview">
+            <div class="tp-label">Script YouTube</div>
+            <div class="tp-title">Titre du script — À renseigner</div>
+            <div class="tp-body">Type de vidéo, durée, ton utilisé, plateforme de diffusion. Résultats et performances.</div>
+            <div class="tp-meta"><span>⏱ 8 min de lecture</span><span>🎬 YouTube</span></div>
+          </div>
+        </div>
       </div>
-      <div class="articles-grid">
-        <div class="article-card">
-          <div class="article-type">Script YouTube</div>
-          <div class="article-title">Titre du script — À renseigner</div>
-          <div class="article-excerpt">Type de vidéo, durée, ton utilisé, plateforme de diffusion.</div>
-          <div class="article-meta"><span>⏱ 8 min de lecture</span><span>🎬 YouTube</span></div>
+      <div class="group-gallery">
+        <div class="gallery-img">
+          <div class="gallery-text-card">
+            <div class="tp-label">Script pub</div>
+            <div class="tp-title">Campagne — Nom du projet</div>
+            <div class="tp-body">Marque, objectif, durée du spot.</div>
+          </div>
         </div>
-        <div class="article-card">
-          <div class="article-type">Script publicitaire</div>
-          <div class="article-title">Campagne — Nom du projet</div>
-          <div class="article-excerpt">Marque, objectif de la publicité, durée du spot, résultats.</div>
-          <div class="article-meta"><span>⏱ 30s spot</span><span>📺 TV / Social</span></div>
+        <div class="gallery-img">
+          <div class="gallery-text-card">
+            <div class="tp-label">Podcast</div>
+            <div class="tp-title">Épisode — Titre</div>
+            <div class="tp-body">Sujet traité, invités éventuels, durée.</div>
+          </div>
         </div>
-        <div class="article-card">
-          <div class="article-type">Podcast</div>
-          <div class="article-title">Épisode — Titre</div>
-          <div class="article-excerpt">Sujet traité, invités éventuels, durée de l'épisode.</div>
-          <div class="article-meta"><span>⏱ 45 min</span><span>🎙 Podcast</span></div>
+        <div class="gallery-img">
+          <div class="gallery-text-card">
+            <div class="tp-label">Court-métrage</div>
+            <div class="tp-title">Titre — Projet</div>
+            <div class="tp-body">Genre, durée, festival de présentation.</div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Groupe 3 — Copywriting -->
+    <!-- ── Groupe : Copywriting & Ghostwriting ── -->
     <div class="project-group reveal">
-      <div class="group-header">
-        <div class="mini-fig">💼</div>
-        <div class="group-info">
-          <div class="group-name">Copywriting & Ghostwriting</div>
-          <div class="group-meta">Pages web · Email · LinkedIn · Biographies</div>
+      <div class="group-row">
+        <div class="group-lead">
+          <div class="group-fig">
+            <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+              <ellipse cx="30" cy="12" rx="11" ry="11"/>
+              <rect x="25" y="22" width="10" height="7" rx="3"/>
+              <path d="M14 29 Q30 35 46 29 L49 90 Q30 96 11 90 Z"/>
+              <path d="M14 31 L8 70 Q8 76 18 74 L22 37 Z"/>
+              <path d="M46 31 L52 70 Q52 76 42 74 L38 37 Z"/>
+              <path d="M15 88 L12 150 Q12 157 24 157 L27 97 Z"/>
+              <path d="M45 88 L48 150 Q48 157 36 157 L33 97 Z"/>
+            </svg>
+          </div>
+          <div class="group-text">
+            <h2>Copywriting & Ghostwriting</h2>
+            <p>Pages de vente, emails, LinkedIn, biographies. Des mots qui convertissent, des voix que l'on reconnaît. Discret et efficace.</p>
+          </div>
         </div>
-        <div class="group-count">— projets</div>
+        <div class="group-main-img">
+          <div class="text-preview">
+            <div class="tp-label">Page de vente</div>
+            <div class="tp-title">Projet — Nom du client</div>
+            <div class="tp-body">Secteur, objectif de conversion, résultats obtenus après déploiement de la page.</div>
+            <div class="tp-meta"><span>📈 Conversion</span><span>💼 B2C</span></div>
+          </div>
+        </div>
       </div>
-      <div class="articles-grid">
-        <div class="article-card">
-          <div class="article-type">Page de vente</div>
-          <div class="article-title">Projet — Nom du client</div>
-          <div class="article-excerpt">Secteur, objectif de conversion, résultats obtenus après déploiement.</div>
-          <div class="article-meta"><span>📈 Conversion</span><span>💼 B2C</span></div>
+      <div class="group-gallery">
+        <div class="gallery-img">
+          <div class="gallery-text-card">
+            <div class="tp-label">Ghostwriting LinkedIn</div>
+            <div class="tp-title">Client — Domaine</div>
+            <div class="tp-body">Type de contenu, fréquence, croissance obtenue.</div>
+          </div>
         </div>
-        <div class="article-card">
-          <div class="article-type">Ghostwriting LinkedIn</div>
-          <div class="article-title">Client — Domaine d'expertise</div>
-          <div class="article-excerpt">Type de contenu produit, fréquence, croissance de l'audience obtenue.</div>
-          <div class="article-meta"><span>💼 LinkedIn</span><span>+0K impressions</span></div>
+        <div class="gallery-img">
+          <div class="gallery-text-card">
+            <div class="tp-label">Email marketing</div>
+            <div class="tp-title">Séquence — Nom</div>
+            <div class="tp-body">Taux d'ouverture, nombre d'emails, objectif.</div>
+          </div>
+        </div>
+        <div class="gallery-img">
+          <div class="gallery-text-card">
+            <div class="tp-label">Biographie</div>
+            <div class="tp-title">Client — Profil</div>
+            <div class="tp-body">Secteur, plateforme, ton et positionnement.</div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Groupe 4 — Récits de voyage -->
+    <!-- ── Groupe : Récits de voyage ── -->
     <div class="project-group reveal">
-      <div class="group-header">
-        <div class="mini-fig">🗺️</div>
-        <div class="group-info">
-          <div class="group-name">Récits de voyage</div>
-          <div class="group-meta">Carnets de route · Chroniques · Storytelling</div>
+      <div class="group-row">
+        <div class="group-lead">
+          <div class="group-fig">
+            <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+              <ellipse cx="30" cy="12" rx="11" ry="11"/>
+              <rect x="25" y="22" width="10" height="7" rx="3"/>
+              <path d="M12 29 Q30 35 48 29 L52 88 Q30 94 8 88 Z"/>
+              <path d="M12 31 L5 68 Q5 74 15 72 L20 37 Z"/>
+              <path d="M48 31 L55 68 Q55 74 45 72 L40 37 Z"/>
+              <path d="M14 86 L10 150 Q10 157 22 157 L26 96 Z"/>
+              <path d="M46 86 L50 150 Q50 157 38 157 L34 96 Z"/>
+            </svg>
+          </div>
+          <div class="group-text">
+            <h2>Récits de voyage</h2>
+            <p>Carnets de route, chroniques, storytelling de l'aventure. Des récits honnêtes qui transportent le lecteur là où les photos ne suffisent pas.</p>
+          </div>
         </div>
-        <div class="group-count">— récits</div>
+        <div class="group-main-img">
+          <div class="text-preview">
+            <div class="tp-label">Récit de voyage</div>
+            <div class="tp-title">Destination — Titre du récit</div>
+            <div class="tp-body">Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</div>
+            <div class="tp-meta"><span>📅 Date</span><span>⏱ 8 min</span></div>
+          </div>
+        </div>
       </div>
-      <div class="articles-grid">
-        <div class="article-card">
-          <div class="article-type">Récit de voyage</div>
-          <div class="article-title">Destination — Titre du récit</div>
-          <div class="article-excerpt">Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</div>
-          <div class="article-meta"><span>📅 Date</span><span>⏱ 8 min</span></div>
+      <div class="group-gallery">
+        <div class="gallery-img">
+          <div class="gallery-text-card">
+            <div class="tp-label">Carnet de route</div>
+            <div class="tp-title">Destination — Titre</div>
+            <div class="tp-body">Donec quam felis, ultricies nec, pellentesque eu.</div>
+          </div>
         </div>
-        <div class="article-card">
-          <div class="article-type">Carnet de route</div>
-          <div class="article-title">Destination — Titre du carnet</div>
-          <div class="article-excerpt">Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</div>
-          <div class="article-meta"><span>📅 Date</span><span>⏱ 12 min</span></div>
+        <div class="gallery-img">
+          <div class="gallery-text-card">
+            <div class="tp-label">Chronique</div>
+            <div class="tp-title">Titre de la chronique</div>
+            <div class="tp-body">Phasellus viverra nulla ut metus varius laoreet.</div>
+          </div>
         </div>
-        <div class="article-card">
-          <div class="article-type">Chronique</div>
-          <div class="article-title">Titre de la chronique</div>
-          <div class="article-excerpt">Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</div>
-          <div class="article-meta"><span>📅 Date</span><span>⏱ 6 min</span></div>
+        <div class="gallery-img">
+          <div class="gallery-text-card">
+            <div class="tp-label">Carnet de route</div>
+            <div class="tp-title">Destination — Titre</div>
+            <div class="tp-body">Aliquam lorem ante, dapibus in, viverra quis.</div>
+          </div>
         </div>
       </div>
     </div>
 
-  </div>
+  </div><!-- /portfolio-section -->
 
+  <!-- CTA -->
   <div class="cta-section">
     <div class="cta-inner">
       <div>

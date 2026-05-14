@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Matthias — Portfolio</title>
-  <meta name="description" content="Portfolio pluridisciplinaire — Photographie, Vidéo, Community Manager, Développement Web, Voyage, Création de contenu, Écriture." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -33,31 +32,32 @@
       <p>Choisissez une discipline pour explorer</p>
     </div>
 
-    <div class="carousel-wrapper">
-      <button class="carousel-btn prev" aria-label="Précédent">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    <!-- Silhouette carousel -->
+    <div class="sil-carousel-wrap">
+      <button class="sil-btn prev" aria-label="Précédent">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
       </button>
-      <div class="carousel-stage">
-        <div class="carousel-track"></div>
-      </div>
-      <button class="carousel-btn next" aria-label="Suivant">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+      <!-- Items injected by JS -->
+      <button class="sil-btn next" aria-label="Suivant">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
       </button>
     </div>
 
-    <div class="carousel-dots"></div>
+    <!-- Dots -->
+    <div class="sil-dots"></div>
 
-    <div class="active-info">
-      <h2 class="active-title" id="active-title">Photographie</h2>
-      <p class="active-desc" id="active-desc">De la photo de portrait à la photo de paysage, chaque cliché raconte une histoire.</p>
-      <div class="active-cta">
-        <a class="btn btn-ghost" id="active-cta" href="photo.html">Découvrir →</a>
+    <!-- Active info -->
+    <div class="sil-info">
+      <div class="sil-title" id="sil-title" style="transition:opacity 0.3s,color 0.4s">Photographie</div>
+      <p class="sil-desc" id="sil-desc" style="transition:opacity 0.3s">Du portrait intime au grand paysage, je photographie avec l'œil et le cœur.</p>
+      <div class="sil-cta">
+        <a class="btn btn-ghost" id="sil-cta" href="photo.html">Découvrir →</a>
       </div>
     </div>
 
     <div class="scroll-cue">
       <span>parcourir</span>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
   </section>
 
@@ -106,17 +106,14 @@
   <!-- ABOUT -->
   <div class="about-block">
     <div class="about-portrait reveal">
-      <div class="portrait-placeholder">
-        <div class="ph-icon">👤</div>
-        <span>Portrait</span>
-      </div>
+      <div class="portrait-ph">👤</div>
     </div>
     <div class="about-text">
       <p class="label">À propos</p>
       <h2 class="reveal">Une curiosité sans<br><em>limite, des disciplines</em><br>à l'infini.</h2>
       <p class="reveal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-      <p class="reveal">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-      <div class="hero-actions" style="margin-top:24px">
+      <p class="reveal">Pellentesque habitant morbi tristique senectus et netus. Vestibulum tortor quam, feugiat vitae ultricies eget, tempor sit amet, ante.</p>
+      <div class="about-actions">
         <a href="mailto:contact@exemple.com" class="btn btn-primary reveal" style="--page-color:#7c7cff">Me contacter</a>
       </div>
     </div>
