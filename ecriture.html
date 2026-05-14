@@ -6,54 +6,73 @@
   <title>Écriture — Matthias</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    :root { --page-color: #f48fb1; --page-glow: rgba(244,143,177,0.2); }
-    .btn-primary { background: var(--page-color); color: #07070f; box-shadow: 0 4px 24px var(--page-glow); }
-    .btn-primary:hover { background: #f6a5be; box-shadow: 0 8px 32px rgba(244,143,177,0.4); }
-    .section-label { color: var(--page-color); }
-    .stat-number { color: var(--page-color); }
-    .step-num { background: var(--page-color) !important; color: #07070f !important; }
-    .tag-chip { background: rgba(244,143,177,0.1); border: 1px solid rgba(244,143,177,0.25); color: var(--page-color); display:inline-block;padding:6px 14px;border-radius:99px;font-size:.78rem;font-weight:500;margin:4px; }
-
-    /* Article cards */
-    .articles-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px; }
-    .article-card { padding:28px;border-radius:var(--radius-md);background:var(--glass-bg);border:1px solid var(--glass-border);transition:all .3s;cursor:pointer; }
-    .article-card:hover { background:var(--glass-bg-hover);transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,0.3); }
-    .article-tag { display:inline-block;padding:4px 12px;border-radius:99px;background:rgba(244,143,177,0.12);color:var(--page-color);font-size:.72rem;font-weight:500;margin-bottom:14px; }
-    .article-title { font-size:1rem;font-weight:600;line-height:1.4;margin-bottom:10px; }
-    .article-excerpt { font-size:.85rem;color:var(--text-secondary);line-height:1.6;margin-bottom:16px; }
-    .article-meta { display:flex;align-items:center;gap:12px;font-size:.75rem;color:var(--text-tertiary); }
-    .article-meta span { display:flex;align-items:center;gap:4px; }
-
-    /* Pull quote */
+    :root { --page-color: var(--c-writing); }
+    .article-card {
+      padding: 28px;
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: border-color 0.25s, transform 0.25s;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .article-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+    .article-type {
+      font-family: var(--font-hand);
+      font-size: 0.8rem;
+      color: var(--page-color);
+    }
+    .article-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 400;
+      line-height: 1.35;
+    }
+    .article-excerpt {
+      font-size: 0.82rem;
+      color: var(--text-2);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+    .article-meta {
+      display: flex; gap: 12px;
+      font-size: 0.72rem; color: var(--text-3);
+      margin-top: 4px;
+    }
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 14px;
+    }
     .pull-quote {
-      padding: 48px;
+      padding: 40px;
       border-radius: var(--radius-lg);
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      border-left: 3px solid var(--page-color);
-      text-align: center;
-      margin: 0 auto;
-      max-width: 700px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 2px solid var(--page-color);
+      grid-column: 1 / -1;
     }
     .pull-quote blockquote {
-      font-size: 1.4rem;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
       font-weight: 300;
-      line-height: 1.6;
-      letter-spacing: -0.01em;
       font-style: italic;
-      color: var(--text-primary);
-      margin-bottom: 16px;
+      line-height: 1.5;
+      color: var(--text-1);
+      margin-bottom: 10px;
     }
     .pull-quote cite {
-      font-size: .8rem;
-      color: var(--text-tertiary);
-      letter-spacing: .06em;
-      text-transform: uppercase;
+      font-family: var(--font-hand);
+      font-size: 0.82rem;
+      color: var(--text-3);
       font-style: normal;
     }
   </style>
 </head>
 <body>
+
   <nav class="navbar">
     <a class="nav-logo" href="index.html">Matthias</a>
     <div class="nav-links">
@@ -66,130 +85,155 @@
     <div class="nav-burger"><span></span><span></span><span></span></div>
   </nav>
 
-  <section class="page-hero hero-writing">
-    <div class="hero-tag">✍️ Écriture</div>
-    <h1>Les mots qui <span style="-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background:linear-gradient(135deg,#fff 0%,var(--page-color) 100%)">font la différence</span></h1>
-    <p>Articles, scripts, copywriting, storytelling — j'écris avec clarté, style et intention. Chaque mot est choisi pour servir votre message et toucher votre audience.</p>
+  <div class="page-hero">
+    <div class="hero-eyebrow">
+      <div class="figurine-lg">✍️</div>
+      <span>Écriture</span>
+    </div>
+    <h1>Les mots qui<br><em>font la différence</em></h1>
+    <p>Articles, scripts, copywriting, storytelling — j'écris avec clarté, style et intention. Chaque mot est choisi pour servir votre message.</p>
     <div class="hero-actions">
       <a href="mailto:contact@exemple.com" class="btn btn-primary">Travailler ensemble</a>
-      <a href="#articles" class="btn btn-glass">Lire des extraits</a>
+      <a href="#projets" class="btn btn-ghost">Lire des extraits</a>
     </div>
-  </section>
+  </div>
 
-  <section class="section">
-    <div class="section-inner">
-      <div class="stats-row reveal">
-        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00+</div><div class="stat-label">Articles publiés</div></div>
-        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00+</div><div class="stat-label">Scripts rédigés</div></div>
-        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00K+</div><div class="stat-label">Mots écrits</div></div>
-        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00+</div><div class="stat-label">Clients accompagnés</div></div>
+  <div class="portfolio-section" id="projets">
+
+    <!-- Groupe 1 — Articles -->
+    <div class="project-group reveal">
+      <div class="group-header">
+        <div class="mini-fig">📰</div>
+        <div class="group-info">
+          <div class="group-name">Articles & Blog</div>
+          <div class="group-meta">Fond · Opinion · SEO · Presse</div>
+        </div>
+        <div class="group-count">— articles</div>
       </div>
-    </div>
-  </section>
-
-  <!-- PULL QUOTE -->
-  <section class="section" style="padding-top:0">
-    <div class="section-inner" style="display:flex;justify-content:center;">
-      <div class="pull-quote reveal">
-        <blockquote>« Les bons mots n'expliquent pas seulement — ils font ressentir, ils convainquent, ils restent. »</blockquote>
-        <cite>— Matthias</cite>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="articles">
-    <div class="section-inner">
-      <p class="section-label reveal">Extraits & articles</p>
-      <h2 class="section-title reveal">Ce que j'écris</h2>
-      <p class="section-desc reveal">Des textes variés — articles de fond, scripts vidéo, récits de voyage, copies publicitaires.</p>
-      <div class="articles-grid reveal">
+      <div class="articles-grid">
+        <div class="pull-quote">
+          <blockquote>« Les bons mots n'expliquent pas seulement — ils font ressentir, ils convainquent, ils restent. »</blockquote>
+          <cite>— Matthias</cite>
+        </div>
         <div class="article-card">
-          <span class="article-tag">Article</span>
+          <div class="article-type">Article de fond</div>
           <div class="article-title">Titre de l'article — À renseigner</div>
-          <div class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
-          <div class="article-meta">
-            <span>📅 Date</span>
-            <span>⏱ 5 min de lecture</span>
-          </div>
+          <div class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+          <div class="article-meta"><span>📅 Date</span><span>⏱ 5 min</span></div>
         </div>
         <div class="article-card">
-          <span class="article-tag">Script</span>
+          <div class="article-type">Opinion</div>
+          <div class="article-title">Titre de l'article — À renseigner</div>
+          <div class="article-excerpt">Pellentesque habitant morbi tristique senectus et netus. Vestibulum tortor quam, feugiat vitae ultricies eget.</div>
+          <div class="article-meta"><span>📅 Date</span><span>⏱ 3 min</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Groupe 2 — Scripts -->
+    <div class="project-group reveal">
+      <div class="group-header">
+        <div class="mini-fig">🎬</div>
+        <div class="group-info">
+          <div class="group-name">Scripts & Narration</div>
+          <div class="group-meta">Vidéo · Podcast · Publicité · Court-métrage</div>
+        </div>
+        <div class="group-count">— scripts</div>
+      </div>
+      <div class="articles-grid">
+        <div class="article-card">
+          <div class="article-type">Script YouTube</div>
           <div class="article-title">Titre du script — À renseigner</div>
-          <div class="article-excerpt">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</div>
-          <div class="article-meta">
-            <span>📅 Date</span>
-            <span>⏱ 3 min de lecture</span>
-          </div>
+          <div class="article-excerpt">Type de vidéo, durée, ton utilisé, plateforme de diffusion.</div>
+          <div class="article-meta"><span>⏱ 8 min de lecture</span><span>🎬 YouTube</span></div>
         </div>
         <div class="article-card">
-          <span class="article-tag">Récit</span>
-          <div class="article-title">Titre du récit — À renseigner</div>
-          <div class="article-excerpt">Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>
-          <div class="article-meta">
-            <span>📅 Date</span>
-            <span>⏱ 8 min de lecture</span>
-          </div>
+          <div class="article-type">Script publicitaire</div>
+          <div class="article-title">Campagne — Nom du projet</div>
+          <div class="article-excerpt">Marque, objectif de la publicité, durée du spot, résultats.</div>
+          <div class="article-meta"><span>⏱ 30s spot</span><span>📺 TV / Social</span></div>
+        </div>
+        <div class="article-card">
+          <div class="article-type">Podcast</div>
+          <div class="article-title">Épisode — Titre</div>
+          <div class="article-excerpt">Sujet traité, invités éventuels, durée de l'épisode.</div>
+          <div class="article-meta"><span>⏱ 45 min</span><span>🎙 Podcast</span></div>
         </div>
       </div>
     </div>
-  </section>
 
-  <section class="section">
-    <div class="section-inner">
-      <p class="section-label reveal">Prestations</p>
-      <h2 class="section-title reveal">Ce que je propose</h2>
-      <div class="features-grid reveal">
-        <div class="feature-card"><div class="feature-icon">📰</div><h3>Articles & Blog</h3><p>Articles de fond, billets d'opinion, dossiers thématiques. Écriture SEO-friendly si nécessaire.</p></div>
-        <div class="feature-card"><div class="feature-icon">🎬</div><h3>Scripts vidéo</h3><p>Scripts pour YouTube, réels, podcasts, publicités. Narration pensée pour être dite autant que lue.</p></div>
-        <div class="feature-card"><div class="feature-icon">💼</div><h3>Copywriting</h3><p>Textes de vente, pages web, fiches produit, emailings. Des mots qui convainquent et convertissent.</p></div>
-        <div class="feature-card"><div class="feature-icon">🗺️</div><h3>Récits de voyage</h3><p>Carnets de route, chroniques d'aventure, storytelling immersif autour de vos expériences.</p></div>
-        <div class="feature-card"><div class="feature-icon">🎙️</div><h3>Ghostwriting</h3><p>J'écris en votre nom, dans votre voix. Articles, billets LinkedIn, livres blancs, biographies.</p></div>
-        <div class="feature-card"><div class="feature-icon">✏️</div><h3>Relecture & édition</h3><p>Correction orthographique, reformulation, amélioration de style et cohérence éditoriale.</p></div>
+    <!-- Groupe 3 — Copywriting -->
+    <div class="project-group reveal">
+      <div class="group-header">
+        <div class="mini-fig">💼</div>
+        <div class="group-info">
+          <div class="group-name">Copywriting & Ghostwriting</div>
+          <div class="group-meta">Pages web · Email · LinkedIn · Biographies</div>
+        </div>
+        <div class="group-count">— projets</div>
+      </div>
+      <div class="articles-grid">
+        <div class="article-card">
+          <div class="article-type">Page de vente</div>
+          <div class="article-title">Projet — Nom du client</div>
+          <div class="article-excerpt">Secteur, objectif de conversion, résultats obtenus après déploiement.</div>
+          <div class="article-meta"><span>📈 Conversion</span><span>💼 B2C</span></div>
+        </div>
+        <div class="article-card">
+          <div class="article-type">Ghostwriting LinkedIn</div>
+          <div class="article-title">Client — Domaine d'expertise</div>
+          <div class="article-excerpt">Type de contenu produit, fréquence, croissance de l'audience obtenue.</div>
+          <div class="article-meta"><span>💼 LinkedIn</span><span>+0K impressions</span></div>
+        </div>
       </div>
     </div>
-  </section>
 
-  <section class="section">
-    <div class="section-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;">
+    <!-- Groupe 4 — Récits de voyage -->
+    <div class="project-group reveal">
+      <div class="group-header">
+        <div class="mini-fig">🗺️</div>
+        <div class="group-info">
+          <div class="group-name">Récits de voyage</div>
+          <div class="group-meta">Carnets de route · Chroniques · Storytelling</div>
+        </div>
+        <div class="group-count">— récits</div>
+      </div>
+      <div class="articles-grid">
+        <div class="article-card">
+          <div class="article-type">Récit de voyage</div>
+          <div class="article-title">Destination — Titre du récit</div>
+          <div class="article-excerpt">Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</div>
+          <div class="article-meta"><span>📅 Date</span><span>⏱ 8 min</span></div>
+        </div>
+        <div class="article-card">
+          <div class="article-type">Carnet de route</div>
+          <div class="article-title">Destination — Titre du carnet</div>
+          <div class="article-excerpt">Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</div>
+          <div class="article-meta"><span>📅 Date</span><span>⏱ 12 min</span></div>
+        </div>
+        <div class="article-card">
+          <div class="article-type">Chronique</div>
+          <div class="article-title">Titre de la chronique</div>
+          <div class="article-excerpt">Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</div>
+          <div class="article-meta"><span>📅 Date</span><span>⏱ 6 min</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cta-section">
+    <div class="cta-inner">
       <div>
-        <p class="section-label reveal">Ma méthode</p>
-        <h2 class="section-title reveal">Écrire, c'est structurer avant tout</h2>
-        <p class="section-desc reveal" style="margin-bottom:0">Un bon texte commence bien avant la première phrase. La recherche, la structure et le ton sont aussi importants que les mots eux-mêmes.</p>
+        <h2 class="reveal">Vous avez quelque chose<br><em>à dire.</em></h2>
+        <p class="reveal">Je vous aide à le dire avec les mots qu'il faut, dans le format qu'il faut, pour les gens qu'il faut.</p>
       </div>
-      <div class="steps-list reveal">
-        <div class="step-item"><div class="step-num" style="background:var(--page-color)">1</div><div class="step-content"><h3>Comprendre le sujet</h3><p>Recherche approfondie, sources fiables, compréhension des enjeux du texte.</p></div></div>
-        <div class="step-item"><div class="step-num" style="background:var(--page-color)">2</div><div class="step-content"><h3>Définir le ton</h3><p>Quel registre ? Quelle voix ? Quel niveau de langage pour quelle audience ?</p></div></div>
-        <div class="step-item"><div class="step-num" style="background:var(--page-color)">3</div><div class="step-content"><h3>Structurer</h3><p>Plan, introduction, développement, conclusion. La structure est l'ossature du texte.</p></div></div>
-        <div class="step-item"><div class="step-num" style="background:var(--page-color)">4</div><div class="step-content"><h3>Rédiger & affiner</h3><p>Écriture, relecture, reformulation. Je travaille le texte jusqu'à ce qu'il sonne juste.</p></div></div>
-        <div class="step-item"><div class="step-num" style="background:var(--page-color)">5</div><div class="step-content"><h3>Livrer & itérer</h3><p>Livraison avec retours possibles. Je m'adapte jusqu'à votre satisfaction totale.</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top:0">
-    <div class="section-inner">
-      <p class="section-label reveal">Genres & spécialités</p>
-      <div class="reveal">
-        <span class="tag-chip">Storytelling</span><span class="tag-chip">Copywriting</span>
-        <span class="tag-chip">Script vidéo</span><span class="tag-chip">Article de fond</span>
-        <span class="tag-chip">Récit de voyage</span><span class="tag-chip">Ghostwriting</span>
-        <span class="tag-chip">SEO Writing</span><span class="tag-chip">Newsletter</span>
-        <span class="tag-chip">Biographie</span><span class="tag-chip">Manifeste de marque</span>
-        <span class="tag-chip">LinkedIn</span><span class="tag-chip">Pitch deck</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta-section">
-    <div class="cta-box reveal">
-      <h2>Vous avez quelque chose à dire.</h2>
-      <p>Je vous aide à le dire avec les mots qu'il faut, dans le format qu'il faut, pour les gens qu'il faut.</p>
-      <div class="cta-actions">
+      <div class="cta-actions reveal">
         <a href="mailto:contact@exemple.com" class="btn btn-primary">Me contacter</a>
-        <a href="index.html" class="btn btn-glass">← Retour à l'accueil</a>
+        <a href="index.html" class="btn btn-ghost">← Accueil</a>
       </div>
     </div>
-  </section>
+  </div>
 
   <footer>
     <div class="footer-logo">Matthias</div>

@@ -3,164 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio — Matthias</title>
+  <title>Matthias — Portfolio</title>
   <meta name="description" content="Portfolio pluridisciplinaire — Photographie, Vidéo, Community Manager, Développement Web, Voyage, Création de contenu, Écriture." />
   <link rel="stylesheet" href="style.css" />
-
-  <style>
-    /* Index-specific styles */
-    .lobby {
-      min-height: 100vh;
-      padding-bottom: 120px;
-    }
-
-    .active-info {
-      transition: opacity 0.3s ease;
-    }
-    .active-info .active-title {
-      transition: color 0.4s ease, opacity 0.3s ease;
-    }
-    .active-info .active-desc {
-      transition: opacity 0.3s ease;
-    }
-
-    .quick-nav {
-      padding: 80px 40px 0;
-    }
-
-    .quick-nav-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .quick-nav h2 {
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      margin-bottom: 24px;
-      letter-spacing: 0.04em;
-    }
-
-    .quick-nav-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 12px;
-    }
-
-    .quick-nav-card {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 20px 22px;
-      border-radius: var(--radius-md);
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      cursor: pointer;
-      text-decoration: none;
-      color: var(--text-primary);
-      transition: all 0.25s var(--ease);
-      backdrop-filter: blur(12px);
-    }
-    .quick-nav-card:hover {
-      background: var(--glass-bg-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.3);
-    }
-
-    .qnc-icon {
-      font-size: 1.6rem;
-      flex-shrink: 0;
-    }
-    .qnc-text strong {
-      display: block;
-      font-size: 0.92rem;
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
-    .qnc-text span {
-      font-size: 0.78rem;
-      color: var(--text-secondary);
-    }
-    .qnc-arrow {
-      margin-left: auto;
-      color: var(--text-tertiary);
-      font-size: 0.9rem;
-      transition: transform 0.2s;
-    }
-    .quick-nav-card:hover .qnc-arrow { transform: translateX(4px); }
-
-    /* About teaser */
-    .about-teaser {
-      padding: 80px 40px;
-    }
-    .about-teaser-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-    .about-img-block {
-      aspect-ratio: 3/4;
-      border-radius: var(--radius-lg);
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      overflow: hidden;
-    }
-    .about-img-block img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .about-img-block .no-img {
-      opacity: 0.2;
-      font-size: 4rem;
-    }
-    .about-img-block .no-img-label {
-      font-size: 0.75rem;
-      color: var(--text-tertiary);
-      letter-spacing: 0.06em;
-    }
-    .about-text .eyebrow {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
-    .about-text h2 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1.15;
-      margin-bottom: 20px;
-    }
-    .about-text p {
-      color: var(--text-secondary);
-      line-height: 1.75;
-      margin-bottom: 16px;
-      font-size: 0.95rem;
-    }
-    .about-text .btn { margin-top: 12px; }
-
-    @media (max-width: 768px) {
-      .about-teaser-inner { grid-template-columns: 1fr; }
-      .about-img-block { aspect-ratio: 16/10; }
-      .quick-nav { padding: 60px 20px 0; }
-      .about-teaser { padding: 60px 20px; }
-    }
-  </style>
 </head>
-
 <body>
-  <!-- ===== NAVIGATION ===== -->
+
   <nav class="navbar">
     <div class="nav-logo">Matthias</div>
     <div class="nav-links">
@@ -173,130 +21,121 @@
       <a href="ecriture.html">Écriture</a>
       <a href="mailto:contact@exemple.com" class="nav-cta">Contact</a>
     </div>
-    <div class="nav-burger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </div>
+    <div class="nav-burger"><span></span><span></span><span></span></div>
   </nav>
 
-  <!-- ===== LOBBY ===== -->
+  <!-- LOBBY -->
   <section class="lobby">
-    <div class="lobby-header anim-fade-up">
-      <h1>Bienvenue dans <span>mon univers</span></h1>
+    <div class="lobby-bg"></div>
+
+    <div class="lobby-header">
+      <h1>Bienvenue dans<br><em>mon univers</em></h1>
       <p>Choisissez une discipline pour explorer</p>
     </div>
 
-    <!-- 3D Carousel -->
-    <div class="carousel-wrapper anim-fade-up anim-delay-2">
+    <div class="carousel-wrapper">
       <button class="carousel-btn prev" aria-label="Précédent">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
       </button>
-
       <div class="carousel-stage">
         <div class="carousel-track"></div>
       </div>
-
       <button class="carousel-btn next" aria-label="Suivant">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
       </button>
     </div>
 
-    <!-- Dot indicators -->
-    <div class="carousel-dots anim-fade-up anim-delay-3"></div>
+    <div class="carousel-dots"></div>
 
-    <!-- Active info -->
-    <div class="active-info anim-fade-up anim-delay-3">
+    <div class="active-info">
       <h2 class="active-title" id="active-title">Photographie</h2>
       <p class="active-desc" id="active-desc">De la photo de portrait à la photo de paysage, chaque cliché raconte une histoire.</p>
       <div class="active-cta">
-        <a class="btn btn-glass" id="active-cta" href="photo.html">
-          Découvrir
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
+        <a class="btn btn-ghost" id="active-cta" href="photo.html">Découvrir →</a>
       </div>
     </div>
 
-    <!-- Scroll cue -->
     <div class="scroll-cue">
-      <span>Parcourir</span>
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+      <span>parcourir</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
   </section>
 
-  <!-- ===== QUICK NAV GRID ===== -->
-  <section class="quick-nav">
-    <div class="quick-nav-inner">
-      <h2 class="reveal">Accès rapide</h2>
-      <div class="quick-nav-grid">
-        <a href="photo.html" class="quick-nav-card reveal">
-          <span class="qnc-icon">📷</span>
-          <div class="qnc-text"><strong>Photographie</strong><span>Capturer l'instant</span></div>
-          <span class="qnc-arrow">→</span>
-        </a>
-        <a href="video.html" class="quick-nav-card reveal">
-          <span class="qnc-icon">🎬</span>
-          <div class="qnc-text"><strong>Vidéo</strong><span>Motion & Cinéma</span></div>
-          <span class="qnc-arrow">→</span>
-        </a>
-        <a href="community-manager.html" class="quick-nav-card reveal">
-          <span class="qnc-icon">📱</span>
-          <div class="qnc-text"><strong>Community Manager</strong><span>Social & Stratégie</span></div>
-          <span class="qnc-arrow">→</span>
-        </a>
-        <a href="web-dev.html" class="quick-nav-card reveal">
-          <span class="qnc-icon">💻</span>
-          <div class="qnc-text"><strong>Développement Web</strong><span>Code & Design</span></div>
-          <span class="qnc-arrow">→</span>
-        </a>
-        <a href="voyage.html" class="quick-nav-card reveal">
-          <span class="qnc-icon">✈️</span>
-          <div class="qnc-text"><strong>Voyage & Aventure</strong><span>Explorer le monde</span></div>
-          <span class="qnc-arrow">→</span>
-        </a>
-        <a href="creation-contenu.html" class="quick-nav-card reveal">
-          <span class="qnc-icon">🎨</span>
-          <div class="qnc-text"><strong>Création de Contenu</strong><span>Créer & Inspirer</span></div>
-          <span class="qnc-arrow">→</span>
-        </a>
-        <a href="ecriture.html" class="quick-nav-card reveal">
-          <span class="qnc-icon">✍️</span>
-          <div class="qnc-text"><strong>Écriture</strong><span>Mots & Sens</span></div>
-          <span class="qnc-arrow">→</span>
-        </a>
+  <!-- QUICK NAV -->
+  <div class="quick-nav">
+    <p class="label">Accès direct</p>
+    <div class="quick-nav-grid">
+      <a href="photo.html" class="quick-nav-card reveal">
+        <span class="qnc-icon">📷</span>
+        <div class="qnc-text"><strong>Photographie</strong><span>Portraits, paysages, reportage</span></div>
+        <span class="qnc-arrow">→</span>
+      </a>
+      <a href="video.html" class="quick-nav-card reveal">
+        <span class="qnc-icon">🎬</span>
+        <div class="qnc-text"><strong>Vidéo</strong><span>Montage, réels, documentaire</span></div>
+        <span class="qnc-arrow">→</span>
+      </a>
+      <a href="community-manager.html" class="quick-nav-card reveal">
+        <span class="qnc-icon">📱</span>
+        <div class="qnc-text"><strong>Community Manager</strong><span>Réseaux, stratégie, croissance</span></div>
+        <span class="qnc-arrow">→</span>
+      </a>
+      <a href="web-dev.html" class="quick-nav-card reveal">
+        <span class="qnc-icon">💻</span>
+        <div class="qnc-text"><strong>Développement Web</strong><span>Sites, interfaces, code</span></div>
+        <span class="qnc-arrow">→</span>
+      </a>
+      <a href="voyage.html" class="quick-nav-card reveal">
+        <span class="qnc-icon">✈️</span>
+        <div class="qnc-text"><strong>Voyage & Aventure</strong><span>Road trips, treks, récits</span></div>
+        <span class="qnc-arrow">→</span>
+      </a>
+      <a href="creation-contenu.html" class="quick-nav-card reveal">
+        <span class="qnc-icon">🎨</span>
+        <div class="qnc-text"><strong>Création de Contenu</strong><span>UGC, personal branding</span></div>
+        <span class="qnc-arrow">→</span>
+      </a>
+      <a href="ecriture.html" class="quick-nav-card reveal">
+        <span class="qnc-icon">✍️</span>
+        <div class="qnc-text"><strong>Écriture</strong><span>Articles, scripts, copywriting</span></div>
+        <span class="qnc-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="about-block">
+    <div class="about-portrait reveal">
+      <div class="portrait-placeholder">
+        <div class="ph-icon">👤</div>
+        <span>Portrait</span>
       </div>
     </div>
-  </section>
-
-  <!-- ===== ABOUT TEASER ===== -->
-  <section class="about-teaser">
-    <div class="about-teaser-inner">
-      <div class="about-img-block reveal">
-        <!-- Image portrait à remplacer -->
-        <div class="no-img">👤</div>
-        <span class="no-img-label">Photo portrait</span>
-      </div>
-      <div class="about-text">
-        <p class="eyebrow reveal">À propos</p>
-        <h2 class="reveal">Une curiosité sans limite, des disciplines à l'infini.</h2>
-        <p class="reveal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-        <p class="reveal">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget.</p>
-        <a href="mailto:contact@exemple.com" class="btn btn-primary reveal">Me contacter</a>
+    <div class="about-text">
+      <p class="label">À propos</p>
+      <h2 class="reveal">Une curiosité sans<br><em>limite, des disciplines</em><br>à l'infini.</h2>
+      <p class="reveal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <p class="reveal">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+      <div class="hero-actions" style="margin-top:24px">
+        <a href="mailto:contact@exemple.com" class="btn btn-primary reveal" style="--page-color:#7c7cff">Me contacter</a>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- ===== CTA ===== -->
-  <section class="cta-section">
-    <div class="cta-box reveal">
-      <h2>Travaillons ensemble.</h2>
-      <p>Vous avez un projet ? Une idée ? Une collaboration en tête ? Je suis disponible pour en discuter.</p>
-      <div class="cta-actions">
-        <a href="mailto:contact@exemple.com" class="btn btn-primary">Envoyer un message</a>
-        <a href="photo.html" class="btn btn-glass">Voir mon travail</a>
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="cta-inner">
+      <div>
+        <h2 class="reveal">Travaillons<br><em>ensemble.</em></h2>
+        <p class="reveal">Un projet, une idée, une collaboration — je suis disponible pour en discuter.</p>
+      </div>
+      <div class="cta-actions reveal">
+        <a href="mailto:contact@exemple.com" class="btn btn-primary" style="--page-color:#7c7cff">Envoyer un message</a>
+        <a href="photo.html" class="btn btn-ghost">Voir le portfolio</a>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- ===== FOOTER ===== -->
   <footer>
     <div class="footer-logo">Matthias</div>
     <div class="footer-links">
@@ -306,7 +145,7 @@
       <a href="voyage.html">Voyage</a>
       <a href="mailto:contact@exemple.com">Contact</a>
     </div>
-    <div class="footer-copy">&copy; 2025 Matthias — Tous droits réservés</div>
+    <div class="footer-copy">&copy; 2025 Matthias</div>
   </footer>
 
   <script src="main.js"></script>

@@ -5,23 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Création de Contenu — Matthias</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    :root { --page-color: #ff8a65; --page-glow: rgba(255,138,101,0.2); }
-    .btn-primary { background: var(--page-color); color: #07070f; box-shadow: 0 4px 24px var(--page-glow); }
-    .btn-primary:hover { background: #ffa07a; box-shadow: 0 8px 32px rgba(255,138,101,0.4); }
-    .section-label { color: var(--page-color); }
-    .stat-number { color: var(--page-color); }
-    .step-num { background: var(--page-color) !important; color: #07070f !important; }
-    .tag-chip { background: rgba(255,138,101,0.1); border: 1px solid rgba(255,138,101,0.25); color: var(--page-color); display:inline-block;padding:6px 14px;border-radius:99px;font-size:.78rem;font-weight:500;margin:4px; }
-    .content-format-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px; }
-    .format-card { padding:28px 20px;border-radius:var(--radius-md);background:var(--glass-bg);border:1px solid var(--glass-border);text-align:center;transition:all .3s; }
-    .format-card:hover { background:var(--glass-bg-hover);transform:translateY(-2px); }
-    .format-icon { font-size:2rem;margin-bottom:12px; }
-    .format-name { font-size:.88rem;font-weight:600;margin-bottom:4px; }
-    .format-desc { font-size:.78rem;color:var(--text-secondary);line-height:1.4; }
-  </style>
+  <style> :root { --page-color: var(--c-content); } </style>
 </head>
 <body>
+
   <nav class="navbar">
     <a class="nav-logo" href="index.html">Matthias</a>
     <div class="nav-links">
@@ -35,100 +22,141 @@
     <div class="nav-burger"><span></span><span></span><span></span></div>
   </nav>
 
-  <section class="page-hero hero-content">
-    <div class="hero-tag">🎨 Création de Contenu</div>
-    <h1>Du contenu qui <span style="-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background:linear-gradient(135deg,#fff 0%,var(--page-color) 100%)">engage & inspire</span></h1>
-    <p>Stratégie de contenu, UGC, personal branding — je crée des contenus multiformat qui génèrent de l'engagement, fidélisent une audience et construisent une identité forte.</p>
+  <div class="page-hero">
+    <div class="hero-eyebrow">
+      <div class="figurine-lg">🎨</div>
+      <span>Création de Contenu</span>
+    </div>
+    <h1>Du contenu qui<br><em>engage & inspire</em></h1>
+    <p>Stratégie de contenu, UGC, personal branding — je crée des contenus multiformat qui génèrent de l'engagement et construisent une audience durable.</p>
     <div class="hero-actions">
       <a href="mailto:contact@exemple.com" class="btn btn-primary">Créons ensemble</a>
-      <a href="#formats" class="btn btn-glass">Les formats</a>
+      <a href="#projets" class="btn btn-ghost">Voir les projets</a>
     </div>
-  </section>
+  </div>
 
-  <section class="section">
-    <div class="section-inner">
-      <div class="stats-row reveal">
-        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00+</div><div class="stat-label">Contenus produits</div></div>
-        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00+</div><div class="stat-label">Marques accompagnées</div></div>
-        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00M+</div><div class="stat-label">Impressions générées</div></div>
-        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00%</div><div class="stat-label">Taux de satisfaction</div></div>
+  <div class="portfolio-section" id="projets">
+
+    <!-- Groupe 1 — UGC -->
+    <div class="project-group reveal">
+      <div class="group-header">
+        <div class="mini-fig">🤳</div>
+        <div class="group-info">
+          <div class="group-name">UGC & Contenus pour marques</div>
+          <div class="group-meta">Unboxing · Review · Démo produit</div>
+        </div>
+        <div class="group-count">— collaborations</div>
+      </div>
+      <div class="project-grid">
+        <div class="project-card">
+          <div class="project-thumb"><div class="thumb-placeholder"><div class="ph-icon">🤳</div><span>Contenu à venir</span></div></div>
+          <div class="project-body">
+            <div class="project-title">Marque — Type de contenu</div>
+            <div class="project-desc">Produit mis en avant, format, plateforme de diffusion.</div>
+            <div class="project-tags"><span class="project-tag">UGC</span><span class="project-tag">Instagram</span></div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-thumb"><div class="thumb-placeholder"><div class="ph-icon">📦</div><span>Contenu à venir</span></div></div>
+          <div class="project-body">
+            <div class="project-title">Marque — Type de contenu</div>
+            <div class="project-desc">Produit mis en avant, format, plateforme de diffusion.</div>
+            <div class="project-tags"><span class="project-tag">Unboxing</span><span class="project-tag">TikTok</span></div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-thumb"><div class="thumb-placeholder"><div class="ph-icon">⭐</div><span>Contenu à venir</span></div></div>
+          <div class="project-body">
+            <div class="project-title">Marque — Type de contenu</div>
+            <div class="project-desc">Produit mis en avant, format, plateforme de diffusion.</div>
+            <div class="project-tags"><span class="project-tag">Review</span><span class="project-tag">YouTube</span></div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
 
-  <section class="section" id="formats">
-    <div class="section-inner">
-      <p class="section-label reveal">Formats maîtrisés</p>
-      <h2 class="section-title reveal">Tout le spectre du contenu</h2>
-      <div class="content-format-grid reveal">
-        <div class="format-card"><div class="format-icon">📱</div><div class="format-name">Réels & TikToks</div><div class="format-desc">Vidéos courtes virales, accroches fortes</div></div>
-        <div class="format-card"><div class="format-icon">📸</div><div class="format-name">Photos & Carrousels</div><div class="format-desc">Visuels soignés pour le feed</div></div>
-        <div class="format-card"><div class="format-icon">💬</div><div class="format-name">Stories interactives</div><div class="format-desc">Engagement, sondages, Q&A</div></div>
-        <div class="format-card"><div class="format-icon">📝</div><div class="format-name">Légendes & Copies</div><div class="format-desc">Textes qui convertissent</div></div>
-        <div class="format-card"><div class="format-icon">🎙️</div><div class="format-name">Podcasts</div><div class="format-desc">Audio, captation et montage</div></div>
-        <div class="format-card"><div class="format-icon">📧</div><div class="format-name">Newsletter</div><div class="format-desc">Email marketing et storytelling</div></div>
-        <div class="format-card"><div class="format-icon">📊</div><div class="format-name">Infographies</div><div class="format-desc">Données visuelles et pédagogie</div></div>
-        <div class="format-card"><div class="format-icon">🤳</div><div class="format-name">UGC</div><div class="format-desc">Contenu authentique pour les marques</div></div>
+    <!-- Groupe 2 — Personal branding -->
+    <div class="project-group reveal">
+      <div class="group-header">
+        <div class="mini-fig">🏷️</div>
+        <div class="group-info">
+          <div class="group-name">Personal Branding</div>
+          <div class="group-meta">Identité · Ligne éditoriale · Positionnement</div>
+        </div>
+        <div class="group-count">— projets</div>
+      </div>
+      <div class="project-grid col-2">
+        <div class="project-card">
+          <div class="project-thumb"><div class="thumb-placeholder"><div class="ph-icon">🏷️</div><span>Projet à venir</span></div></div>
+          <div class="project-body">
+            <div class="project-title">Client — Secteur</div>
+            <div class="project-desc">Objectif, plateforme principale, résultats.</div>
+            <div class="project-tags"><span class="project-tag">Personal brand</span><span class="project-tag">LinkedIn</span></div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-thumb"><div class="thumb-placeholder"><div class="ph-icon">✨</div><span>Projet à venir</span></div></div>
+          <div class="project-body">
+            <div class="project-title">Client — Secteur</div>
+            <div class="project-desc">Objectif, plateforme principale, résultats.</div>
+            <div class="project-tags"><span class="project-tag">Personal brand</span><span class="project-tag">Instagram</span></div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
 
-  <section class="section">
-    <div class="section-inner">
-      <p class="section-label reveal">Prestations</p>
-      <h2 class="section-title reveal">Ce que je propose</h2>
-      <div class="features-grid reveal">
-        <div class="feature-card"><div class="feature-icon">🏷️</div><h3>Personal Branding</h3><p>Construction de votre identité de marque personnelle, positionnement et ligne directrice visuelle.</p></div>
-        <div class="feature-card"><div class="feature-icon">📅</div><h3>Stratégie de contenu</h3><p>Plan éditorial, calendrier de publication, thématiques et piliers de contenu adaptés à vos objectifs.</p></div>
-        <div class="feature-card"><div class="feature-icon">🤳</div><h3>UGC Creator</h3><p>Création de contenus authentiques pour les marques : unboxings, reviews, démos produits.</p></div>
-        <div class="feature-card"><div class="feature-icon">🎯</div><h3>Campagnes de contenu</h3><p>Campagnes multicanal coordonnées autour d'un lancement, événement ou moment fort.</p></div>
-        <div class="feature-card"><div class="feature-icon">📈</div><h3>Growth content</h3><p>Contenu optimisé pour la croissance organique : SEO, hashtags, algorithmes, viralité.</p></div>
-        <div class="feature-card"><div class="feature-icon">🎓</div><h3>Formation</h3><p>Ateliers et formations pour apprendre à créer votre propre contenu en autonomie.</p></div>
+    <!-- Groupe 3 — Campagnes de contenu -->
+    <div class="project-group reveal">
+      <div class="group-header">
+        <div class="mini-fig">📅</div>
+        <div class="group-info">
+          <div class="group-name">Stratégies & Campagnes de contenu</div>
+          <div class="group-meta">Plans éditoriaux · Séries · Lancement</div>
+        </div>
+        <div class="group-count">— campagnes</div>
+      </div>
+      <div class="project-grid">
+        <div class="project-card">
+          <div class="project-thumb"><div class="thumb-placeholder"><div class="ph-icon">📅</div><span>Campagne à venir</span></div></div>
+          <div class="project-body">
+            <div class="project-title">Campagne — Nom du projet</div>
+            <div class="project-desc">Durée, formats utilisés, résultats obtenus.</div>
+            <div class="project-tags"><span class="project-tag">Multi-plateforme</span></div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-thumb"><div class="thumb-placeholder"><div class="ph-icon">🎯</div><span>Série à venir</span></div></div>
+          <div class="project-body">
+            <div class="project-title">Série de contenu — Nom</div>
+            <div class="project-desc">Concept, nombre d'épisodes, plateforme.</div>
+            <div class="project-tags"><span class="project-tag">Série</span><span class="project-tag">YouTube</span></div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-thumb"><div class="thumb-placeholder"><div class="ph-icon">📈</div><span>Growth à venir</span></div></div>
+          <div class="project-body">
+            <div class="project-title">Growth content — Nom</div>
+            <div class="project-desc">Stratégie, canaux, résultats de croissance.</div>
+            <div class="project-tags"><span class="project-tag">Growth</span><span class="project-tag">SEO</span></div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
 
-  <section class="section">
-    <div class="section-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;">
+  </div>
+
+  <div class="cta-section">
+    <div class="cta-inner">
       <div>
-        <p class="section-label reveal">Mon approche</p>
-        <h2 class="section-title reveal">Contenu pensé, pas improvisé</h2>
-        <p class="section-desc reveal" style="margin-bottom:0">Chaque contenu répond à un objectif précis. Je travaille avec méthode pour que chaque publication ait un impact réel.</p>
+        <h2 class="reveal">Votre contenu<br><em>mérite mieux.</em></h2>
+        <p class="reveal">Construisons ensemble une stratégie de contenu qui vous ressemble et qui fonctionne vraiment.</p>
       </div>
-      <div class="steps-list reveal">
-        <div class="step-item"><div class="step-num" style="background:var(--page-color)">1</div><div class="step-content"><h3>Définir l'objectif</h3><p>Notoriété, engagement, conversion ? On pose un objectif clair avant de créer.</p></div></div>
-        <div class="step-item"><div class="step-num" style="background:var(--page-color)">2</div><div class="step-content"><h3>Connaître l'audience</h3><p>Analyse de votre cible, de ses habitudes et des contenus qui l'intéressent.</p></div></div>
-        <div class="step-item"><div class="step-num" style="background:var(--page-color)">3</div><div class="step-content"><h3>Créer avec intention</h3><p>Chaque contenu est produit avec un message clair et une direction artistique cohérente.</p></div></div>
-        <div class="step-item"><div class="step-num" style="background:var(--page-color)">4</div><div class="step-content"><h3>Publier au bon moment</h3><p>Optimisation des horaires, des formats et des plateformes selon les données.</p></div></div>
-        <div class="step-item"><div class="step-num" style="background:var(--page-color)">5</div><div class="step-content"><h3>Analyser & itérer</h3><p>Suivi des performances et ajustements pour s'améliorer continuellement.</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top:0">
-    <div class="section-inner">
-      <p class="section-label reveal">Outils & plateformes</p>
-      <div class="reveal">
-        <span class="tag-chip">Canva Pro</span><span class="tag-chip">Adobe Express</span>
-        <span class="tag-chip">CapCut</span><span class="tag-chip">Notion</span>
-        <span class="tag-chip">Later</span><span class="tag-chip">ChatGPT</span>
-        <span class="tag-chip">Instagram</span><span class="tag-chip">TikTok</span>
-        <span class="tag-chip">YouTube</span><span class="tag-chip">LinkedIn</span>
-        <span class="tag-chip">Pinterest</span><span class="tag-chip">Substack</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta-section">
-    <div class="cta-box reveal">
-      <h2>Votre contenu mérite mieux.</h2>
-      <p>Construisons ensemble une stratégie de contenu qui vous ressemble et qui fonctionne vraiment.</p>
-      <div class="cta-actions">
+      <div class="cta-actions reveal">
         <a href="mailto:contact@exemple.com" class="btn btn-primary">Démarrer un projet</a>
-        <a href="index.html" class="btn btn-glass">← Retour à l'accueil</a>
+        <a href="index.html" class="btn btn-ghost">← Accueil</a>
       </div>
     </div>
-  </section>
+  </div>
 
   <footer>
     <div class="footer-logo">Matthias</div>

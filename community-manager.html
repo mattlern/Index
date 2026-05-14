@@ -5,22 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Community Manager — Matthias</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    :root { --page-color: #ce93d8; --page-glow: rgba(206,147,216,0.2); }
-    .btn-primary { background: var(--page-color); color: #07070f; box-shadow: 0 4px 24px var(--page-glow); }
-    .btn-primary:hover { background: #d9a8e0; box-shadow: 0 8px 32px rgba(206,147,216,0.4); }
-    .section-label { color: var(--page-color); }
-    .stat-number { color: var(--page-color); }
-    .step-num { background: var(--page-color) !important; color: #07070f !important; }
-    .tag-chip { background: rgba(206,147,216,0.1); border: 1px solid rgba(206,147,216,0.25); color: var(--page-color); display:inline-block;padding:6px 14px;border-radius:99px;font-size:.78rem;font-weight:500;margin:4px; }
-    .platform-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px; }
-    .platform-card { padding:24px 20px;border-radius:var(--radius-md);background:var(--glass-bg);border:1px solid var(--glass-border);text-align:center;transition:all .3s; }
-    .platform-card:hover { background:var(--glass-bg-hover);transform:translateY(-2px); }
-    .platform-icon { font-size:2rem;margin-bottom:10px; }
-    .platform-name { font-size:.88rem;font-weight:600; }
-  </style>
+  <style> :root { --page-color: var(--c-cm); } </style>
 </head>
 <body>
+
   <nav class="navbar">
     <a class="nav-logo" href="index.html">Matthias</a>
     <div class="nav-links">
@@ -33,99 +21,141 @@
     <div class="nav-burger"><span></span><span></span><span></span></div>
   </nav>
 
-  <section class="page-hero hero-cm">
-    <div class="hero-tag">📱 Community Manager</div>
-    <h1>Vos réseaux, <span style="-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background:linear-gradient(135deg,#fff 0%,var(--page-color) 100%)">vivants & engagés</span></h1>
-    <p>Stratégie éditoriale, gestion de communautés, création de contenus réguliers. Je fais vivre votre présence digitale avec authenticité et efficacité.</p>
+  <div class="page-hero">
+    <div class="hero-eyebrow">
+      <div class="figurine-lg">📱</div>
+      <span>Community Manager</span>
+    </div>
+    <h1>Vos réseaux,<br><em>vivants</em></h1>
+    <p>Stratégie éditoriale, gestion de communautés, création de contenus réguliers. Je fais vivre votre présence digitale avec authenticité.</p>
     <div class="hero-actions">
-      <a href="mailto:contact@exemple.com" class="btn btn-primary">Parler de votre projet</a>
-      <a href="#services" class="btn btn-glass">Mes services</a>
+      <a href="mailto:contact@exemple.com" class="btn btn-primary">Parlons de votre projet</a>
+      <a href="#projets" class="btn btn-ghost">Voir les projets</a>
     </div>
-  </section>
+  </div>
 
-  <section class="section">
-    <div class="section-inner">
-      <div class="stats-row reveal">
-        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00+</div><div class="stat-label">Comptes gérés</div></div>
-        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00K+</div><div class="stat-label">Abonnés générés</div></div>
-        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00%</div><div class="stat-label">Taux d'engagement moy.</div></div>
-        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00+</div><div class="stat-label">Posts publiés</div></div>
+  <div class="portfolio-section" id="projets">
+
+    <!-- Groupe 1 — Instagram -->
+    <div class="project-group reveal">
+      <div class="group-header">
+        <div class="mini-fig">📸</div>
+        <div class="group-info">
+          <div class="group-name">Instagram & TikTok</div>
+          <div class="group-meta">Stratégie · Feed · Réels · Stories</div>
+        </div>
+        <div class="group-count">— comptes gérés</div>
+      </div>
+      <div class="project-grid">
+        <div class="project-card">
+          <div class="project-thumb"><div class="thumb-placeholder"><div class="ph-icon">📸</div><span>Capture à venir</span></div></div>
+          <div class="project-body">
+            <div class="project-title">Compte — Nom du client</div>
+            <div class="project-desc">Secteur, objectifs, résultats obtenus.</div>
+            <div class="project-tags"><span class="project-tag">Instagram</span><span class="project-tag">+0K abonnés</span></div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-thumb"><div class="thumb-placeholder"><div class="ph-icon">🎵</div><span>Capture à venir</span></div></div>
+          <div class="project-body">
+            <div class="project-title">Compte — Nom du client</div>
+            <div class="project-desc">Secteur, objectifs, résultats obtenus.</div>
+            <div class="project-tags"><span class="project-tag">TikTok</span><span class="project-tag">+0K vues</span></div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-thumb"><div class="thumb-placeholder"><div class="ph-icon">📸</div><span>Capture à venir</span></div></div>
+          <div class="project-body">
+            <div class="project-title">Compte — Nom du client</div>
+            <div class="project-desc">Secteur, objectifs, résultats obtenus.</div>
+            <div class="project-tags"><span class="project-tag">Instagram</span><span class="project-tag">Réels</span></div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
 
-  <section class="section" id="services">
-    <div class="section-inner">
-      <p class="section-label reveal">Plateformes</p>
-      <h2 class="section-title reveal">Je maîtrise votre présence sur</h2>
-      <div class="platform-grid reveal">
-        <div class="platform-card"><div class="platform-icon">📸</div><div class="platform-name">Instagram</div></div>
-        <div class="platform-card"><div class="platform-icon">🎵</div><div class="platform-name">TikTok</div></div>
-        <div class="platform-card"><div class="platform-icon">🐦</div><div class="platform-name">X / Twitter</div></div>
-        <div class="platform-card"><div class="platform-icon">💼</div><div class="platform-name">LinkedIn</div></div>
-        <div class="platform-card"><div class="platform-icon">📘</div><div class="platform-name">Facebook</div></div>
-        <div class="platform-card"><div class="platform-icon">▶️</div><div class="platform-name">YouTube</div></div>
-        <div class="platform-card"><div class="platform-icon">📌</div><div class="platform-name">Pinterest</div></div>
-        <div class="platform-card"><div class="platform-icon">💬</div><div class="platform-name">Threads</div></div>
+    <!-- Groupe 2 — LinkedIn -->
+    <div class="project-group reveal">
+      <div class="group-header">
+        <div class="mini-fig">💼</div>
+        <div class="group-info">
+          <div class="group-name">LinkedIn & Corporate</div>
+          <div class="group-meta">Personal branding · B2B · Thought leadership</div>
+        </div>
+        <div class="group-count">— comptes gérés</div>
+      </div>
+      <div class="project-grid col-2">
+        <div class="project-card">
+          <div class="project-thumb"><div class="thumb-placeholder"><div class="ph-icon">💼</div><span>Capture à venir</span></div></div>
+          <div class="project-body">
+            <div class="project-title">Profil / Page — Nom du client</div>
+            <div class="project-desc">Secteur, stratégie mise en place, résultats.</div>
+            <div class="project-tags"><span class="project-tag">LinkedIn</span><span class="project-tag">B2B</span></div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-thumb"><div class="thumb-placeholder"><div class="ph-icon">💼</div><span>Capture à venir</span></div></div>
+          <div class="project-body">
+            <div class="project-title">Profil / Page — Nom du client</div>
+            <div class="project-desc">Secteur, stratégie mise en place, résultats.</div>
+            <div class="project-tags"><span class="project-tag">LinkedIn</span><span class="project-tag">Personal brand</span></div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
 
-  <section class="section">
-    <div class="section-inner">
-      <p class="section-label reveal">Ce que je fais</p>
-      <h2 class="section-title reveal">Mes prestations CM</h2>
-      <div class="features-grid reveal">
-        <div class="feature-card"><div class="feature-icon">🗓️</div><h3>Stratégie éditoriale</h3><p>Définition de votre ligne éditoriale, calendrier de contenu, ton de voix et positionnement.</p></div>
-        <div class="feature-card"><div class="feature-icon">✍️</div><h3>Création de contenu</h3><p>Rédaction des légendes, création des visuels, production de réels et stories adaptés à chaque plateforme.</p></div>
-        <div class="feature-card"><div class="feature-icon">🤝</div><h3>Gestion de communauté</h3><p>Réponses aux commentaires et messages, animation de la communauté, gestion des interactions.</p></div>
-        <div class="feature-card"><div class="feature-icon">📊</div><h3>Reporting & analyse</h3><p>Suivi des KPIs, rapports mensuels, ajustements stratégiques basés sur les données.</p></div>
-        <div class="feature-card"><div class="feature-icon">📣</div><h3>Publicité sociale</h3><p>Création et gestion de campagnes payantes sur Meta Ads, TikTok Ads et LinkedIn Ads.</p></div>
-        <div class="feature-card"><div class="feature-icon">🤳</div><h3>Influence & partenariats</h3><p>Identification d'influenceurs, gestion de collaborations et suivi des campagnes UGC.</p></div>
+    <!-- Groupe 3 — Campagnes -->
+    <div class="project-group reveal">
+      <div class="group-header">
+        <div class="mini-fig">📣</div>
+        <div class="group-info">
+          <div class="group-name">Campagnes & Lancements</div>
+          <div class="group-meta">Lancement produit · Campagnes saisonnières · Ads</div>
+        </div>
+        <div class="group-count">— campagnes</div>
+      </div>
+      <div class="project-grid">
+        <div class="project-card">
+          <div class="project-thumb"><div class="thumb-placeholder"><div class="ph-icon">📣</div><span>Campagne à venir</span></div></div>
+          <div class="project-body">
+            <div class="project-title">Campagne — Nom du projet</div>
+            <div class="project-desc">Objectif, plateformes, résultats clés.</div>
+            <div class="project-tags"><span class="project-tag">Lancement</span><span class="project-tag">Meta Ads</span></div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-thumb"><div class="thumb-placeholder"><div class="ph-icon">🎯</div><span>Campagne à venir</span></div></div>
+          <div class="project-body">
+            <div class="project-title">Campagne — Nom du projet</div>
+            <div class="project-desc">Objectif, plateformes, résultats clés.</div>
+            <div class="project-tags"><span class="project-tag">Saisonnier</span><span class="project-tag">UGC</span></div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-thumb"><div class="thumb-placeholder"><div class="ph-icon">🤳</div><span>Influence à venir</span></div></div>
+          <div class="project-body">
+            <div class="project-title">Partenariat influence</div>
+            <div class="project-desc">Marque, créateurs impliqués, portée.</div>
+            <div class="project-tags"><span class="project-tag">Influence</span><span class="project-tag">UGC</span></div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
 
-  <section class="section">
-    <div class="section-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;">
+  </div>
+
+  <div class="cta-section">
+    <div class="cta-inner">
       <div>
-        <p class="section-label reveal">Ma méthode</p>
-        <h2 class="section-title reveal">Comment je travaille</h2>
-        <p class="section-desc reveal" style="margin-bottom:0">Un processus structuré pour des résultats mesurables.</p>
+        <h2 class="reveal">Prêt à faire grandir<br><em>votre communauté ?</em></h2>
+        <p class="reveal">Discutons de vos réseaux, vos objectifs et construisons une stratégie sur mesure.</p>
       </div>
-      <div class="steps-list reveal">
-        <div class="step-item"><div class="step-num" style="background:var(--page-color)">1</div><div class="step-content"><h3>Audit & diagnostic</h3><p>Analyse de vos comptes existants, de votre audience et de vos concurrents.</p></div></div>
-        <div class="step-item"><div class="step-num" style="background:var(--page-color)">2</div><div class="step-content"><h3>Stratégie</h3><p>Définition des objectifs, des cibles et du plan d'action éditorial sur 3 mois.</p></div></div>
-        <div class="step-item"><div class="step-num" style="background:var(--page-color)">3</div><div class="step-content"><h3>Production</h3><p>Création et planification des contenus selon le calendrier éditorial.</p></div></div>
-        <div class="step-item"><div class="step-num" style="background:var(--page-color)">4</div><div class="step-content"><h3>Animation & veille</h3><p>Gestion quotidienne, veille concurrentielle et réactivité aux tendances.</p></div></div>
-        <div class="step-item"><div class="step-num" style="background:var(--page-color)">5</div><div class="step-content"><h3>Analyse & optimisation</h3><p>Reporting mensuel et ajustements continus pour améliorer les performances.</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top:0">
-    <div class="section-inner">
-      <p class="section-label reveal">Outils</p>
-      <div class="reveal">
-        <span class="tag-chip">Meta Business Suite</span><span class="tag-chip">Later</span>
-        <span class="tag-chip">Canva Pro</span><span class="tag-chip">Notion</span>
-        <span class="tag-chip">Google Analytics</span><span class="tag-chip">Hootsuite</span>
-        <span class="tag-chip">Figma</span><span class="tag-chip">CapCut</span>
-        <span class="tag-chip">ChatGPT</span><span class="tag-chip">Ahrefs</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta-section">
-    <div class="cta-box reveal">
-      <h2>Prêt à faire grandir votre communauté ?</h2>
-      <p>Discutons de vos réseaux, vos objectifs et construisons une stratégie sur mesure.</p>
-      <div class="cta-actions">
+      <div class="cta-actions reveal">
         <a href="mailto:contact@exemple.com" class="btn btn-primary">Me contacter</a>
-        <a href="index.html" class="btn btn-glass">← Retour à l'accueil</a>
+        <a href="index.html" class="btn btn-ghost">← Accueil</a>
       </div>
     </div>
-  </section>
+  </div>
 
   <footer>
     <div class="footer-logo">Matthias</div>
