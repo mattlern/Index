@@ -1,247 +1,171 @@
 /* =============================================
-   NAVIGATION — mobile burger
+   NAV — mobile burger
    ============================================= */
 function initNav() {
   const burger = document.querySelector('.nav-burger');
   const links  = document.querySelector('.nav-links');
   if (!burger) return;
-
   burger.addEventListener('click', () => {
     links.classList.toggle('open');
-    const spans = burger.querySelectorAll('span');
-    const isOpen = links.classList.contains('open');
-    spans[0].style.transform = isOpen ? 'rotate(45deg) translate(5px, 5px)' : '';
-    spans[1].style.opacity   = isOpen ? '0' : '1';
-    spans[2].style.transform = isOpen ? 'rotate(-45deg) translate(5px, -5px)' : '';
+    const s = burger.querySelectorAll('span');
+    const open = links.classList.contains('open');
+    s[0].style.transform = open ? 'rotate(45deg) translate(5px,5px)' : '';
+    s[1].style.opacity   = open ? '0' : '1';
+    s[2].style.transform = open ? 'rotate(-45deg) translate(5px,-5px)' : '';
   });
-
-  // Close on link click
-  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    links.classList.remove('open');
-  }));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
 }
 
 /* =============================================
-   FIGURINE CAROUSEL
+   SERVICES DATA
    ============================================= */
 const SERVICES = [
-  {
-    id:      'photo',
-    title:   'Photographie',
-    tag:     'Capturer l\'instant',
-    desc:    'De la photo de portrait à la photo de paysage, chaque cliché raconte une histoire. Je travaille avec un œil pour la lumière, la composition et l\'émotion.',
-    icon:    '📷',
-    color:   '#f5a623',
-    link:    'photo.html',
-    bg:      'linear-gradient(160deg, rgba(245,166,35,0.25) 0%, rgba(245,166,35,0.05) 100%)',
-  },
-  {
-    id:      'video',
-    title:   'Vidéo',
-    tag:     'Motion & Cinéma',
-    desc:    'Tournage, montage, motion design — je crée des vidéos qui captivent, de la courte vidéo sociale au mini-documentaire.',
-    icon:    '🎬',
-    color:   '#4fc3f7',
-    link:    'video.html',
-    bg:      'linear-gradient(160deg, rgba(79,195,247,0.25) 0%, rgba(79,195,247,0.05) 100%)',
-  },
-  {
-    id:      'cm',
-    title:   'Community Manager',
-    tag:     'Social & Stratégie',
-    desc:    'Gestion de communautés, stratégie éditoriale, croissance organique. Je fais vivre vos réseaux sociaux avec authenticité et régularité.',
-    icon:    '📱',
-    color:   '#ce93d8',
-    link:    'community-manager.html',
-    bg:      'linear-gradient(160deg, rgba(206,147,216,0.25) 0%, rgba(206,147,216,0.05) 100%)',
-  },
-  {
-    id:      'webdev',
-    title:   'Développement Web',
-    tag:     'Code & Design',
-    desc:    'Sites vitrines, portfolios, landing pages — je conçois des interfaces propres, rapides et efficaces, du design à la mise en ligne.',
-    icon:    '💻',
-    color:   '#80cbc4',
-    link:    'web-dev.html',
-    bg:      'linear-gradient(160deg, rgba(128,203,196,0.25) 0%, rgba(128,203,196,0.05) 100%)',
-  },
-  {
-    id:      'voyage',
-    title:   'Voyage & Aventure',
-    tag:     'Explorer le monde',
-    desc:    'Road trips, treks, destinations hors des sentiers battus. Je documente chaque aventure avec honnêteté et passion.',
-    icon:    '✈️',
-    color:   '#a5d6a7',
-    link:    'voyage.html',
-    bg:      'linear-gradient(160deg, rgba(165,214,167,0.25) 0%, rgba(165,214,167,0.05) 100%)',
-  },
-  {
-    id:      'content',
-    title:   'Création de Contenu',
-    tag:     'Créer & Inspirer',
-    desc:    'Stratégie de contenu, UGC, personal branding — je crée des contenus qui génèrent de l\'engagement et construisent une audience.',
-    icon:    '🎨',
-    color:   '#ff8a65',
-    link:    'creation-contenu.html',
-    bg:      'linear-gradient(160deg, rgba(255,138,101,0.25) 0%, rgba(255,138,101,0.05) 100%)',
-  },
-  {
-    id:      'writing',
-    title:   'Écriture',
-    tag:     'Mots & Sens',
-    desc:    'Articles, scripts, copywriting, storytelling — je mets les mots au service de votre message avec clarté et style.',
-    icon:    '✍️',
-    color:   '#f48fb1',
-    link:    'ecriture.html',
-    bg:      'linear-gradient(160deg, rgba(244,143,177,0.25) 0%, rgba(244,143,177,0.05) 100%)',
-  },
+  { id:'photo',   title:'Photographie',      desc:'Du portrait intime au grand paysage, je photographie avec l\'œil et le cœur.',              link:'photo.html',            color:'#d4a853' },
+  { id:'video',   title:'Vidéo',             desc:'Réels, documentaires, corporate — je maîtrise tout le processus de production vidéo.',       link:'video.html',            color:'#5ab4d4' },
+  { id:'cm',      title:'Community Manager', desc:'Stratégie éditoriale, gestion de communautés, croissance organique sur tous les réseaux.',   link:'community-manager.html',color:'#b87fc4' },
+  { id:'webdev',  title:'Développement Web', desc:'Sites vitrines, portfolios, landing pages — du design au déploiement, clé en main.',         link:'web-dev.html',          color:'#5abdb5' },
+  { id:'voyage',  title:'Voyage & Aventure', desc:'Road trips, treks, destinations hors des sentiers battus, documentés avec honnêteté.',       link:'voyage.html',           color:'#72b87a' },
+  { id:'content', title:'Création de Contenu','desc':'UGC, personal branding, stratégie de contenu multiformat pour construire une audience.',  link:'creation-contenu.html', color:'#d47a5a' },
+  { id:'writing', title:'Écriture',          desc:'Articles, scripts, copywriting, storytelling — les mots au service de votre message.',       link:'ecriture.html',         color:'#c47a8f' },
 ];
 
-class FigurineCarousel {
-  constructor(containerEl) {
-    this.container = containerEl;
-    this.current   = 0;
-    this.total     = SERVICES.length;
-    this.isAnimating = false;
+/* SVG silhouette — standing casual pose */
+function silSVG() {
+  return `<svg class="fig-svg" viewBox="0 0 60 160" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="30" cy="12" rx="11" ry="11"/>
+    <rect x="25" y="22" width="10" height="7" rx="3"/>
+    <path d="M11 29 Q30 35 49 29 L53 90 Q30 96 7 90 Z"/>
+    <path d="M11 31 L3 78 Q3 85 13 83 L19 37 Z"/>
+    <path d="M49 31 L57 78 Q57 85 47 83 L41 37 Z"/>
+    <path d="M13 88 L9 150 Q9 157 21 157 L25 97 Z"/>
+    <path d="M47 88 L51 150 Q51 157 39 157 L35 97 Z"/>
+  </svg>`;
+}
 
-    this.track = containerEl.querySelector('.carousel-track');
-    this.dotsContainer = document.querySelector('.carousel-dots');
-    this.titleEl = document.getElementById('active-title');
-    this.descEl  = document.getElementById('active-desc');
-    this.ctaEl   = document.getElementById('active-cta');
+/* =============================================
+   SILHOUETTE CAROUSEL
+   ============================================= */
+class SilCarousel {
+  constructor() {
+    this.wrap  = document.querySelector('.sil-carousel-wrap');
+    if (!this.wrap) return;
 
-    this._buildCards();
+    this.total   = SERVICES.length;
+    this.current = 0;
+    this.items   = [];
+
+    this.titleEl = document.getElementById('sil-title');
+    this.descEl  = document.getElementById('sil-desc');
+    this.ctaEl   = document.getElementById('sil-cta');
+    this.dotsEl  = document.querySelector('.sil-dots');
+
+    this._build();
     this._buildDots();
-    this._bindEvents();
-    this.goTo(0, false);
+    this._bind();
+    this._render(false);
   }
 
-  _buildCards() {
-    this.cards = SERVICES.map((s, i) => {
-      const card = document.createElement('div');
-      card.className  = 'figurine-card';
-      card.dataset.index = i;
-      card.innerHTML = `
-        <div class="card-top" style="background: ${s.bg}">
-          <div class="placeholder-silhouette">
-            <div class="figurine-icon">${s.icon}</div>
-            <div class="silhouette-shape" style="border-color: ${s.color}44">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="${s.color}" stroke-width="1.5" opacity="0.6">
-                <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div class="card-bottom">
-          <div class="card-title">${s.title}</div>
-          <div class="card-tag">${s.tag}</div>
-        </div>
-      `;
-      card.style.setProperty('--card-color', s.color);
-
-      card.addEventListener('click', () => {
-        if (i === this.current) {
-          window.location.href = s.link;
-        } else {
-          this.goTo(i);
-        }
+  _build() {
+    SERVICES.forEach((s, i) => {
+      const el = document.createElement('div');
+      el.className = 'sil-item';
+      el.dataset.index = i;
+      el.innerHTML = silSVG();
+      el.addEventListener('click', () => {
+        if (i === this.current) window.location.href = s.link;
+        else this.goTo(i);
       });
-
-      this.track.appendChild(card);
-      return card;
+      this.wrap.appendChild(el);
+      this.items.push(el);
     });
   }
 
   _buildDots() {
-    if (!this.dotsContainer) return;
+    if (!this.dotsEl) return;
     this.dots = SERVICES.map((_, i) => {
-      const dot = document.createElement('div');
-      dot.className = 'carousel-dot';
-      dot.addEventListener('click', () => this.goTo(i));
-      this.dotsContainer.appendChild(dot);
-      return dot;
+      const d = document.createElement('div');
+      d.className = 'sil-dot';
+      d.addEventListener('click', () => this.goTo(i));
+      this.dotsEl.appendChild(d);
+      return d;
     });
   }
 
-  _bindEvents() {
-    document.querySelector('.carousel-btn.prev')?.addEventListener('click', () => this.prev());
-    document.querySelector('.carousel-btn.next')?.addEventListener('click', () => this.next());
+  _bind() {
+    document.querySelector('.sil-btn.prev')?.addEventListener('click', () => this.prev());
+    document.querySelector('.sil-btn.next')?.addEventListener('click', () => this.next());
 
-    // Keyboard navigation
     document.addEventListener('keydown', e => {
       if (e.key === 'ArrowLeft')  this.prev();
       if (e.key === 'ArrowRight') this.next();
     });
 
-    // Touch / swipe
-    let startX = 0;
-    this.container.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-    this.container.addEventListener('touchend',   e => {
-      const delta = e.changedTouches[0].clientX - startX;
-      if (Math.abs(delta) > 40) delta > 0 ? this.prev() : this.next();
+    let sx = 0;
+    this.wrap.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
+    this.wrap.addEventListener('touchend',   e => {
+      const dx = e.changedTouches[0].clientX - sx;
+      if (Math.abs(dx) > 40) dx > 0 ? this.prev() : this.next();
     }, { passive: true });
   }
 
-  goTo(index, animate = true) {
-    this.current = ((index % this.total) + this.total) % this.total;
-    this._updatePositions(animate);
+  goTo(i) { this.current = ((i % this.total) + this.total) % this.total; this._render(true); }
+  prev()   { this.goTo(this.current - 1); }
+  next()   { this.goTo(this.current + 1); }
+
+  _render(animate) {
+    const n = this.total, cur = this.current;
+
+    // Rail config per distance from center
+    const STEP = 150; // px between item centres
+    const CFG = [
+      { h: 280, w: 118, op: 1.00 },  // 0  — active
+      { h: 210, w: 88,  op: 0.55 },  // ±1
+      { h: 158, w: 66,  op: 0.28 },  // ±2
+      { h: 118, w: 48,  op: 0.12 },  // ±3
+    ];
+    const T = animate
+      ? 'transform 0.52s cubic-bezier(0.4,0,0.2,1), opacity 0.45s ease, height 0.45s ease, width 0.45s ease, color 0.45s ease'
+      : 'none';
+
+    this.items.forEach((el, i) => {
+      let raw = i - cur;
+      if (raw >  Math.floor(n / 2)) raw -= n;
+      if (raw < -Math.floor(n / 2)) raw += n;
+
+      const abs = Math.abs(raw);
+
+      el.style.transition = T;
+
+      if (abs > 3) {
+        el.style.opacity = '0';
+        el.style.pointerEvents = 'none';
+        return;
+      }
+
+      const c = CFG[abs];
+      el.style.height        = `${c.h}px`;
+      el.style.width         = `${c.w}px`;
+      el.style.opacity       = c.op;
+      el.style.zIndex        = 10 - abs;
+      el.style.pointerEvents = abs <= 2 ? 'auto' : 'none';
+      el.style.transform     = `translateX(calc(-50% + ${raw * STEP}px))`;
+      el.style.color         = abs === 0 ? SERVICES[i].color : 'rgba(240,237,232,0.75)';
+    });
+
     this._updateInfo();
     this._updateDots();
   }
 
-  prev() { this.goTo(this.current - 1); }
-  next() { this.goTo(this.current + 1); }
-
-  _updatePositions(animate) {
-    const total    = this.total;
-    const current  = this.current;
-    // Layout config: how far each offset position sits
-    const positions = {
-      0:  { x:    0, z:  0,    scale: 1,    opacity: 1,    blur: 0 },
-      1:  { x:  220, z: -80,   scale: 0.82, opacity: 0.75, blur: 0 },
-      2:  { x:  410, z: -160,  scale: 0.65, opacity: 0.45, blur: 2 },
-      3:  { x:  560, z: -240,  scale: 0.5,  opacity: 0.2,  blur: 4 },
-    };
-
-    this.cards.forEach((card, i) => {
-      const raw    = i - current;
-      const offset = ((raw + total) % total);
-      // Map offset: 0=center, 1=right1, 2=right2, total-1=left1, total-2=left2...
-      let absOff, sign;
-      if (offset === 0) {
-        absOff = 0; sign = 1;
-      } else if (offset <= Math.floor(total / 2)) {
-        absOff = offset; sign = 1;
-      } else {
-        absOff = total - offset; sign = -1;
-      }
-
-      const pos = positions[Math.min(absOff, 3)];
-      const x   = pos.x * sign;
-
-      card.style.transition = animate ? 'transform 0.6s cubic-bezier(0.4,0,0.2,1), opacity 0.6s ease, filter 0.6s ease' : 'none';
-      card.style.transform  = `translateX(${x}px) translateZ(${pos.z}px) scale(${pos.scale})`;
-      card.style.opacity    = pos.opacity;
-      card.style.filter     = pos.blur ? `blur(${pos.blur}px)` : '';
-      card.style.zIndex     = 10 - absOff;
-      card.style.pointerEvents = absOff > 2 ? 'none' : 'auto';
-      card.classList.toggle('is-active', i === current);
-    });
-  }
-
   _updateInfo() {
     const s = SERVICES[this.current];
-    if (!this.titleEl || !this.descEl || !this.ctaEl) return;
-
+    if (!this.titleEl) return;
     this.titleEl.style.opacity = '0';
     this.descEl.style.opacity  = '0';
-
     setTimeout(() => {
       this.titleEl.textContent = s.title;
       this.titleEl.style.color = s.color;
       this.descEl.textContent  = s.desc;
       this.ctaEl.href          = s.link;
-
       this.titleEl.style.opacity = '1';
       this.descEl.style.opacity  = '1';
     }, 200);
@@ -256,23 +180,16 @@ class FigurineCarousel {
 /* =============================================
    SCROLL REVEAL
    ============================================= */
-function initScrollReveal() {
-  const observer = new IntersectionObserver((entries) => {
+function initReveal() {
+  const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        e.target.style.opacity    = '1';
-        e.target.style.transform  = 'translateY(0)';
-        observer.unobserve(e.target);
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
       }
     });
-  }, { threshold: 0.12 });
-
-  document.querySelectorAll('.reveal').forEach(el => {
-    el.style.opacity   = '0';
-    el.style.transform = 'translateY(28px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-  });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 }
 
 /* =============================================
@@ -280,10 +197,6 @@ function initScrollReveal() {
    ============================================= */
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
-  initScrollReveal();
-
-  const stage = document.querySelector('.carousel-stage');
-  if (stage) {
-    window._carousel = new FigurineCarousel(stage);
-  }
+  initReveal();
+  if (document.querySelector('.sil-carousel-wrap')) new SilCarousel();
 });
