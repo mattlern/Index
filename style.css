@@ -197,17 +197,14 @@ ul { list-style: none; }
 }
 
 /* ---- SILHOUETTE CAROUSEL ---- */
+/* Rail container — items slide inside it */
 .sil-carousel-wrap {
   position: relative;
   width: 100%;
   max-width: 1100px;
-  z-index: 2;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 0;
-  padding: 0 20px;
   height: 320px;
+  overflow: hidden;
+  z-index: 2;
 }
 
 .sil-btn {
@@ -228,56 +225,16 @@ ul { list-style: none; }
 .sil-btn.prev { left: 8px; }
 .sil-btn.next { right: 8px; }
 
-/* A single figurine slot */
+/* Each figurine slides on the rail — sizes/positions set by JS */
 .sil-item {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   cursor: pointer;
-  transition: transform 0.5s var(--ease), opacity 0.5s var(--ease), color 0.5s var(--ease);
-  flex-shrink: 0;
-}
-
-/* Center (active) */
-.sil-item[data-pos="0"] {
-  height: 280px; width: 120px;
-  color: var(--text-1);
-  opacity: 1;
-  transform: scale(1);
-  z-index: 5;
-}
-/* ±1 */
-.sil-item[data-pos="1"],
-.sil-item[data-pos="-1"] {
-  height: 220px; width: 96px;
-  color: var(--text-2);
-  opacity: 0.6;
-  transform: scale(0.92);
-  z-index: 4;
-}
-/* ±2 */
-.sil-item[data-pos="2"],
-.sil-item[data-pos="-2"] {
-  height: 170px; width: 76px;
-  color: rgba(240,237,232,0.25);
-  opacity: 0.35;
-  transform: scale(0.82);
-  z-index: 3;
-}
-/* ±3 (barely visible) */
-.sil-item[data-pos="3"],
-.sil-item[data-pos="-3"] {
-  height: 130px; width: 60px;
-  color: rgba(240,237,232,0.12);
-  opacity: 0.18;
-  transform: scale(0.7);
-  z-index: 2;
-}
-/* Hidden */
-.sil-item[data-pos="hidden"] {
-  opacity: 0;
-  pointer-events: none;
-  width: 0;
+  will-change: transform, opacity, height, width;
 }
 
 /* Active info below carousel */

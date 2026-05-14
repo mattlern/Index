@@ -115,18 +115,41 @@ class SilCarousel {
   _render(animate) {
     const n = this.total, cur = this.current;
 
+    // Rail config per distance from center
+    const STEP = 150; // px between item centres
+    const CFG = [
+      { h: 280, w: 118, op: 1.00 },  // 0  — active
+      { h: 210, w: 88,  op: 0.55 },  // ±1
+      { h: 158, w: 66,  op: 0.28 },  // ±2
+      { h: 118, w: 48,  op: 0.12 },  // ±3
+    ];
+    const T = animate
+      ? 'transform 0.52s cubic-bezier(0.4,0,0.2,1), opacity 0.45s ease, height 0.45s ease, width 0.45s ease, color 0.45s ease'
+      : 'none';
+
     this.items.forEach((el, i) => {
-      // Offset relative to current
       let raw = i - cur;
-      // Normalize to [-floor(n/2), floor(n/2)]
       if (raw >  Math.floor(n / 2)) raw -= n;
       if (raw < -Math.floor(n / 2)) raw += n;
 
-      const absPos = Math.abs(raw);
-      const pos    = absPos > 3 ? 'hidden' : String(raw);
+      const abs = Math.abs(raw);
 
-      el.dataset.pos = pos;
-      el.style.transition = animate ? 'transform 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.5s ease, color 0.5s ease, width 0.5s ease, height 0.5s ease' : 'none';
+      el.style.transition = T;
+
+      if (abs > 3) {
+        el.style.opacity = '0';
+        el.style.pointerEvents = 'none';
+        return;
+      }
+
+      const c = CFG[abs];
+      el.style.height        = `${c.h}px`;
+      el.style.width         = `${c.w}px`;
+      el.style.opacity       = c.op;
+      el.style.zIndex        = 10 - abs;
+      el.style.pointerEvents = abs <= 2 ? 'auto' : 'none';
+      el.style.transform     = `translateX(calc(-50% + ${raw * STEP}px))`;
+      el.style.color         = abs === 0 ? SERVICES[i].color : 'rgba(240,237,232,0.75)';
     });
 
     this._updateInfo();
