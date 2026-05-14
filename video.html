@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vidéo — Matthias</title>
+  <meta name="description" content="Production vidéo — tournage, montage, motion design. De la vidéo sociale au mini-documentaire." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    :root { --page-color: #4fc3f7; --page-glow: rgba(79,195,247,0.2); }
+    .btn-primary { background: var(--page-color); color: #07070f; box-shadow: 0 4px 24px var(--page-glow); }
+    .btn-primary:hover { background: #6dcffa; box-shadow: 0 8px 32px rgba(79,195,247,0.4); }
+    .section-label { color: var(--page-color); }
+    .hero-accent { background: linear-gradient(135deg,#fff 0%,var(--page-color) 100%); }
+    .stat-number { color: var(--page-color); }
+    .step-num { background: var(--page-color) !important; color: #07070f !important; }
+    .tag-chip { background: rgba(79,195,247,0.1); border-color: rgba(79,195,247,0.25); color: var(--page-color); display:inline-block;padding:6px 14px;border-radius:99px;border:1px solid;font-size:.78rem;font-weight:500;margin:4px; }
+    .video-placeholder { aspect-ratio:16/9; border-radius:var(--radius-md); background:var(--glass-bg); border:1px solid var(--glass-border); display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px; cursor:pointer; transition:all .3s; }
+    .video-placeholder:hover { background:var(--glass-bg-hover); }
+    .play-btn { width:64px;height:64px;border-radius:50%;background:var(--page-color);display:flex;align-items:center;justify-content:center;color:#07070f;font-size:1.4rem; }
+    .video-label { font-size:.8rem;color:var(--text-secondary); }
+    .video-grid { display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px; }
+    @media(max-width:768px){.video-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a class="nav-logo" href="index.html">Matthias</a>
+    <div class="nav-links">
+      <a href="photo.html">Photo</a>
+      <a href="video.html" class="active">Vidéo</a>
+      <a href="community-manager.html">CM</a>
+      <a href="web-dev.html">Web</a>
+      <a href="voyage.html">Voyage</a>
+      <a href="creation-contenu.html">Contenu</a>
+      <a href="ecriture.html">Écriture</a>
+      <a href="mailto:contact@exemple.com" class="nav-cta">Contact</a>
+    </div>
+    <div class="nav-burger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <section class="page-hero hero-video">
+    <div class="hero-tag">🎬 Vidéo</div>
+    <h1>La vidéo qui <span class="hero-accent" style="-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background:linear-gradient(135deg,#fff 0%,var(--page-color) 100%)">raconte & captive</span></h1>
+    <p>Du tournage au montage, je crée des vidéos percutantes. Réels, clips, documentaires, vidéos corporate — je maîtrise tout le processus de production.</p>
+    <div class="hero-actions">
+      <a href="mailto:contact@exemple.com" class="btn btn-primary">Démarrer un projet</a>
+      <a href="#portfolio" class="btn btn-glass">Voir les réalisations</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="stats-row reveal">
+        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00+</div><div class="stat-label">Vidéos réalisées</div></div>
+        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00M+</div><div class="stat-label">Vues cumulées</div></div>
+        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00+</div><div class="stat-label">Clients</div></div>
+        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">4K</div><div class="stat-label">Résolution max</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="portfolio">
+    <div class="section-inner">
+      <p class="section-label reveal">Réalisations</p>
+      <h2 class="section-title reveal">Quelques projets</h2>
+      <p class="section-desc reveal">Les vidéos seront intégrées ici via embed ou lecteur natif.</p>
+
+      <div class="video-grid reveal">
+        <div class="video-placeholder">
+          <div class="play-btn">▶</div>
+          <span class="video-label">Projet vidéo — Titre à définir</span>
+        </div>
+        <div class="video-placeholder">
+          <div class="play-btn">▶</div>
+          <span class="video-label">Projet vidéo — Titre à définir</span>
+        </div>
+      </div>
+      <div class="video-placeholder reveal" style="margin-bottom:16px">
+        <div class="play-btn">▶</div>
+        <span class="video-label">Vidéo principale / Showreel — Format 16/9</span>
+      </div>
+      <div class="video-grid reveal">
+        <div class="video-placeholder">
+          <div class="play-btn">▶</div>
+          <span class="video-label">Projet court</span>
+        </div>
+        <div class="video-placeholder">
+          <div class="play-btn">▶</div>
+          <span class="video-label">Projet court</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <p class="section-label reveal">Prestations</p>
+      <h2 class="section-title reveal">Ce que je propose</h2>
+      <div class="features-grid reveal">
+        <div class="feature-card"><div class="feature-icon">📱</div><h3>Réels & Shorts</h3><p>Vidéos courtes optimisées pour Instagram, TikTok et YouTube Shorts. Format vertical, accroches percutantes.</p></div>
+        <div class="feature-card"><div class="feature-icon">🎞️</div><h3>Mini-documentaire</h3><p>Narration longue forme, reportage immersif, portrait de marque ou de personnalité.</p></div>
+        <div class="feature-card"><div class="feature-icon">🏢</div><h3>Vidéo corporate</h3><p>Film institutionnel, présentation d'entreprise, vidéo produit et formation.</p></div>
+        <div class="feature-card"><div class="feature-icon">🎵</div><h3>Clip musical</h3><p>Clip vidéo pour artistes, direction artistique, mise en scène et post-production.</p></div>
+        <div class="feature-card"><div class="feature-icon">✂️</div><h3>Montage</h3><p>Montage de vos rushes, étalonnage colorimétrique, mixage son et sous-titrage.</p></div>
+        <div class="feature-card"><div class="feature-icon">✨</div><h3>Motion Design</h3><p>Animations graphiques, génériques, titres animés et éléments visuels dynamiques.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <p class="section-label reveal">Stack technique</p>
+      <div class="reveal">
+        <span class="tag-chip">Premiere Pro</span><span class="tag-chip">After Effects</span>
+        <span class="tag-chip">DaVinci Resolve</span><span class="tag-chip">4K</span>
+        <span class="tag-chip">Drone</span><span class="tag-chip">Stabilisateur</span>
+        <span class="tag-chip">Son professionnel</span><span class="tag-chip">Étalonnage</span>
+        <span class="tag-chip">Motion Design</span><span class="tag-chip">Sous-titrage</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-box reveal">
+      <h2>Votre projet vidéo commence ici.</h2>
+      <p>Dites-moi ce que vous imaginez, je m'occupe du reste — du tournage à la livraison.</p>
+      <div class="cta-actions">
+        <a href="mailto:contact@exemple.com" class="btn btn-primary">Me contacter</a>
+        <a href="index.html" class="btn btn-glass">← Retour à l'accueil</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">Matthias</div>
+    <div class="footer-links">
+      <a href="photo.html">Photo</a><a href="video.html">Vidéo</a>
+      <a href="web-dev.html">Web</a><a href="voyage.html">Voyage</a>
+      <a href="mailto:contact@exemple.com">Contact</a>
+    </div>
+    <div class="footer-copy">&copy; 2025 Matthias</div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voyage & Aventure — Matthias</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    :root { --page-color: #a5d6a7; --page-glow: rgba(165,214,167,0.2); }
+    .btn-primary { background: var(--page-color); color: #07070f; box-shadow: 0 4px 24px var(--page-glow); }
+    .btn-primary:hover { background: #b8deba; box-shadow: 0 8px 32px rgba(165,214,167,0.4); }
+    .section-label { color: var(--page-color); }
+    .stat-number { color: var(--page-color); }
+    .step-num { background: var(--page-color) !important; color: #07070f !important; }
+    .tag-chip { background: rgba(165,214,167,0.1); border: 1px solid rgba(165,214,167,0.25); color: var(--page-color); display:inline-block;padding:6px 14px;border-radius:99px;font-size:.78rem;font-weight:500;margin:4px; }
+    .destination-card { border-radius:var(--radius-md);overflow:hidden;background:var(--glass-bg);border:1px solid var(--glass-border);transition:all .3s;cursor:pointer; }
+    .destination-card:hover { transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.4); }
+    .dest-thumb { aspect-ratio:4/3;background:linear-gradient(135deg,rgba(165,214,167,0.15),rgba(165,214,167,0.03));display:flex;align-items:center;justify-content:center;font-size:3rem; }
+    .dest-body { padding:16px 18px; }
+    .dest-name { font-size:.9rem;font-weight:600;margin-bottom:4px; }
+    .dest-sub { font-size:.78rem;color:var(--text-secondary); }
+    .destinations-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px; }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a class="nav-logo" href="index.html">Matthias</a>
+    <div class="nav-links">
+      <a href="photo.html">Photo</a><a href="video.html">Vidéo</a>
+      <a href="community-manager.html">CM</a><a href="web-dev.html">Web</a>
+      <a href="voyage.html" class="active">Voyage</a>
+      <a href="creation-contenu.html">Contenu</a><a href="ecriture.html">Écriture</a>
+      <a href="mailto:contact@exemple.com" class="nav-cta">Contact</a>
+    </div>
+    <div class="nav-burger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <section class="page-hero hero-voyage">
+    <div class="hero-tag">✈️ Voyage & Aventure</div>
+    <h1>Le monde comme <span style="-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background:linear-gradient(135deg,#fff 0%,var(--page-color) 100%)">terrain de jeu</span></h1>
+    <p>Road trips, treks en altitude, destinations hors des sentiers battus. Je documente chaque aventure avec honnêteté, humour et une caméra dans le sac.</p>
+    <div class="hero-actions">
+      <a href="#destinations" class="btn btn-primary">Explorer les destinations</a>
+      <a href="#galerie" class="btn btn-glass">Voir les photos</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="stats-row reveal">
+        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00+</div><div class="stat-label">Pays visités</div></div>
+        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00K</div><div class="stat-label">Kilomètres parcourus</div></div>
+        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00+</div><div class="stat-label">Aventures documentées</div></div>
+        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00+</div><div class="stat-label">Continents</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="destinations">
+    <div class="section-inner">
+      <p class="section-label reveal">Destinations</p>
+      <h2 class="section-title reveal">Là où je suis allé</h2>
+      <p class="section-desc reveal">Chaque destination est une nouvelle page. Cliquez pour découvrir les photos et récits.</p>
+      <div class="destinations-grid reveal">
+        <div class="destination-card"><div class="dest-thumb">🏔️</div><div class="dest-body"><div class="dest-name">Destination — À définir</div><div class="dest-sub">Pays · Continent</div></div></div>
+        <div class="destination-card"><div class="dest-thumb">🌊</div><div class="dest-body"><div class="dest-name">Destination — À définir</div><div class="dest-sub">Pays · Continent</div></div></div>
+        <div class="destination-card"><div class="dest-thumb">🏜️</div><div class="dest-body"><div class="dest-name">Destination — À définir</div><div class="dest-sub">Pays · Continent</div></div></div>
+        <div class="destination-card"><div class="dest-thumb">🌿</div><div class="dest-body"><div class="dest-name">Destination — À définir</div><div class="dest-sub">Pays · Continent</div></div></div>
+        <div class="destination-card"><div class="dest-thumb">🏙️</div><div class="dest-body"><div class="dest-name">Destination — À définir</div><div class="dest-sub">Pays · Continent</div></div></div>
+        <div class="destination-card"><div class="dest-thumb">🌋</div><div class="dest-body"><div class="dest-name">Destination — À définir</div><div class="dest-sub">Pays · Continent</div></div></div>
+        <div class="destination-card"><div class="dest-thumb">❄️</div><div class="dest-body"><div class="dest-name">Destination — À définir</div><div class="dest-sub">Pays · Continent</div></div></div>
+        <div class="destination-card"><div class="dest-thumb">🌺</div><div class="dest-body"><div class="dest-name">Destination — À définir</div><div class="dest-sub">Pays · Continent</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="galerie">
+    <div class="section-inner">
+      <p class="section-label reveal">Galerie</p>
+      <h2 class="section-title reveal">Instantanés du monde</h2>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item featured"><div class="gallery-placeholder"><span class="ph-icon">✈️</span><span>Photo principale voyage</span></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder"><span class="ph-icon">🌄</span><span>Paysage</span></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder"><span class="ph-icon">🏕️</span><span>Aventure</span></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder"><span class="ph-icon">🌆</span><span>Ville</span></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder"><span class="ph-icon">🍜</span><span>Culture locale</span></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder"><span class="ph-icon">🌅</span><span>Coucher de soleil</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <p class="section-label reveal">Comment je voyage</p>
+      <h2 class="section-title reveal">Mon style d'aventure</h2>
+      <div class="features-grid reveal">
+        <div class="feature-card"><div class="feature-icon">🎒</div><h3>Voyage léger</h3><p>Un sac à dos, l'essentiel. Je privilégie la liberté de mouvement et l'immersion totale.</p></div>
+        <div class="feature-card"><div class="feature-icon">🗺️</div><h3>Hors des sentiers</h3><p>Les routes peu fréquentées, les villages oubliés, les paysages qui ne sont pas sur Instagram.</p></div>
+        <div class="feature-card"><div class="feature-icon">📸</div><h3>Tout documenter</h3><p>Photo, vidéo, carnet de bord — chaque voyage devient un récit multiformat complet.</p></div>
+        <div class="feature-card"><div class="feature-icon">🤝</div><h3>Rencontres humaines</h3><p>Les habitants, les cultures, les traditions locales sont au cœur de chaque aventure.</p></div>
+        <div class="feature-card"><div class="feature-icon">♻️</div><h3>Voyage responsable</h3><p>Respect des environnements naturels, soutien à l'économie locale, empreinte minimisée.</p></div>
+        <div class="feature-card"><div class="feature-icon">✍️</div><h3>Récits authentiques</h3><p>Pas de filtre, pas de façade. Je raconte les voyages tels qu'ils sont, avec leurs imprévus.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="section-inner">
+      <p class="section-label reveal">Types d'aventures</p>
+      <div class="reveal">
+        <span class="tag-chip">Road trip</span><span class="tag-chip">Trek</span>
+        <span class="tag-chip">Backpacking</span><span class="tag-chip">Urbex</span>
+        <span class="tag-chip">Camping sauvage</span><span class="tag-chip">Van life</span>
+        <span class="tag-chip">Surf</span><span class="tag-chip">Escalade</span>
+        <span class="tag-chip">Solo travel</span><span class="tag-chip">Europe</span>
+        <span class="tag-chip">Asie</span><span class="tag-chip">Amérique</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-box reveal">
+      <h2>On part en aventure ensemble ?</h2>
+      <p>Vous cherchez un photographe/vidéaste pour documenter votre expédition ou votre destination ? Parlons-en.</p>
+      <div class="cta-actions">
+        <a href="mailto:contact@exemple.com" class="btn btn-primary">Me contacter</a>
+        <a href="index.html" class="btn btn-glass">← Retour à l'accueil</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">Matthias</div>
+    <div class="footer-links">
+      <a href="photo.html">Photo</a><a href="video.html">Vidéo</a>
+      <a href="web-dev.html">Web</a><a href="voyage.html">Voyage</a>
+      <a href="mailto:contact@exemple.com">Contact</a>
+    </div>
+    <div class="footer-copy">&copy; 2025 Matthias</div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

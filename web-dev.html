@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Développement Web — Matthias</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    :root { --page-color: #80cbc4; --page-glow: rgba(128,203,196,0.2); }
+    .btn-primary { background: var(--page-color); color: #07070f; box-shadow: 0 4px 24px var(--page-glow); }
+    .btn-primary:hover { background: #96d5cf; box-shadow: 0 8px 32px rgba(128,203,196,0.4); }
+    .section-label { color: var(--page-color); }
+    .stat-number { color: var(--page-color); }
+    .step-num { background: var(--page-color) !important; color: #07070f !important; }
+    .tag-chip { background: rgba(128,203,196,0.1); border: 1px solid rgba(128,203,196,0.25); color: var(--page-color); display:inline-block;padding:6px 14px;border-radius:99px;font-size:.78rem;font-weight:500;margin:4px; }
+    .project-card { border-radius:var(--radius-md);overflow:hidden;background:var(--glass-bg);border:1px solid var(--glass-border);transition:all .3s; }
+    .project-card:hover { transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.4); }
+    .project-thumb { aspect-ratio:16/9;background:linear-gradient(135deg,rgba(128,203,196,0.15),rgba(128,203,196,0.03));display:flex;align-items:center;justify-content:center;font-size:2.5rem; }
+    .project-body { padding:20px; }
+    .project-title { font-size:.95rem;font-weight:600;margin-bottom:6px; }
+    .project-desc { font-size:.82rem;color:var(--text-secondary);line-height:1.5;margin-bottom:12px; }
+    .project-tags { display:flex;gap:6px;flex-wrap:wrap; }
+    .project-tag { padding:3px 10px;border-radius:99px;background:rgba(128,203,196,0.12);color:var(--page-color);font-size:.72rem;font-weight:500; }
+    .projects-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px; }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a class="nav-logo" href="index.html">Matthias</a>
+    <div class="nav-links">
+      <a href="photo.html">Photo</a><a href="video.html">Vidéo</a>
+      <a href="community-manager.html">CM</a>
+      <a href="web-dev.html" class="active">Web</a>
+      <a href="voyage.html">Voyage</a>
+      <a href="creation-contenu.html">Contenu</a><a href="ecriture.html">Écriture</a>
+      <a href="mailto:contact@exemple.com" class="nav-cta">Contact</a>
+    </div>
+    <div class="nav-burger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <section class="page-hero hero-webdev">
+    <div class="hero-tag">💻 Développement Web</div>
+    <h1>Des sites <span style="-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background:linear-gradient(135deg,#fff 0%,var(--page-color) 100%)">propres & performants</span></h1>
+    <p>Du design au déploiement, je crée des interfaces web modernes, rapides et efficaces. Sites vitrines, portfolios, landing pages — pensés pour convertir et impressionner.</p>
+    <div class="hero-actions">
+      <a href="mailto:contact@exemple.com" class="btn btn-primary">Démarrer un projet</a>
+      <a href="#projets" class="btn btn-glass">Voir les projets</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="stats-row reveal">
+        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00+</div><div class="stat-label">Sites livrés</div></div>
+        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">&lt;2s</div><div class="stat-label">Temps de chargement</div></div>
+        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">100%</div><div class="stat-label">Responsive design</div></div>
+        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00+</div><div class="stat-label">Clients satisfaits</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projets">
+    <div class="section-inner">
+      <p class="section-label reveal">Réalisations</p>
+      <h2 class="section-title reveal">Projets récents</h2>
+      <p class="section-desc reveal">Des projets variés, du site vitrine au portfolio interactif.</p>
+      <div class="projects-grid reveal">
+        <div class="project-card">
+          <div class="project-thumb">🌐</div>
+          <div class="project-body">
+            <div class="project-title">Projet — Titre à définir</div>
+            <div class="project-desc">Description courte du projet, des objectifs et des résultats obtenus.</div>
+            <div class="project-tags"><span class="project-tag">HTML</span><span class="project-tag">CSS</span><span class="project-tag">JS</span></div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-thumb">🛍️</div>
+          <div class="project-body">
+            <div class="project-title">Projet — Titre à définir</div>
+            <div class="project-desc">Description courte du projet, des objectifs et des résultats obtenus.</div>
+            <div class="project-tags"><span class="project-tag">React</span><span class="project-tag">Figma</span></div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-thumb">🎨</div>
+          <div class="project-body">
+            <div class="project-title">Projet — Titre à définir</div>
+            <div class="project-desc">Description courte du projet, des objectifs et des résultats obtenus.</div>
+            <div class="project-tags"><span class="project-tag">WordPress</span><span class="project-tag">SEO</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <p class="section-label reveal">Prestations</p>
+      <h2 class="section-title reveal">Ce que je propose</h2>
+      <div class="features-grid reveal">
+        <div class="feature-card"><div class="feature-icon">🎨</div><h3>Design UI/UX</h3><p>Maquettes Figma, wireframes, prototypes interactifs et design systems.</p></div>
+        <div class="feature-card"><div class="feature-icon">🌐</div><h3>Site vitrine</h3><p>Site de présentation professionnel, responsive, optimisé SEO et performant.</p></div>
+        <div class="feature-card"><div class="feature-icon">📁</div><h3>Portfolio</h3><p>Portfolio interactif sur mesure pour mettre en valeur vos créations et projets.</p></div>
+        <div class="feature-card"><div class="feature-icon">🚀</div><h3>Landing page</h3><p>Page d'atterrissage optimisée pour la conversion, avec A/B testing possible.</p></div>
+        <div class="feature-card"><div class="feature-icon">⚡</div><h3>Performance & SEO</h3><p>Optimisation des performances, audit SEO, accessibilité et Core Web Vitals.</p></div>
+        <div class="feature-card"><div class="feature-icon">🔧</div><h3>Maintenance</h3><p>Suivi, mises à jour, corrections et évolutions de vos sites existants.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;">
+      <div>
+        <p class="section-label reveal">Mon processus</p>
+        <h2 class="section-title reveal">De l'idée au site live</h2>
+      </div>
+      <div class="steps-list reveal">
+        <div class="step-item"><div class="step-num" style="background:var(--page-color)">1</div><div class="step-content"><h3>Brief & cahier des charges</h3><p>On définit ensemble vos besoins, objectifs, cible et budget.</p></div></div>
+        <div class="step-item"><div class="step-num" style="background:var(--page-color)">2</div><div class="step-content"><h3>Maquette & validation</h3><p>Je crée les maquettes Figma et on valide le design avant de coder.</p></div></div>
+        <div class="step-item"><div class="step-num" style="background:var(--page-color)">3</div><div class="step-content"><h3>Développement</h3><p>Intégration HTML/CSS/JS ou framework selon les besoins du projet.</p></div></div>
+        <div class="step-item"><div class="step-num" style="background:var(--page-color)">4</div><div class="step-content"><h3>Tests & recette</h3><p>Tests multi-navigateurs, responsive, performance et accessibilité.</p></div></div>
+        <div class="step-item"><div class="step-num" style="background:var(--page-color)">5</div><div class="step-content"><h3>Mise en ligne</h3><p>Déploiement, configuration du domaine et transfert de propriété.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="section-inner">
+      <p class="section-label reveal">Stack technique</p>
+      <div class="reveal">
+        <span class="tag-chip">HTML5</span><span class="tag-chip">CSS3</span>
+        <span class="tag-chip">JavaScript</span><span class="tag-chip">React</span>
+        <span class="tag-chip">Next.js</span><span class="tag-chip">Figma</span>
+        <span class="tag-chip">WordPress</span><span class="tag-chip">Webflow</span>
+        <span class="tag-chip">Vercel</span><span class="tag-chip">GitHub</span>
+        <span class="tag-chip">SEO</span><span class="tag-chip">Responsive</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-box reveal">
+      <h2>Votre site web, livré clé en main.</h2>
+      <p>Parlez-moi de votre projet et je vous propose une solution adaptée à vos besoins et votre budget.</p>
+      <div class="cta-actions">
+        <a href="mailto:contact@exemple.com" class="btn btn-primary">Demander un devis</a>
+        <a href="index.html" class="btn btn-glass">← Retour à l'accueil</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">Matthias</div>
+    <div class="footer-links">
+      <a href="photo.html">Photo</a><a href="video.html">Vidéo</a>
+      <a href="web-dev.html">Web</a><a href="voyage.html">Voyage</a>
+      <a href="mailto:contact@exemple.com">Contact</a>
+    </div>
+    <div class="footer-copy">&copy; 2025 Matthias</div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

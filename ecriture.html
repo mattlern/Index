@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Écriture — Matthias</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    :root { --page-color: #f48fb1; --page-glow: rgba(244,143,177,0.2); }
+    .btn-primary { background: var(--page-color); color: #07070f; box-shadow: 0 4px 24px var(--page-glow); }
+    .btn-primary:hover { background: #f6a5be; box-shadow: 0 8px 32px rgba(244,143,177,0.4); }
+    .section-label { color: var(--page-color); }
+    .stat-number { color: var(--page-color); }
+    .step-num { background: var(--page-color) !important; color: #07070f !important; }
+    .tag-chip { background: rgba(244,143,177,0.1); border: 1px solid rgba(244,143,177,0.25); color: var(--page-color); display:inline-block;padding:6px 14px;border-radius:99px;font-size:.78rem;font-weight:500;margin:4px; }
+
+    /* Article cards */
+    .articles-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px; }
+    .article-card { padding:28px;border-radius:var(--radius-md);background:var(--glass-bg);border:1px solid var(--glass-border);transition:all .3s;cursor:pointer; }
+    .article-card:hover { background:var(--glass-bg-hover);transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,0.3); }
+    .article-tag { display:inline-block;padding:4px 12px;border-radius:99px;background:rgba(244,143,177,0.12);color:var(--page-color);font-size:.72rem;font-weight:500;margin-bottom:14px; }
+    .article-title { font-size:1rem;font-weight:600;line-height:1.4;margin-bottom:10px; }
+    .article-excerpt { font-size:.85rem;color:var(--text-secondary);line-height:1.6;margin-bottom:16px; }
+    .article-meta { display:flex;align-items:center;gap:12px;font-size:.75rem;color:var(--text-tertiary); }
+    .article-meta span { display:flex;align-items:center;gap:4px; }
+
+    /* Pull quote */
+    .pull-quote {
+      padding: 48px;
+      border-radius: var(--radius-lg);
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-left: 3px solid var(--page-color);
+      text-align: center;
+      margin: 0 auto;
+      max-width: 700px;
+    }
+    .pull-quote blockquote {
+      font-size: 1.4rem;
+      font-weight: 300;
+      line-height: 1.6;
+      letter-spacing: -0.01em;
+      font-style: italic;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+    .pull-quote cite {
+      font-size: .8rem;
+      color: var(--text-tertiary);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      font-style: normal;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a class="nav-logo" href="index.html">Matthias</a>
+    <div class="nav-links">
+      <a href="photo.html">Photo</a><a href="video.html">Vidéo</a>
+      <a href="community-manager.html">CM</a><a href="web-dev.html">Web</a>
+      <a href="voyage.html">Voyage</a><a href="creation-contenu.html">Contenu</a>
+      <a href="ecriture.html" class="active">Écriture</a>
+      <a href="mailto:contact@exemple.com" class="nav-cta">Contact</a>
+    </div>
+    <div class="nav-burger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <section class="page-hero hero-writing">
+    <div class="hero-tag">✍️ Écriture</div>
+    <h1>Les mots qui <span style="-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background:linear-gradient(135deg,#fff 0%,var(--page-color) 100%)">font la différence</span></h1>
+    <p>Articles, scripts, copywriting, storytelling — j'écris avec clarté, style et intention. Chaque mot est choisi pour servir votre message et toucher votre audience.</p>
+    <div class="hero-actions">
+      <a href="mailto:contact@exemple.com" class="btn btn-primary">Travailler ensemble</a>
+      <a href="#articles" class="btn btn-glass">Lire des extraits</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="stats-row reveal">
+        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00+</div><div class="stat-label">Articles publiés</div></div>
+        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00+</div><div class="stat-label">Scripts rédigés</div></div>
+        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00K+</div><div class="stat-label">Mots écrits</div></div>
+        <div class="stat-item"><div class="stat-number" style="color:var(--page-color)">00+</div><div class="stat-label">Clients accompagnés</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PULL QUOTE -->
+  <section class="section" style="padding-top:0">
+    <div class="section-inner" style="display:flex;justify-content:center;">
+      <div class="pull-quote reveal">
+        <blockquote>« Les bons mots n'expliquent pas seulement — ils font ressentir, ils convainquent, ils restent. »</blockquote>
+        <cite>— Matthias</cite>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="articles">
+    <div class="section-inner">
+      <p class="section-label reveal">Extraits & articles</p>
+      <h2 class="section-title reveal">Ce que j'écris</h2>
+      <p class="section-desc reveal">Des textes variés — articles de fond, scripts vidéo, récits de voyage, copies publicitaires.</p>
+      <div class="articles-grid reveal">
+        <div class="article-card">
+          <span class="article-tag">Article</span>
+          <div class="article-title">Titre de l'article — À renseigner</div>
+          <div class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
+          <div class="article-meta">
+            <span>📅 Date</span>
+            <span>⏱ 5 min de lecture</span>
+          </div>
+        </div>
+        <div class="article-card">
+          <span class="article-tag">Script</span>
+          <div class="article-title">Titre du script — À renseigner</div>
+          <div class="article-excerpt">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</div>
+          <div class="article-meta">
+            <span>📅 Date</span>
+            <span>⏱ 3 min de lecture</span>
+          </div>
+        </div>
+        <div class="article-card">
+          <span class="article-tag">Récit</span>
+          <div class="article-title">Titre du récit — À renseigner</div>
+          <div class="article-excerpt">Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>
+          <div class="article-meta">
+            <span>📅 Date</span>
+            <span>⏱ 8 min de lecture</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <p class="section-label reveal">Prestations</p>
+      <h2 class="section-title reveal">Ce que je propose</h2>
+      <div class="features-grid reveal">
+        <div class="feature-card"><div class="feature-icon">📰</div><h3>Articles & Blog</h3><p>Articles de fond, billets d'opinion, dossiers thématiques. Écriture SEO-friendly si nécessaire.</p></div>
+        <div class="feature-card"><div class="feature-icon">🎬</div><h3>Scripts vidéo</h3><p>Scripts pour YouTube, réels, podcasts, publicités. Narration pensée pour être dite autant que lue.</p></div>
+        <div class="feature-card"><div class="feature-icon">💼</div><h3>Copywriting</h3><p>Textes de vente, pages web, fiches produit, emailings. Des mots qui convainquent et convertissent.</p></div>
+        <div class="feature-card"><div class="feature-icon">🗺️</div><h3>Récits de voyage</h3><p>Carnets de route, chroniques d'aventure, storytelling immersif autour de vos expériences.</p></div>
+        <div class="feature-card"><div class="feature-icon">🎙️</div><h3>Ghostwriting</h3><p>J'écris en votre nom, dans votre voix. Articles, billets LinkedIn, livres blancs, biographies.</p></div>
+        <div class="feature-card"><div class="feature-icon">✏️</div><h3>Relecture & édition</h3><p>Correction orthographique, reformulation, amélioration de style et cohérence éditoriale.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;">
+      <div>
+        <p class="section-label reveal">Ma méthode</p>
+        <h2 class="section-title reveal">Écrire, c'est structurer avant tout</h2>
+        <p class="section-desc reveal" style="margin-bottom:0">Un bon texte commence bien avant la première phrase. La recherche, la structure et le ton sont aussi importants que les mots eux-mêmes.</p>
+      </div>
+      <div class="steps-list reveal">
+        <div class="step-item"><div class="step-num" style="background:var(--page-color)">1</div><div class="step-content"><h3>Comprendre le sujet</h3><p>Recherche approfondie, sources fiables, compréhension des enjeux du texte.</p></div></div>
+        <div class="step-item"><div class="step-num" style="background:var(--page-color)">2</div><div class="step-content"><h3>Définir le ton</h3><p>Quel registre ? Quelle voix ? Quel niveau de langage pour quelle audience ?</p></div></div>
+        <div class="step-item"><div class="step-num" style="background:var(--page-color)">3</div><div class="step-content"><h3>Structurer</h3><p>Plan, introduction, développement, conclusion. La structure est l'ossature du texte.</p></div></div>
+        <div class="step-item"><div class="step-num" style="background:var(--page-color)">4</div><div class="step-content"><h3>Rédiger & affiner</h3><p>Écriture, relecture, reformulation. Je travaille le texte jusqu'à ce qu'il sonne juste.</p></div></div>
+        <div class="step-item"><div class="step-num" style="background:var(--page-color)">5</div><div class="step-content"><h3>Livrer & itérer</h3><p>Livraison avec retours possibles. Je m'adapte jusqu'à votre satisfaction totale.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="section-inner">
+      <p class="section-label reveal">Genres & spécialités</p>
+      <div class="reveal">
+        <span class="tag-chip">Storytelling</span><span class="tag-chip">Copywriting</span>
+        <span class="tag-chip">Script vidéo</span><span class="tag-chip">Article de fond</span>
+        <span class="tag-chip">Récit de voyage</span><span class="tag-chip">Ghostwriting</span>
+        <span class="tag-chip">SEO Writing</span><span class="tag-chip">Newsletter</span>
+        <span class="tag-chip">Biographie</span><span class="tag-chip">Manifeste de marque</span>
+        <span class="tag-chip">LinkedIn</span><span class="tag-chip">Pitch deck</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-box reveal">
+      <h2>Vous avez quelque chose à dire.</h2>
+      <p>Je vous aide à le dire avec les mots qu'il faut, dans le format qu'il faut, pour les gens qu'il faut.</p>
+      <div class="cta-actions">
+        <a href="mailto:contact@exemple.com" class="btn btn-primary">Me contacter</a>
+        <a href="index.html" class="btn btn-glass">← Retour à l'accueil</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">Matthias</div>
+    <div class="footer-links">
+      <a href="photo.html">Photo</a><a href="video.html">Vidéo</a>
+      <a href="web-dev.html">Web</a><a href="voyage.html">Voyage</a>
+      <a href="mailto:contact@exemple.com">Contact</a>
+    </div>
+    <div class="footer-copy">&copy; 2025 Matthias</div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

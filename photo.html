@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photographie — Matthias</title>
+  <meta name="description" content="Photographie de portrait, paysage, reportage. Capturer l'instant avec sensibilité." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    :root { --page-color: #f5a623; --page-glow: rgba(245,166,35,0.2); }
+    .accent-text { color: var(--page-color); }
+    .accent-bg   { background: var(--page-color); }
+    .step-num    { background: var(--page-color) !important; }
+    .btn-primary { background: var(--page-color); box-shadow: 0 4px 24px var(--page-glow); }
+    .btn-primary:hover { background: #f7b84a; box-shadow: 0 8px 32px rgba(245,166,35,0.4); }
+    .section-label { color: var(--page-color); }
+    .hero-accent { background: linear-gradient(135deg, #fff 0%, var(--page-color) 100%); }
+    .stat-number { color: var(--page-color); }
+    .tag-chip {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 99px;
+      background: rgba(245,166,35,0.12);
+      border: 1px solid rgba(245,166,35,0.25);
+      color: var(--page-color);
+      font-size: 0.78rem;
+      font-weight: 500;
+      margin: 4px;
+    }
+    .tags-row { margin-bottom: 40px; }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a class="nav-logo" href="index.html">Matthias</a>
+    <div class="nav-links">
+      <a href="photo.html" class="active">Photo</a>
+      <a href="video.html">Vidéo</a>
+      <a href="community-manager.html">CM</a>
+      <a href="web-dev.html">Web</a>
+      <a href="voyage.html">Voyage</a>
+      <a href="creation-contenu.html">Contenu</a>
+      <a href="ecriture.html">Écriture</a>
+      <a href="mailto:contact@exemple.com" class="nav-cta">Contact</a>
+    </div>
+    <div class="nav-burger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="page-hero hero-photo">
+    <div class="hero-tag">📷 Photographie</div>
+    <h1 anim-fade-up>L'art de <span class="hero-accent" style="-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background:linear-gradient(135deg,#fff 0%,var(--page-color) 100%)">capturer l'instant</span></h1>
+    <p class="anim-fade-up anim-delay-1">Du portrait intime au paysage sauvage, chaque photo est une fenêtre ouverte sur un monde à explorer. Je photographie avec l'œil et le cœur.</p>
+    <div class="hero-actions anim-fade-up anim-delay-2">
+      <a href="mailto:contact@exemple.com" class="btn btn-primary">Me contacter</a>
+      <a href="#galerie" class="btn btn-glass">Voir la galerie</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="stats-row reveal">
+        <div class="stat-item">
+          <div class="stat-number" style="color:var(--page-color)">00+</div>
+          <div class="stat-label">Séances photo</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" style="color:var(--page-color)">00</div>
+          <div class="stat-label">Pays photographiés</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" style="color:var(--page-color)">00+</div>
+          <div class="stat-label">Clients satisfaits</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" style="color:var(--page-color)">00+</div>
+          <div class="stat-label">Photos livrées</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="galerie">
+    <div class="section-inner">
+      <p class="section-label reveal">Portfolio</p>
+      <h2 class="section-title reveal">Quelques clichés</h2>
+      <p class="section-desc reveal">Les images seront intégrées ici. Chaque galerie est organisée par thème ou projet.</p>
+
+      <div class="gallery-grid reveal">
+        <div class="gallery-item featured">
+          <div class="gallery-placeholder">
+            <span class="ph-icon">📷</span>
+            <span>Photo principale — Format 16/9</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder"><span class="ph-icon">📷</span><span>Portrait</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder"><span class="ph-icon">📷</span><span>Paysage</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder"><span class="ph-icon">📷</span><span>Architecture</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder"><span class="ph-icon">📷</span><span>Reportage</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder"><span class="ph-icon">📷</span><span>Street</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section">
+    <div class="section-inner">
+      <p class="section-label reveal">Ce que je propose</p>
+      <h2 class="section-title reveal">Mes prestations photo</h2>
+
+      <div class="features-grid reveal">
+        <div class="feature-card">
+          <div class="feature-icon">🧍</div>
+          <h3>Portrait</h3>
+          <p>Séances portrait individuelles ou en groupe, en studio ou en extérieur. Mise en valeur naturelle et authentique.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏔️</div>
+          <h3>Paysage & Nature</h3>
+          <p>Photographie de paysages, de nature sauvage et d'environnements. Lumières dorées, grands espaces.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎉</div>
+          <h3>Événements</h3>
+          <p>Couverture complète d'événements professionnels ou personnels : conférences, soirées, mariages, anniversaires.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏢</div>
+          <h3>Corporate & Brand</h3>
+          <p>Photos institutionnelles, photos d'équipe, reportages d'entreprise pour valoriser votre image professionnelle.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3>Artistique</h3>
+          <p>Projets créatifs, série conceptuelle, direction artistique et réalisation de visuels uniques et marquants.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">✏️</div>
+          <h3>Retouche</h3>
+          <p>Retouche professionnelle sous Lightroom et Photoshop, étalonnage couleur et traitement de lots.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section">
+    <div class="section-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;">
+      <div>
+        <p class="section-label reveal">Comment ça se passe</p>
+        <h2 class="section-title reveal">Le processus</h2>
+        <p class="section-desc reveal" style="margin-bottom:0">Du premier contact à la livraison des fichiers, voici comment je travaille.</p>
+      </div>
+      <div class="steps-list reveal">
+        <div class="step-item">
+          <div class="step-num" style="background:var(--page-color)">1</div>
+          <div class="step-content">
+            <h3>Brief & échange</h3>
+            <p>On discute de votre projet, vos envies, le style souhaité, la date et le lieu.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num" style="background:var(--page-color)">2</div>
+          <div class="step-content">
+            <h3>Préparation</h3>
+            <p>Je prépare le matériel, les références visuelles et le planning de la séance.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num" style="background:var(--page-color)">3</div>
+          <div class="step-content">
+            <h3>Séance</h3>
+            <p>On réalise la séance dans une atmosphère détendue et créative.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num" style="background:var(--page-color)">4</div>
+          <div class="step-content">
+            <h3>Sélection & retouche</h3>
+            <p>Je sélectionne les meilleurs clichés et réalise la retouche professionnelle.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num" style="background:var(--page-color)">5</div>
+          <div class="step-content">
+            <h3>Livraison</h3>
+            <p>Les photos sont livrées via galerie en ligne dans un délai convenu.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAGS -->
+  <section class="section" style="padding-top:0">
+    <div class="section-inner">
+      <p class="section-label reveal">Style & spécialités</p>
+      <div class="tags-row reveal">
+        <span class="tag-chip">Portrait</span>
+        <span class="tag-chip">Paysage</span>
+        <span class="tag-chip">Street</span>
+        <span class="tag-chip">Reportage</span>
+        <span class="tag-chip">Architecture</span>
+        <span class="tag-chip">Corporate</span>
+        <span class="tag-chip">Événementiel</span>
+        <span class="tag-chip">Noir & Blanc</span>
+        <span class="tag-chip">Couleur</span>
+        <span class="tag-chip">Lightroom</span>
+        <span class="tag-chip">Photoshop</span>
+        <span class="tag-chip">Lumière naturelle</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-box reveal">
+      <h2>Un projet en tête ?</h2>
+      <p>Parlons de votre séance, de vos besoins et de ce qu'on peut créer ensemble.</p>
+      <div class="cta-actions">
+        <a href="mailto:contact@exemple.com" class="btn btn-primary">Prendre contact</a>
+        <a href="index.html" class="btn btn-glass">← Retour à l'accueil</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">Matthias</div>
+    <div class="footer-links">
+      <a href="photo.html">Photo</a><a href="video.html">Vidéo</a>
+      <a href="web-dev.html">Web</a><a href="voyage.html">Voyage</a>
+      <a href="mailto:contact@exemple.com">Contact</a>
+    </div>
+    <div class="footer-copy">&copy; 2025 Matthias</div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
