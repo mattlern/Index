@@ -11,13 +11,13 @@
   <nav class="navbar">
     <div class="nav-logo">Matthias</div>
     <div class="nav-links">
-      <a href="photo.html">Photo</a>
-      <a href="video.html">Vidéo</a>
-      <a href="community-manager.html">CM</a>
-      <a href="web-dev.html">Web</a>
-      <a href="voyage.html">Voyage</a>
-      <a href="creation-contenu.html">Contenu</a>
-      <a href="ecriture.html">Écriture</a>
+      <a href="#photo"   onclick="goService('photo')">Photo</a>
+      <a href="#video"   onclick="goService('video')">Vidéo</a>
+      <a href="#cm"      onclick="goService('cm')">CM</a>
+      <a href="#webdev"  onclick="goService('webdev')">Web</a>
+      <a href="#voyage"  onclick="goService('voyage')">Voyage</a>
+      <a href="#content" onclick="goService('content')">Contenu</a>
+      <a href="#writing" onclick="goService('writing')">Écriture</a>
       <a href="mailto:contact@exemple.com" class="nav-cta">Contact</a>
     </div>
     <div class="nav-burger"><span></span><span></span><span></span></div>
@@ -50,56 +50,694 @@
     <div class="sil-info">
       <div class="sil-title" id="sil-title" style="transition:opacity 0.3s,color 0.4s">Photographie</div>
       <p class="sil-desc" id="sil-desc" style="transition:opacity 0.3s">Du portrait intime au grand paysage, je photographie avec l'œil et le cœur.</p>
-      <div class="sil-cta">
-        <a class="btn btn-ghost" id="sil-cta" href="photo.html">Découvrir →</a>
-      </div>
     </div>
 
     <div class="scroll-cue">
-      <span>parcourir</span>
+      <span>découvrir</span>
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
   </section>
 
-  <!-- QUICK NAV -->
-  <div class="quick-nav">
-    <p class="label">Accès direct</p>
-    <div class="quick-nav-grid">
-      <a href="photo.html" class="quick-nav-card reveal">
-        <span class="qnc-icon">📷</span>
-        <div class="qnc-text"><strong>Photographie</strong><span>Portraits, paysages, reportage</span></div>
-        <span class="qnc-arrow">→</span>
-      </a>
-      <a href="video.html" class="quick-nav-card reveal">
-        <span class="qnc-icon">🎬</span>
-        <div class="qnc-text"><strong>Vidéo</strong><span>Montage, réels, documentaire</span></div>
-        <span class="qnc-arrow">→</span>
-      </a>
-      <a href="community-manager.html" class="quick-nav-card reveal">
-        <span class="qnc-icon">📱</span>
-        <div class="qnc-text"><strong>Community Manager</strong><span>Réseaux, stratégie, croissance</span></div>
-        <span class="qnc-arrow">→</span>
-      </a>
-      <a href="web-dev.html" class="quick-nav-card reveal">
-        <span class="qnc-icon">💻</span>
-        <div class="qnc-text"><strong>Développement Web</strong><span>Sites, interfaces, code</span></div>
-        <span class="qnc-arrow">→</span>
-      </a>
-      <a href="voyage.html" class="quick-nav-card reveal">
-        <span class="qnc-icon">✈️</span>
-        <div class="qnc-text"><strong>Voyage & Aventure</strong><span>Road trips, treks, récits</span></div>
-        <span class="qnc-arrow">→</span>
-      </a>
-      <a href="creation-contenu.html" class="quick-nav-card reveal">
-        <span class="qnc-icon">🎨</span>
-        <div class="qnc-text"><strong>Création de Contenu</strong><span>UGC, personal branding</span></div>
-        <span class="qnc-arrow">→</span>
-      </a>
-      <a href="ecriture.html" class="quick-nav-card reveal">
-        <span class="qnc-icon">✍️</span>
-        <div class="qnc-text"><strong>Écriture</strong><span>Articles, scripts, copywriting</span></div>
-        <span class="qnc-arrow">→</span>
-      </a>
+  <!-- ══════════════════════════════════════════
+       SERVICE SECTIONS — one visible at a time
+       ══════════════════════════════════════════ -->
+
+  <!-- ── PHOTO ── -->
+  <div class="service-section" data-service="photo" id="photo" style="--page-color:#d4a853">
+    <div class="portfolio-section">
+
+      <div class="project-group reveal">
+        <div class="group-row">
+          <div class="group-lead">
+            <div class="group-fig">
+              <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+                <ellipse cx="30" cy="12" rx="11" ry="11"/>
+                <rect x="25" y="22" width="10" height="7" rx="3"/>
+                <path d="M11 29 Q30 35 49 29 L53 90 Q30 96 7 90 Z"/>
+                <path d="M11 31 L3 78 Q3 85 13 83 L19 37 Z"/>
+                <path d="M49 31 L57 78 Q57 85 47 83 L41 37 Z"/>
+                <path d="M13 88 L9 150 Q9 157 21 157 L25 97 Z"/>
+                <path d="M47 88 L51 150 Q51 157 39 157 L35 97 Z"/>
+              </svg>
+            </div>
+            <div class="group-text">
+              <h2>Photo soirée & événements</h2>
+              <p>Couverture complète de vos soirées, mariages, anniversaires et événements professionnels. Chaque moment immortalisé avec discrétion et talent.</p>
+            </div>
+          </div>
+          <div class="group-main-img">
+            <div class="img-ph"><div class="ph-icon">📷</div><span>Image principale</span></div>
+          </div>
+        </div>
+        <div class="group-gallery">
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🎉</div><span>Photo à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🥂</div><span>Photo à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🎊</div><span>Photo à venir</span></div></div>
+        </div>
+      </div>
+
+      <div class="project-group reveal">
+        <div class="group-row">
+          <div class="group-lead">
+            <div class="group-fig">
+              <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+                <ellipse cx="30" cy="12" rx="11" ry="11"/>
+                <rect x="25" y="22" width="10" height="7" rx="3"/>
+                <path d="M11 29 Q30 35 49 29 L53 90 Q30 96 7 90 Z"/>
+                <path d="M7 31 L2 72 Q2 78 12 77 L17 37 Z"/>
+                <path d="M53 31 L58 72 Q58 78 48 77 L43 37 Z"/>
+                <path d="M13 88 L9 150 Q9 157 21 157 L25 97 Z"/>
+                <path d="M47 88 L51 150 Q51 157 39 157 L35 97 Z"/>
+              </svg>
+            </div>
+            <div class="group-text">
+              <h2>Portrait</h2>
+              <p>Séances portrait individuelles ou corporate, en studio ou en extérieur. Mise en valeur naturelle, atmosphère détendue, résultat authentique.</p>
+            </div>
+          </div>
+          <div class="group-main-img">
+            <div class="img-ph"><div class="ph-icon">🧍</div><span>Image principale</span></div>
+          </div>
+        </div>
+        <div class="group-gallery">
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">👤</div><span>Photo à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">👤</div><span>Photo à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">👤</div><span>Photo à venir</span></div></div>
+        </div>
+      </div>
+
+      <div class="project-group reveal">
+        <div class="group-row">
+          <div class="group-lead">
+            <div class="group-fig">
+              <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+                <ellipse cx="30" cy="12" rx="11" ry="11"/>
+                <rect x="25" y="22" width="10" height="7" rx="3"/>
+                <path d="M12 29 Q30 35 48 29 L52 88 Q30 94 8 88 Z"/>
+                <path d="M12 31 L5 68 Q5 74 15 72 L20 37 Z"/>
+                <path d="M48 31 L55 68 Q55 74 45 72 L40 37 Z"/>
+                <path d="M14 86 L10 150 Q10 157 22 157 L26 96 Z"/>
+                <path d="M46 86 L50 150 Q50 157 38 157 L34 96 Z"/>
+              </svg>
+            </div>
+            <div class="group-text">
+              <h2>Paysages & Nature</h2>
+              <p>Montagnes, côtes, forêts — je capture la nature dans ses lumières les plus saisissantes. Golden hour, longue exposition, grands espaces.</p>
+            </div>
+          </div>
+          <div class="group-main-img">
+            <div class="img-ph"><div class="ph-icon">🏔️</div><span>Image principale</span></div>
+          </div>
+        </div>
+        <div class="group-gallery">
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🌄</div><span>Photo à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🌊</div><span>Photo à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🌿</div><span>Photo à venir</span></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── VIDÉO ── -->
+  <div class="service-section" data-service="video" id="video" style="--page-color:#5ab4d4">
+    <div class="portfolio-section">
+
+      <div class="project-group reveal">
+        <div class="group-row">
+          <div class="group-lead">
+            <div class="group-fig">
+              <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+                <ellipse cx="30" cy="12" rx="11" ry="11"/>
+                <rect x="25" y="22" width="10" height="7" rx="3"/>
+                <path d="M11 29 Q30 35 49 29 L53 90 Q30 96 7 90 Z"/>
+                <path d="M11 31 L3 78 Q3 85 13 83 L19 37 Z"/>
+                <path d="M49 31 L57 78 Q57 85 47 83 L41 37 Z"/>
+                <path d="M13 88 L9 150 Q9 157 21 157 L25 97 Z"/>
+                <path d="M47 88 L51 150 Q51 157 39 157 L35 97 Z"/>
+              </svg>
+            </div>
+            <div class="group-text">
+              <h2>Réels & Shorts</h2>
+              <p>Formats courts percutants pour Instagram, TikTok et YouTube. Rythme, musique, montage — chaque seconde compte pour capter l'attention.</p>
+            </div>
+          </div>
+          <div class="group-main-img">
+            <div class="img-ph"><div class="ph-icon">▶</div><span>Vidéo principale</span></div>
+          </div>
+        </div>
+        <div class="group-gallery">
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">📱</div><span>Reel à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🎵</div><span>TikTok à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">▶</div><span>Short à venir</span></div></div>
+        </div>
+      </div>
+
+      <div class="project-group reveal">
+        <div class="group-row">
+          <div class="group-lead">
+            <div class="group-fig">
+              <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+                <ellipse cx="30" cy="12" rx="11" ry="11"/>
+                <rect x="25" y="22" width="10" height="7" rx="3"/>
+                <path d="M11 29 Q30 35 49 29 L53 90 Q30 96 7 90 Z"/>
+                <path d="M7 31 L2 72 Q2 78 12 77 L17 37 Z"/>
+                <path d="M53 31 L58 72 Q58 78 48 77 L43 37 Z"/>
+                <path d="M13 88 L9 150 Q9 157 21 157 L25 97 Z"/>
+                <path d="M47 88 L51 150 Q51 157 39 157 L35 97 Z"/>
+              </svg>
+            </div>
+            <div class="group-text">
+              <h2>Mini-documentaires & Reportages</h2>
+              <p>Narration longue forme, portraits humains, histoires qui méritent d'être racontées. Un regard sincère sur ce qui compte vraiment.</p>
+            </div>
+          </div>
+          <div class="group-main-img">
+            <div class="img-ph"><div class="ph-icon">🎞️</div><span>Documentaire principal</span></div>
+          </div>
+        </div>
+        <div class="group-gallery">
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">▶</div><span>Doc à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">▶</div><span>Reportage à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">▶</div><span>Portrait à venir</span></div></div>
+        </div>
+      </div>
+
+      <div class="project-group reveal">
+        <div class="group-row">
+          <div class="group-lead">
+            <div class="group-fig">
+              <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+                <ellipse cx="30" cy="12" rx="11" ry="11"/>
+                <rect x="25" y="22" width="10" height="7" rx="3"/>
+                <path d="M14 29 Q30 35 46 29 L49 90 Q30 96 11 90 Z"/>
+                <path d="M14 31 L8 70 Q8 76 18 74 L22 37 Z"/>
+                <path d="M46 31 L52 70 Q52 76 42 74 L38 37 Z"/>
+                <path d="M15 88 L12 150 Q12 157 24 157 L27 97 Z"/>
+                <path d="M45 88 L48 150 Q48 157 36 157 L33 97 Z"/>
+              </svg>
+            </div>
+            <div class="group-text">
+              <h2>Corporate & Clips musicaux</h2>
+              <p>Films institutionnels, vidéos produit, clips — la vidéo au service de votre image de marque ou de votre direction artistique.</p>
+            </div>
+          </div>
+          <div class="group-main-img">
+            <div class="img-ph"><div class="ph-icon">🎬</div><span>Film principal</span></div>
+          </div>
+        </div>
+        <div class="group-gallery">
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🏢</div><span>Corporate à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🎵</div><span>Clip à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">📦</div><span>Produit à venir</span></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── COMMUNITY MANAGER ── -->
+  <div class="service-section" data-service="cm" id="cm" style="--page-color:#b87fc4">
+    <div class="portfolio-section">
+
+      <div class="project-group reveal">
+        <div class="group-row">
+          <div class="group-lead">
+            <div class="group-fig">
+              <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+                <ellipse cx="30" cy="12" rx="11" ry="11"/>
+                <rect x="25" y="22" width="10" height="7" rx="3"/>
+                <path d="M11 29 Q30 35 49 29 L53 90 Q30 96 7 90 Z"/>
+                <path d="M11 31 L3 78 Q3 85 13 83 L19 37 Z"/>
+                <path d="M49 31 L57 78 Q57 85 47 83 L41 37 Z"/>
+                <path d="M13 88 L9 150 Q9 157 21 157 L25 97 Z"/>
+                <path d="M47 88 L51 150 Q51 157 39 157 L35 97 Z"/>
+              </svg>
+            </div>
+            <div class="group-text">
+              <h2>Instagram & TikTok</h2>
+              <p>Stratégie de contenu, planning éditorial, création de réels et stories. Gestion complète du compte de la ligne éditoriale à la modération.</p>
+            </div>
+          </div>
+          <div class="group-main-img">
+            <div class="img-ph"><div class="ph-icon">📸</div><span>Capture à venir</span></div>
+          </div>
+        </div>
+        <div class="group-gallery">
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">📱</div><span>Feed à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🎵</div><span>TikTok à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">📊</div><span>Stats à venir</span></div></div>
+        </div>
+      </div>
+
+      <div class="project-group reveal">
+        <div class="group-row">
+          <div class="group-lead">
+            <div class="group-fig">
+              <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+                <ellipse cx="30" cy="12" rx="11" ry="11"/>
+                <rect x="25" y="22" width="10" height="7" rx="3"/>
+                <path d="M11 29 Q30 35 49 29 L53 90 Q30 96 7 90 Z"/>
+                <path d="M7 31 L2 72 Q2 78 12 77 L17 37 Z"/>
+                <path d="M53 31 L58 72 Q58 78 48 77 L43 37 Z"/>
+                <path d="M13 88 L9 150 Q9 157 21 157 L25 97 Z"/>
+                <path d="M47 88 L51 150 Q51 157 39 157 L35 97 Z"/>
+              </svg>
+            </div>
+            <div class="group-text">
+              <h2>LinkedIn & Corporate</h2>
+              <p>Personal branding, thought leadership, B2B. Construire une présence LinkedIn qui positionne et qui convertit.</p>
+            </div>
+          </div>
+          <div class="group-main-img">
+            <div class="img-ph"><div class="ph-icon">💼</div><span>Capture à venir</span></div>
+          </div>
+        </div>
+        <div class="group-gallery">
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">📝</div><span>Post à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">📈</div><span>Analytics à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🏷️</div><span>Branding à venir</span></div></div>
+        </div>
+      </div>
+
+      <div class="project-group reveal">
+        <div class="group-row">
+          <div class="group-lead">
+            <div class="group-fig">
+              <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+                <ellipse cx="30" cy="12" rx="11" ry="11"/>
+                <rect x="25" y="22" width="10" height="7" rx="3"/>
+                <path d="M14 29 Q30 35 46 29 L49 90 Q30 96 11 90 Z"/>
+                <path d="M14 31 L8 70 Q8 76 18 74 L22 37 Z"/>
+                <path d="M46 31 L52 70 Q52 76 42 74 L38 37 Z"/>
+                <path d="M15 88 L12 150 Q12 157 24 157 L27 97 Z"/>
+                <path d="M45 88 L48 150 Q48 157 36 157 L33 97 Z"/>
+              </svg>
+            </div>
+            <div class="group-text">
+              <h2>Campagnes & Lancements</h2>
+              <p>Lancement produit, campagnes saisonnières, collaborations influence. De la stratégie à l'exécution multiplateforme.</p>
+            </div>
+          </div>
+          <div class="group-main-img">
+            <div class="img-ph"><div class="ph-icon">📣</div><span>Campagne à venir</span></div>
+          </div>
+        </div>
+        <div class="group-gallery">
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🎯</div><span>Lancement à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🤳</div><span>Influence à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">📊</div><span>Résultats à venir</span></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── DÉVELOPPEMENT WEB ── -->
+  <div class="service-section" data-service="webdev" id="webdev" style="--page-color:#5abdb5">
+    <div class="portfolio-section">
+
+      <div class="project-group reveal">
+        <div class="group-row">
+          <div class="group-lead">
+            <div class="group-fig">
+              <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+                <ellipse cx="30" cy="12" rx="11" ry="11"/>
+                <rect x="25" y="22" width="10" height="7" rx="3"/>
+                <path d="M11 29 Q30 35 49 29 L53 90 Q30 96 7 90 Z"/>
+                <path d="M11 31 L3 78 Q3 85 13 83 L19 37 Z"/>
+                <path d="M49 31 L57 78 Q57 85 47 83 L41 37 Z"/>
+                <path d="M13 88 L9 150 Q9 157 21 157 L25 97 Z"/>
+                <path d="M47 88 L51 150 Q51 157 39 157 L35 97 Z"/>
+              </svg>
+            </div>
+            <div class="group-text">
+              <h2>Sites vitrines</h2>
+              <p>Présentation professionnelle de votre activité. Responsive, rapide, optimisé SEO. Du brief à la mise en ligne, clé en main.</p>
+            </div>
+          </div>
+          <div class="group-main-img">
+            <div class="img-ph"><div class="ph-icon">🌐</div><span>Capture à venir</span></div>
+          </div>
+        </div>
+        <div class="group-gallery">
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🌐</div><span>Site à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🌐</div><span>Site à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🌐</div><span>Site à venir</span></div></div>
+        </div>
+      </div>
+
+      <div class="project-group reveal">
+        <div class="group-row">
+          <div class="group-lead">
+            <div class="group-fig">
+              <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+                <ellipse cx="30" cy="12" rx="11" ry="11"/>
+                <rect x="25" y="22" width="10" height="7" rx="3"/>
+                <path d="M11 29 Q30 35 49 29 L53 90 Q30 96 7 90 Z"/>
+                <path d="M7 31 L2 72 Q2 78 12 77 L17 37 Z"/>
+                <path d="M53 31 L58 72 Q58 78 48 77 L43 37 Z"/>
+                <path d="M13 88 L9 150 Q9 157 21 157 L25 97 Z"/>
+                <path d="M47 88 L51 150 Q51 157 39 157 L35 97 Z"/>
+              </svg>
+            </div>
+            <div class="group-text">
+              <h2>Portfolios & Identités digitales</h2>
+              <p>Pour les créatifs qui veulent une présence en ligne à la hauteur de leur travail. Direction artistique, animations, déploiement inclus.</p>
+            </div>
+          </div>
+          <div class="group-main-img">
+            <div class="img-ph"><div class="ph-icon">📁</div><span>Capture à venir</span></div>
+          </div>
+        </div>
+        <div class="group-gallery">
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">📁</div><span>Portfolio à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🎨</div><span>Portfolio à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">✨</div><span>Portfolio à venir</span></div></div>
+        </div>
+      </div>
+
+      <div class="project-group reveal">
+        <div class="group-row">
+          <div class="group-lead">
+            <div class="group-fig">
+              <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+                <ellipse cx="30" cy="12" rx="11" ry="11"/>
+                <rect x="25" y="22" width="10" height="7" rx="3"/>
+                <path d="M12 29 Q30 35 48 29 L52 88 Q30 94 8 88 Z"/>
+                <path d="M12 31 L5 68 Q5 74 15 72 L20 37 Z"/>
+                <path d="M48 31 L55 68 Q55 74 45 72 L40 37 Z"/>
+                <path d="M14 86 L10 150 Q10 157 22 157 L26 96 Z"/>
+                <path d="M46 86 L50 150 Q50 157 38 157 L34 96 Z"/>
+              </svg>
+            </div>
+            <div class="group-text">
+              <h2>Landing pages & Conversion</h2>
+              <p>Pages pensées pour convertir. Structure claire, hiérarchie visuelle, CTA efficaces. Performance et résultats mesurables.</p>
+            </div>
+          </div>
+          <div class="group-main-img">
+            <div class="img-ph"><div class="ph-icon">🚀</div><span>Capture à venir</span></div>
+          </div>
+        </div>
+        <div class="group-gallery">
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🚀</div><span>Landing à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">⚡</div><span>Landing à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🎯</div><span>Landing à venir</span></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── VOYAGE ── -->
+  <div class="service-section" data-service="voyage" id="voyage" style="--page-color:#72b87a">
+    <div class="portfolio-section">
+
+      <div class="project-group reveal">
+        <div class="group-row">
+          <div class="group-lead">
+            <div class="group-fig">
+              <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+                <ellipse cx="30" cy="12" rx="11" ry="11"/>
+                <rect x="25" y="22" width="10" height="7" rx="3"/>
+                <path d="M11 29 Q30 35 49 29 L53 90 Q30 96 7 90 Z"/>
+                <path d="M11 31 L3 78 Q3 85 13 83 L19 37 Z"/>
+                <path d="M49 31 L57 78 Q57 85 47 83 L41 37 Z"/>
+                <path d="M13 88 L9 150 Q9 157 21 157 L25 97 Z"/>
+                <path d="M47 88 L51 150 Q51 157 39 157 L35 97 Z"/>
+              </svg>
+            </div>
+            <div class="group-text">
+              <h2>Europe</h2>
+              <p>Road trips à travers le continent, escapades en montagne, exploration urbaine. L'Europe vue avec un regard neuf, loin des sentiers touristiques.</p>
+            </div>
+          </div>
+          <div class="group-main-img">
+            <div class="img-ph"><div class="ph-icon">🏔️</div><span>Photo principale</span></div>
+          </div>
+        </div>
+        <div class="group-gallery">
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🏔️</div><span>Photo à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🌊</div><span>Photo à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🏙️</div><span>Photo à venir</span></div></div>
+        </div>
+      </div>
+
+      <div class="project-group reveal">
+        <div class="group-row">
+          <div class="group-lead">
+            <div class="group-fig">
+              <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+                <ellipse cx="30" cy="12" rx="11" ry="11"/>
+                <rect x="25" y="22" width="10" height="7" rx="3"/>
+                <path d="M11 29 Q30 35 49 29 L53 90 Q30 96 7 90 Z"/>
+                <path d="M7 31 L2 72 Q2 78 12 77 L17 37 Z"/>
+                <path d="M53 31 L58 72 Q58 78 48 77 L43 37 Z"/>
+                <path d="M13 88 L9 150 Q9 157 21 157 L25 97 Z"/>
+                <path d="M47 88 L51 150 Q51 157 39 157 L35 97 Z"/>
+              </svg>
+            </div>
+            <div class="group-text">
+              <h2>Asie & Amériques</h2>
+              <p>Backpacking, treks, immersion culturelle. Des rizières aux temples, des grandes routes américaines aux jungles — le monde sans filtre.</p>
+            </div>
+          </div>
+          <div class="group-main-img">
+            <div class="img-ph"><div class="ph-icon">🌏</div><span>Photo principale</span></div>
+          </div>
+        </div>
+        <div class="group-gallery">
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🌿</div><span>Photo à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🛕</div><span>Photo à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🌵</div><span>Photo à venir</span></div></div>
+        </div>
+      </div>
+
+      <div class="project-group reveal">
+        <div class="group-row">
+          <div class="group-lead">
+            <div class="group-fig">
+              <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+                <ellipse cx="30" cy="12" rx="11" ry="11"/>
+                <rect x="25" y="22" width="10" height="7" rx="3"/>
+                <path d="M14 29 Q30 35 46 29 L49 90 Q30 96 11 90 Z"/>
+                <path d="M14 31 L8 70 Q8 76 18 74 L22 37 Z"/>
+                <path d="M46 31 L52 70 Q52 76 42 74 L38 37 Z"/>
+                <path d="M15 88 L12 150 Q12 157 24 157 L27 97 Z"/>
+                <path d="M45 88 L48 150 Q48 157 36 157 L33 97 Z"/>
+              </svg>
+            </div>
+            <div class="group-text">
+              <h2>Aventure & Outdoor</h2>
+              <p>Trek, camping sauvage, escalade, surf. Les activités de plein air documentées avec authenticité — la nature dans ses états les plus bruts.</p>
+            </div>
+          </div>
+          <div class="group-main-img">
+            <div class="img-ph"><div class="ph-icon">🎒</div><span>Photo principale</span></div>
+          </div>
+        </div>
+        <div class="group-gallery">
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">⛺</div><span>Photo à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🏄</div><span>Photo à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🧗</div><span>Photo à venir</span></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── CRÉATION DE CONTENU ── -->
+  <div class="service-section" data-service="content" id="content" style="--page-color:#d47a5a">
+    <div class="portfolio-section">
+
+      <div class="project-group reveal">
+        <div class="group-row">
+          <div class="group-lead">
+            <div class="group-fig">
+              <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+                <ellipse cx="30" cy="12" rx="11" ry="11"/>
+                <rect x="25" y="22" width="10" height="7" rx="3"/>
+                <path d="M11 29 Q30 35 49 29 L53 90 Q30 96 7 90 Z"/>
+                <path d="M11 31 L3 78 Q3 85 13 83 L19 37 Z"/>
+                <path d="M49 31 L57 78 Q57 85 47 83 L41 37 Z"/>
+                <path d="M13 88 L9 150 Q9 157 21 157 L25 97 Z"/>
+                <path d="M47 88 L51 150 Q51 157 39 157 L35 97 Z"/>
+              </svg>
+            </div>
+            <div class="group-text">
+              <h2>UGC & Contenus pour marques</h2>
+              <p>Unboxing, reviews, démos produit. Des contenus authentiques et engageants conçus pour les marques, sur toutes les plateformes.</p>
+            </div>
+          </div>
+          <div class="group-main-img">
+            <div class="img-ph"><div class="ph-icon">🤳</div><span>Contenu principal</span></div>
+          </div>
+        </div>
+        <div class="group-gallery">
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">📦</div><span>Unboxing à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">⭐</div><span>Review à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🎬</div><span>Démo à venir</span></div></div>
+        </div>
+      </div>
+
+      <div class="project-group reveal">
+        <div class="group-row">
+          <div class="group-lead">
+            <div class="group-fig">
+              <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+                <ellipse cx="30" cy="12" rx="11" ry="11"/>
+                <rect x="25" y="22" width="10" height="7" rx="3"/>
+                <path d="M11 29 Q30 35 49 29 L53 90 Q30 96 7 90 Z"/>
+                <path d="M7 31 L2 72 Q2 78 12 77 L17 37 Z"/>
+                <path d="M53 31 L58 72 Q58 78 48 77 L43 37 Z"/>
+                <path d="M13 88 L9 150 Q9 157 21 157 L25 97 Z"/>
+                <path d="M47 88 L51 150 Q51 157 39 157 L35 97 Z"/>
+              </svg>
+            </div>
+            <div class="group-text">
+              <h2>Personal Branding</h2>
+              <p>Construire une identité forte en ligne. Ligne éditoriale, positionnement, cohérence visuelle — pour que votre nom devienne une référence.</p>
+            </div>
+          </div>
+          <div class="group-main-img">
+            <div class="img-ph"><div class="ph-icon">🏷️</div><span>Projet principal</span></div>
+          </div>
+        </div>
+        <div class="group-gallery">
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">✨</div><span>Projet à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">📊</div><span>Résultats à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🎯</div><span>Stratégie à venir</span></div></div>
+        </div>
+      </div>
+
+      <div class="project-group reveal">
+        <div class="group-row">
+          <div class="group-lead">
+            <div class="group-fig">
+              <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+                <ellipse cx="30" cy="12" rx="11" ry="11"/>
+                <rect x="25" y="22" width="10" height="7" rx="3"/>
+                <path d="M14 29 Q30 35 46 29 L49 90 Q30 96 11 90 Z"/>
+                <path d="M14 31 L8 70 Q8 76 18 74 L22 37 Z"/>
+                <path d="M46 31 L52 70 Q52 76 42 74 L38 37 Z"/>
+                <path d="M15 88 L12 150 Q12 157 24 157 L27 97 Z"/>
+                <path d="M45 88 L48 150 Q48 157 36 157 L33 97 Z"/>
+              </svg>
+            </div>
+            <div class="group-text">
+              <h2>Stratégies & Campagnes de contenu</h2>
+              <p>Plans éditoriaux, séries de contenu, lancements. Une approche structurée pour construire une audience solide et durable.</p>
+            </div>
+          </div>
+          <div class="group-main-img">
+            <div class="img-ph"><div class="ph-icon">📅</div><span>Campagne principale</span></div>
+          </div>
+        </div>
+        <div class="group-gallery">
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">📈</div><span>Growth à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🎬</div><span>Série à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">📣</div><span>Lancement à venir</span></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── ÉCRITURE ── -->
+  <div class="service-section" data-service="writing" id="writing" style="--page-color:#c47a8f">
+    <div class="portfolio-section">
+
+      <div class="project-group reveal">
+        <div class="group-row">
+          <div class="group-lead">
+            <div class="group-fig">
+              <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+                <ellipse cx="30" cy="12" rx="11" ry="11"/>
+                <rect x="25" y="22" width="10" height="7" rx="3"/>
+                <path d="M11 29 Q30 35 49 29 L53 90 Q30 96 7 90 Z"/>
+                <path d="M11 31 L3 78 Q3 85 13 83 L19 37 Z"/>
+                <path d="M49 31 L57 78 Q57 85 47 83 L41 37 Z"/>
+                <path d="M13 88 L9 150 Q9 157 21 157 L25 97 Z"/>
+                <path d="M47 88 L51 150 Q51 157 39 157 L35 97 Z"/>
+              </svg>
+            </div>
+            <div class="group-text">
+              <h2>Articles & Blog</h2>
+              <p>Articles de fond, billets d'opinion, contenus SEO. Des textes qui informent, questionnent, engagent — et qui restent en tête.</p>
+            </div>
+          </div>
+          <div class="group-main-img">
+            <div class="img-ph"><div class="ph-icon">📰</div><span>Article à venir</span></div>
+          </div>
+        </div>
+        <div class="group-gallery">
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">✍️</div><span>Article à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">💡</div><span>Opinion à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🔍</div><span>SEO à venir</span></div></div>
+        </div>
+      </div>
+
+      <div class="project-group reveal">
+        <div class="group-row">
+          <div class="group-lead">
+            <div class="group-fig">
+              <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+                <ellipse cx="30" cy="12" rx="11" ry="11"/>
+                <rect x="25" y="22" width="10" height="7" rx="3"/>
+                <path d="M11 29 Q30 35 49 29 L53 90 Q30 96 7 90 Z"/>
+                <path d="M7 31 L2 72 Q2 78 12 77 L17 37 Z"/>
+                <path d="M53 31 L58 72 Q58 78 48 77 L43 37 Z"/>
+                <path d="M13 88 L9 150 Q9 157 21 157 L25 97 Z"/>
+                <path d="M47 88 L51 150 Q51 157 39 157 L35 97 Z"/>
+              </svg>
+            </div>
+            <div class="group-text">
+              <h2>Scripts & Narration</h2>
+              <p>Scripts YouTube, podcasts, publicités, courts-métrages. La narration comme outil de persuasion et d'émotion.</p>
+            </div>
+          </div>
+          <div class="group-main-img">
+            <div class="img-ph"><div class="ph-icon">🎬</div><span>Script à venir</span></div>
+          </div>
+        </div>
+        <div class="group-gallery">
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🎙️</div><span>Podcast à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">📺</div><span>Script pub à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">🎥</div><span>Court-métrage à venir</span></div></div>
+        </div>
+      </div>
+
+      <div class="project-group reveal">
+        <div class="group-row">
+          <div class="group-lead">
+            <div class="group-fig">
+              <svg viewBox="0 0 60 160" fill="currentColor" style="width:52px;opacity:.65">
+                <ellipse cx="30" cy="12" rx="11" ry="11"/>
+                <rect x="25" y="22" width="10" height="7" rx="3"/>
+                <path d="M14 29 Q30 35 46 29 L49 90 Q30 96 11 90 Z"/>
+                <path d="M14 31 L8 70 Q8 76 18 74 L22 37 Z"/>
+                <path d="M46 31 L52 70 Q52 76 42 74 L38 37 Z"/>
+                <path d="M15 88 L12 150 Q12 157 24 157 L27 97 Z"/>
+                <path d="M45 88 L48 150 Q48 157 36 157 L33 97 Z"/>
+              </svg>
+            </div>
+            <div class="group-text">
+              <h2>Copywriting & Ghostwriting</h2>
+              <p>Pages de vente, emails, LinkedIn, biographies. Des mots qui convertissent, des voix que l'on reconnaît.</p>
+            </div>
+          </div>
+          <div class="group-main-img">
+            <div class="img-ph"><div class="ph-icon">💼</div><span>Projet à venir</span></div>
+          </div>
+        </div>
+        <div class="group-gallery">
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">📧</div><span>Email à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">💼</div><span>LinkedIn à venir</span></div></div>
+          <div class="gallery-img"><div class="img-ph"><div class="ph-icon">📄</div><span>Page de vente à venir</span></div></div>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -128,7 +766,6 @@
       </div>
       <div class="cta-actions reveal">
         <a href="mailto:contact@exemple.com" class="btn btn-primary" style="--page-color:#7c7cff">Envoyer un message</a>
-        <a href="photo.html" class="btn btn-ghost">Voir le portfolio</a>
       </div>
     </div>
   </div>
@@ -136,15 +773,27 @@
   <footer>
     <div class="footer-logo">Matthias</div>
     <div class="footer-links">
-      <a href="photo.html">Photo</a>
-      <a href="video.html">Vidéo</a>
-      <a href="web-dev.html">Web</a>
-      <a href="voyage.html">Voyage</a>
+      <a href="#photo"   onclick="goService('photo')">Photo</a>
+      <a href="#video"   onclick="goService('video')">Vidéo</a>
+      <a href="#webdev"  onclick="goService('webdev')">Web</a>
+      <a href="#voyage"  onclick="goService('voyage')">Voyage</a>
       <a href="mailto:contact@exemple.com">Contact</a>
     </div>
     <div class="footer-copy">&copy; 2025 Matthias</div>
   </footer>
 
   <script src="main.js"></script>
+  <script>
+    // Helper: jump to a service from nav links
+    function goService(id) {
+      if (window._carousel) {
+        const idx = SERVICES.findIndex(s => s.id === id);
+        if (idx !== -1) {
+          window._carousel.goTo(idx);
+          document.querySelector('.lobby')?.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+  </script>
 </body>
 </html>

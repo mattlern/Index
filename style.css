@@ -301,6 +301,17 @@ ul { list-style: none; }
   50%      { transform: translateX(-50%) translateY(7px); }
 }
 
+/* Service sections — switch via carousel */
+.service-section { display: none; }
+.service-section.active {
+  display: block;
+  animation: svcIn 0.45s var(--ease) forwards;
+}
+@keyframes svcIn {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* Quick nav */
 .quick-nav {
   max-width: 1100px;
