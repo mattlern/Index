@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projet — Matthias</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .projet-hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 40px 48px;
+    }
+    .projet-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: var(--text-3);
+      text-decoration: none;
+      margin-bottom: 32px;
+      transition: color 0.2s;
+      font-family: var(--ff-hand);
+    }
+    .projet-back:hover { color: var(--text-1); }
+
+    .projet-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 20px;
+    }
+    .projet-tag {
+      padding: 5px 12px;
+      border-radius: 99px;
+      font-size: 0.75rem;
+      border: 1px solid var(--border);
+      color: var(--text-2);
+      font-family: var(--ff-hand);
+    }
+    .projet-tag.service {
+      background: var(--text-1);
+      color: var(--bg);
+      border-color: var(--text-1);
+    }
+
+    .projet-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 4.5vw, 3.6rem);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .projet-title em { font-style: italic; color: var(--text-2); }
+
+    .projet-desc {
+      font-size: 0.95rem;
+      color: var(--text-2);
+      line-height: 1.8;
+      max-width: 600px;
+      font-weight: 300;
+    }
+
+    /* Main image grid */
+    .projet-gallery {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 80px;
+    }
+    .projet-img {
+      aspect-ratio: 4/3;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+    }
+    .projet-img.main {
+      grid-column: 1 / -1;
+      aspect-ratio: 16/7;
+      font-size: 5rem;
+    }
+
+    /* Related videos */
+    .projet-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+    }
+    .projet-section-title {
+      font-family: var(--ff-display);
+      font-size: 1.6rem;
+      font-weight: 300;
+      font-style: italic;
+      margin-bottom: 24px;
+      color: var(--text-2);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
+    }
+    .video-ph-card {
+      aspect-ratio: 16/9;
+      background: #161616;
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .vph-btn {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    /* Related projects */
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .related-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      overflow: hidden;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .related-card:hover { border-color: var(--border-hi); transform: translateY(-2px); }
+    .related-img {
+      aspect-ratio: 16/9;
+      background: #161616;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+    .related-info { padding: 16px; }
+    .related-title {
+      font-family: var(--ff-display);
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+    .related-tags { font-family: var(--ff-hand); font-size: 0.72rem; color: var(--text-3); }
+
+    /* Not found state */
+    .projet-not-found {
+      max-width: 600px;
+      margin: 120px auto;
+      text-align: center;
+      padding: 0 40px;
+    }
+
+    @media (max-width: 640px) {
+      .projet-hero, .projet-section { padding-left: 20px; padding-right: 20px; }
+      .projet-gallery { padding: 0 20px; grid-template-columns: 1fr; }
+      .projet-img.main { grid-column: auto; aspect-ratio: 4/3; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a class="nav-logo" href="index.html">Matthias</a>
+    <div class="nav-links">
+      <a href="projets.html">Projets</a>
+      <a href="index.html#about">À propos</a>
+      <a href="mailto:contact@exemple.com" class="nav-cta">Contact</a>
+    </div>
+    <div class="nav-burger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div id="projet-content">
+    <!-- Populated by JS -->
+  </div>
+
+  <footer>
+    <div class="footer-logo">Matthias</div>
+    <div class="footer-links">
+      <a href="projets.html">Projets</a>
+      <a href="index.html">Accueil</a>
+      <a href="mailto:contact@exemple.com">Contact</a>
+    </div>
+    <div class="footer-copy">&copy; 2025 Matthias</div>
+  </footer>
+
+  <script src="projects-data.js"></script>
+  <script src="main.js"></script>
+  <script>
+    initNav();
+
+    const params  = new URLSearchParams(location.search);
+    const id      = params.get('id');
+    const project = PROJECTS.find(p => p.id === id);
+    const root    = document.getElementById('projet-content');
+
+    if (!project) {
+      root.innerHTML = `
+        <div class="projet-not-found">
+          <p class="label">Projet introuvable</p>
+          <h1 style="font-family:var(--ff-display);font-size:2rem;font-weight:300;margin:16px 0">Ce projet n'existe pas encore.</h1>
+          <a href="projets.html" class="btn btn-ghost" style="margin-top:16px">← Tous les projets</a>
+        </div>`;
+    } else {
+      // Related: same services, different project
+      const related = PROJECTS.filter(p => p.id !== project.id && p.services.some(s => project.services.includes(s))).slice(0, 3);
+
+      document.title = `${project.title} — Matthias`;
+
+      root.innerHTML = `
+        <div class="projet-hero">
+          <a class="projet-back" href="projets.html">← Tous les projets</a>
+          <div class="projet-tags">
+            ${project.services.map(s => `<span class="projet-tag service">${SERVICE_LABELS[s] || s}</span>`).join('')}
+            ${project.tags.map(t => `<span class="projet-tag">${t}</span>`).join('')}
+          </div>
+          <h1 class="projet-title">${project.title}</h1>
+          <p class="projet-desc">${project.desc}</p>
+        </div>
+
+        <!-- Photo gallery -->
+        <div class="projet-gallery">
+          <div class="projet-img main">${project.icon}</div>
+          <div class="projet-img">${project.icon}</div>
+          <div class="projet-img">${project.icon}</div>
+          <div class="projet-img">${project.icon}</div>
+          <div class="projet-img">${project.icon}</div>
+          <div class="projet-img">${project.icon}</div>
+        </div>
+
+        ${project.services.includes('video') ? `
+        <!-- Videos -->
+        <div class="projet-section">
+          <div class="projet-section-title">Vidéos associées</div>
+          <div class="video-grid">
+            <div class="video-ph-card"><div class="vph-btn">▶</div><span style="font-size:.72rem;color:var(--text-3)">Vidéo à venir</span></div>
+            <div class="video-ph-card"><div class="vph-btn">▶</div><span style="font-size:.72rem;color:var(--text-3)">Vidéo à venir</span></div>
+          </div>
+        </div>` : ''}
+
+        ${related.length > 0 ? `
+        <!-- Related projects -->
+        <div class="projet-section">
+          <div class="projet-section-title">Projets similaires</div>
+          <div class="related-grid">
+            ${related.map(r => `
+              <a class="related-card" href="projet.html?id=${r.id}">
+                <div class="related-img">${r.icon}</div>
+                <div class="related-info">
+                  <div class="related-title">${r.title}</div>
+                  <div class="related-tags">${r.tags.join(' · ')}</div>
+                </div>
+              </a>`).join('')}
+          </div>
+        </div>` : ''}
+
+        <div class="cta-section" style="margin-top:0">
+          <div class="cta-inner">
+            <div>
+              <h2 class="reveal">Un projet<br><em>similaire ?</em></h2>
+              <p class="reveal">Discutons de ce que vous avez en tête.</p>
+            </div>
+            <div class="cta-actions reveal">
+              <a href="mailto:contact@exemple.com" class="btn btn-primary">Me contacter</a>
+              <a href="projets.html" class="btn btn-ghost">← Tous les projets</a>
+            </div>
+          </div>
+        </div>
+      `;
+
+      document.querySelectorAll('.reveal').forEach(el => {
+        setTimeout(() => el.classList.add('visible'), 100);
+      });
+    }
+  </script>
+</body>
+</html>

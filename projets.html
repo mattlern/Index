@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projets — Matthias</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Filter bar ── */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 48px;
+    }
+    .filter-btn {
+      padding: 8px 18px;
+      border-radius: 99px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-2);
+      font-family: var(--ff-body);
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover { border-color: var(--border-hi); color: var(--text-1); }
+    .filter-btn.active {
+      background: var(--text-1);
+      color: var(--bg);
+      border-color: var(--text-1);
+    }
+
+    /* ── Project cards grid ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 20px;
+    }
+    .project-card-full {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card-full:hover { border-color: var(--border-hi); transform: translateY(-3px); }
+
+    .pcf-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: #000;
+      aspect-ratio: 16/7;
+      overflow: hidden;
+    }
+    .pcf-images.single { grid-template-columns: 1fr; }
+    .pcf-img {
+      background: #161616;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+    }
+
+    .pcf-body { padding: 24px; flex: 1; display: flex; flex-direction: column; gap: 12px; }
+
+    .pcf-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .pcf-tag {
+      padding: 4px 10px;
+      border-radius: 99px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      font-size: 0.72rem;
+      color: var(--text-2);
+      font-family: var(--ff-hand);
+    }
+    .pcf-service-tag {
+      background: var(--text-1);
+      color: var(--bg);
+      border-color: var(--text-1);
+      font-weight: 500;
+    }
+
+    .pcf-title {
+      font-family: var(--ff-display);
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 1.3;
+    }
+    .pcf-desc {
+      font-size: 0.8rem;
+      color: var(--text-2);
+      line-height: 1.65;
+      font-weight: 300;
+      flex: 1;
+    }
+    .pcf-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 4px;
+      font-size: 0.8rem;
+      color: var(--text-2);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      padding: 8px 16px;
+      border-radius: 99px;
+      transition: all 0.2s;
+      align-self: flex-start;
+    }
+    .pcf-link:hover { border-color: var(--border-hi); color: var(--text-1); }
+
+    /* empty state */
+    .projects-empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 80px 0;
+      color: var(--text-3);
+      font-family: var(--ff-display);
+      font-size: 1.4rem;
+      font-style: italic;
+    }
+
+    /* page header */
+    .projects-header {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 40px 40px;
+    }
+    .projects-header .label { margin-bottom: 12px; }
+    .projects-header h1 {
+      font-family: var(--ff-display);
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 300;
+      margin-bottom: 12px;
+    }
+    .projects-header h1 em { font-style: italic; color: var(--text-2); }
+    .projects-header p {
+      color: var(--text-2);
+      font-size: 0.9rem;
+      max-width: 520px;
+      line-height: 1.7;
+    }
+    .projects-body {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px 100px;
+    }
+
+    @media (max-width: 640px) {
+      .projects-header { padding: 60px 20px 32px; }
+      .projects-body { padding: 0 20px 80px; }
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a class="nav-logo" href="index.html">Matthias</a>
+    <div class="nav-links">
+      <a href="projets.html" class="active">Projets</a>
+      <a href="index.html#about">À propos</a>
+      <a href="mailto:contact@exemple.com" class="nav-cta">Contact</a>
+    </div>
+    <div class="nav-burger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="projects-header">
+    <p class="label">Portfolio</p>
+    <h1>Nos <em>réalisations</em></h1>
+    <p>Une sélection de projets en photographie, vidéo, community management, développement web, voyage, création de contenu et écriture.</p>
+  </div>
+
+  <div class="projects-body">
+
+    <!-- Filter bar -->
+    <div class="filter-bar" id="filter-bar">
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="photo">Photo</button>
+      <button class="filter-btn" data-filter="video">Vidéo</button>
+      <button class="filter-btn" data-filter="cm">CM</button>
+      <button class="filter-btn" data-filter="webdev">Web</button>
+      <button class="filter-btn" data-filter="voyage">Voyage</button>
+      <button class="filter-btn" data-filter="content">Contenu</button>
+      <button class="filter-btn" data-filter="writing">Écriture</button>
+    </div>
+
+    <!-- Projects grid (populated by JS) -->
+    <div class="projects-grid" id="projects-grid"></div>
+
+  </div>
+
+  <footer>
+    <div class="footer-logo">Matthias</div>
+    <div class="footer-links">
+      <a href="projets.html">Projets</a>
+      <a href="index.html">Accueil</a>
+      <a href="mailto:contact@exemple.com">Contact</a>
+    </div>
+    <div class="footer-copy">&copy; 2025 Matthias</div>
+  </footer>
+
+  <script src="projects-data.js"></script>
+  <script src="main.js"></script>
+  <script>
+    const grid  = document.getElementById('projects-grid');
+    const btns  = document.querySelectorAll('.filter-btn');
+    let active  = 'all';
+
+    function renderProjects() {
+      const list = active === 'all'
+        ? PROJECTS
+        : PROJECTS.filter(p => p.services.includes(active));
+
+      grid.innerHTML = list.length === 0
+        ? '<div class="projects-empty">Aucun projet pour cette catégorie.</div>'
+        : list.map(p => `
+          <div class="project-card-full" data-services="${p.services.join(',')}">
+            <div class="pcf-images ${p.images.length <= 1 ? 'single' : ''}">
+              <div class="pcf-img">${p.icon}</div>
+              ${p.images.length > 1 || true ? `<div class="pcf-img" style="opacity:.55">${p.icon}</div>` : ''}
+            </div>
+            <div class="pcf-body">
+              <div class="pcf-tags">
+                ${p.services.map(s => `<span class="pcf-tag pcf-service-tag">${SERVICE_LABELS[s] || s}</span>`).join('')}
+                ${p.tags.map(t => `<span class="pcf-tag">${t}</span>`).join('')}
+              </div>
+              <div class="pcf-title">${p.title}</div>
+              <div class="pcf-desc">${p.desc}</div>
+              <a class="pcf-link" href="projet.html?id=${p.id}">Voir le projet →</a>
+            </div>
+          </div>`).join('');
+    }
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        active = btn.dataset.filter;
+        renderProjects();
+      });
+    });
+
+    renderProjects();
+    initNav();
+  </script>
+</body>
+</html>
