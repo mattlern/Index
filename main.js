@@ -56,7 +56,6 @@ class SilCarousel {
 
     this.titleEl = document.getElementById('sil-title');
     this.descEl  = document.getElementById('sil-desc');
-    this.ctaEl   = document.getElementById('sil-cta');
     this.dotsEl  = document.querySelector('.sil-dots');
 
     this._build();
@@ -71,10 +70,7 @@ class SilCarousel {
       el.className = 'sil-item';
       el.dataset.index = i;
       el.innerHTML = silSVG();
-      el.addEventListener('click', () => {
-        if (i === this.current) window.location.href = s.link;
-        else this.goTo(i);
-      });
+      el.addEventListener('click', () => { this.goTo(i); });
       this.wrap.appendChild(el);
       this.items.push(el);
     });
@@ -159,16 +155,28 @@ class SilCarousel {
   _updateInfo() {
     const s = SERVICES[this.current];
     if (!this.titleEl) return;
+
+    // Fade title/desc
     this.titleEl.style.opacity = '0';
     this.descEl.style.opacity  = '0';
     setTimeout(() => {
-      this.titleEl.textContent = s.title;
-      this.titleEl.style.color = s.color;
-      this.descEl.textContent  = s.desc;
-      this.ctaEl.href          = s.link;
+      this.titleEl.textContent   = s.title;
+      this.titleEl.style.color   = s.color;
+      this.descEl.textContent    = s.desc;
       this.titleEl.style.opacity = '1';
       this.descEl.style.opacity  = '1';
     }, 200);
+
+    // Switch visible service section immediately
+    document.querySelectorAll('.service-section').forEach(sec => sec.classList.remove('active'));
+    const target = document.querySelector(`.service-section[data-service="${s.id}"]`);
+    if (target) {
+      target.classList.add('active');
+      // Staggered reveal for elements inside the newly shown section
+      target.querySelectorAll('.reveal:not(.visible)').forEach((el, idx) => {
+        setTimeout(() => el.classList.add('visible'), idx * 70 + 80);
+      });
+    }
   }
 
   _updateDots() {
@@ -198,5 +206,5 @@ function initReveal() {
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initReveal();
-  if (document.querySelector('.sil-carousel-wrap')) new SilCarousel();
+  if (document.querySelector('.sil-carousel-wrap')) window._carousel = new SilCarousel();
 });
